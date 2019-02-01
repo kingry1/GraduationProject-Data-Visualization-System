@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 import matplotlib.pyplot as plt
 import numpy as np
 
@@ -18,5 +20,6 @@ ax2 = plt.subplot(122, sharey=ax1, sharex=ax1)
 plt.scatter(x, y2, color='green', alpha=0.3, edgecolors='grey', label='correl')
 plt.xlabel('strong correlation')
 plt.grid(True)
+# 显示图例
 plt.legend()
 plt.show()
