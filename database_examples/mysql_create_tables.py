@@ -17,5 +17,5 @@ try:
     myCursor = mydb.cursor()
 
     myCursor.execute("CREATE TABLE sites (name VARCHAR(255), url VARCHAR(255))")
-except Exception as e:
-    print(e)
+except mysql.connector.Error as err:
+    print(err)

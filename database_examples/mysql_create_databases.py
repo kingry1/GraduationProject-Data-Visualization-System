@@ -24,5 +24,10 @@ try:
     myCursor.execute("CREATE DATABASE runoob_db")
 # except DatabaseError as e:
 #     print(e.msg)
-except Exception as e:
-    print(e)
+except mysql.connector.Error as err:
+    print(err)
+else:
+    print("OK!")
+
+myCursor.close()
+mydb.close()

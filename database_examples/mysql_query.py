@@ -21,11 +21,11 @@ try:
     # res = myCursor.fetchall()
     # print(res)
 
-    myCursor.execute("SHOW DATABASES")
+    myCursor.execute("SELECT emp_no, salary FROM employees.salaries LIMIT 1, 100")
 except mysql.connector.Error as err:
     print(err)
 
-for db in myCursor:
-    print(db)
+for (emp_no, salary) in myCursor:
+    print(emp_no)
 
 mydb.close()
