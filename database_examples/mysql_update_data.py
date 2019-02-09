@@ -34,6 +34,7 @@ curA.execute(query, (date(2000, 1, 1), date(2000, 12, 31)))
 print('curA', curA)
 
 # Iterate through the result of curA
+# python中for的性质，元组的列表可以直接这么循环
 for (emp_no, salary, from_date, to_date) in curA:
     # Update the old and insert the new salary
     new_salary = int(round(salary * Decimal('1.15')))

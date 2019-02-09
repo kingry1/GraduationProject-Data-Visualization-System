@@ -25,7 +25,9 @@ try:
 except mysql.connector.Error as err:
     print(err)
 
-for db in myCursor:
+result = myCursor.fetchmany(size=2)
+
+for db in result:
     print(db)
 
 mydb.close()

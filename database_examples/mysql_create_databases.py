@@ -3,6 +3,10 @@
 import mysql.connector
 # from mysql.connector.errors import DatabaseError
 
+param = {
+    'databaseName': 'runoob_db'
+}
+
 try:
     # 接收参数：user, password, host, port=3306, unix_socket and database
     # 返回一个MySQLConnection Object
@@ -21,7 +25,7 @@ try:
     # res = myCursor.fetchall()
     # print(res)
 
-    myCursor.execute("CREATE DATABASE runoob_db")
+    myCursor.execute("CREATE DATABASE {0}".format(param['databaseName']))
 # except DatabaseError as e:
 #     print(e.msg)
 except mysql.connector.Error as err:
