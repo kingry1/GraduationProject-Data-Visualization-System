@@ -6,12 +6,12 @@ import matplotlib
 matplotlib.use('Qt5Agg')
 # 使用 matplotlib中的FigureCanvas (在使用 Qt5 Backends中 FigureCanvas继承自QtWidgets.QWidget)
 from matplotlib.backends.backend_qt5agg import FigureCanvasQTAgg as FigureCanvas
-from PyQt5 import QtCore, QtWidgets, QtGui
+from PyQt5.QtWidgets import QWidget, QPushButton, QVBoxLayout, QApplication
 import matplotlib.pyplot as plt
 import sys
 
 
-class My_Main_window(QtWidgets.QDialog):
+class My_Main_window(QWidget):
     def __init__(self, parent=None):
         # 父类初始化方法
         super(My_Main_window, self).__init__(parent)
@@ -19,13 +19,13 @@ class My_Main_window(QtWidgets.QDialog):
         # 几个QWidgets
         self.figure = plt.figure()
         self.canvas = MatplotlibCanvas()
-        self.button_plot = QtWidgets.QPushButton("绘制")
+        self.button_plot = QPushButton("绘制")
 
         # 连接事件
         self.button_plot.clicked.connect(self.canvas.plot)
 
         # 设置布局
-        layout = QtWidgets.QVBoxLayout()
+        layout = QVBoxLayout()
         layout.addWidget(self.canvas)
         layout.addWidget(self.button_plot)
         self.setLayout(layout)
@@ -43,7 +43,7 @@ class MatplotlibCanvas(FigureCanvas):
 
 # 运行程序
 if __name__ == '__main__':
-    app = QtWidgets.QApplication(sys.argv)
+    app = QApplication(sys.argv)
     main_window = My_Main_window()
     main_window.show()
     app.exec()
