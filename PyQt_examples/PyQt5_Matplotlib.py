@@ -17,7 +17,6 @@ class My_Main_window(QWidget):
         super(My_Main_window, self).__init__(parent)
 
         # 几个QWidgets
-        self.figure = plt.figure()
         self.canvas = MatplotlibCanvas()
         self.button_plot = QPushButton("绘制")
 
