@@ -12,7 +12,7 @@ try:
         password='Sjn19970508'
     )
     sql_cmd = "SELECT * FROM sakila.payment"
-    df = pd.read_sql(sql_cmd, mydb)
+    df = pd.read_sql(sql=sql_cmd, con=mydb)
 
 except mysql.connector.Error as err:
     print(err)
@@ -21,4 +21,7 @@ except mysql.connector.Error as err:
 #     print(emp_no)
 
 mydb.close()
-print(list(df.columns))
+columns = list(df.columns)
+print(columns)
+for column in columns:
+    print(df[column])
