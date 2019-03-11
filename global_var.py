@@ -24,6 +24,19 @@ def config_dic():
     return dbsDic
 
 
+def save_dbs():
+    print("Saving database configuration...")
+    parser = ConfigParser()
+    global dbConfPath
+    global dbsDic
+    for sectionName, sectionValue in dbsDic.items():
+        parser.add_section(section=sectionName)
+        for key, value in sectionValue.items():
+            parser.set(section=sectionName, option=key, value=value)
+    with open(dbConfPath, 'w') as fw:
+        parser.write(fw)
+
+
 dirname = os.path.split(os.path.realpath(__file__))[0].replace('\\', '/')
 dbConfFile = '/config/db.conf'
 dbConfPath = dirname + dbConfFile
