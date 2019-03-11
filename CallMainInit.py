@@ -1,7 +1,8 @@
 # -*- coding: utf-8 -*-
 
 import sys
-from PyQt5.QtWidgets import QApplication, QMainWindow
+from PyQt5 import QtCore, QtGui, QtWidgets
+from PyQt5.QtWidgets import QApplication, QMainWindow, QListWidgetItem, QInputDialog
 from views.MainInit import Ui_MainWindow
 import global_var
 
@@ -12,8 +13,10 @@ class MyMainWindow(QMainWindow, Ui_MainWindow):
         self.setupUi(self)
         self.dbsDic = global_var.dbsDic
         self.clickedDatabase = ''
-        for dbsName in self.dbsDic.keys():
-            self.listWidget.addItem(dbsName)
+        for dbsName in sorted(self.dbsDic.keys()):
+            item = QListWidgetItem()
+            item.setText(dbsName)
+            self.listWidget.addItem(item)
 
     def listClicked(self, clicked_item):
         self.clickedDatabase = clicked_item.text()
@@ -21,10 +24,25 @@ class MyMainWindow(QMainWindow, Ui_MainWindow):
         self.portLine.setText(self.dbsDic[self.clickedDatabase]['port'])
         self.userLine.setText(self.dbsDic[self.clickedDatabase]['user'])
         self.passwordLine.setText(self.dbsDic[self.clickedDatabase]['password'])
+        self.connectButton.setEnabled(True)
+        self.deleteButton.setEnabled(True)
+        self.editButton.setEnabled(True)
 
-    def selectClicked(self):
+    def listDoubleClicked(self, clicked_item):
+        oldName = clicked_item.text()
+        newName, ok = QInputDialog.getText(self, '改名输入框', '输入数据库名称', text=clicked_item.text())
+        if ok:
+            # check first
+            clicked_item.setText(newName)
+            global_var.dbsDic[newName] = global_var.dbsDic.pop(oldName)
+            global_var.save_dbs()
+
+    def connectClicked(self):
         # 这里将选中的数据库传给下一个页面
-        print("传给下一个页面的数据:", self.dbsDic)
+        print("传给下一个页面的数据:", self.dbsDic[self.clickedDatabase])
+
+    def addClicked(self):
+        print("add new")
 
     def editClicked(self):
         # set lineEdit enable

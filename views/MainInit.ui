@@ -18,7 +18,7 @@
     <item>
      <layout class="QVBoxLayout" name="verticalLayout" stretch="1,0,0">
       <item>
-       <layout class="QGridLayout" name="gridLayout" rowstretch="0,0,0,0,0,0,0">
+       <layout class="QGridLayout" name="gridLayout" rowstretch="0,0,0,0,0,0,0,0">
         <property name="sizeConstraint">
          <enum>QLayout::SetDefaultConstraint</enum>
         </property>
@@ -28,10 +28,17 @@
         <property name="rightMargin">
          <number>10</number>
         </property>
-        <item row="3" column="2">
+        <item row="1" column="1" rowspan="6">
+         <widget class="Line" name="line">
+          <property name="orientation">
+           <enum>Qt::Vertical</enum>
+          </property>
+         </widget>
+        </item>
+        <item row="4" column="2">
          <widget class="QPushButton" name="editButton">
           <property name="enabled">
-           <bool>true</bool>
+           <bool>false</bool>
           </property>
           <property name="minimumSize">
            <size>
@@ -62,13 +69,44 @@
           <property name="sizeHint" stdset="0">
            <size>
             <width>20</width>
-            <height>40</height>
+            <height>30</height>
            </size>
           </property>
          </spacer>
         </item>
-        <item row="4" column="2">
+        <item row="6" column="2">
+         <spacer name="verticalSpacer_4">
+          <property name="orientation">
+           <enum>Qt::Vertical</enum>
+          </property>
+          <property name="sizeType">
+           <enum>QSizePolicy::Fixed</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>20</width>
+            <height>30</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item row="0" column="0" alignment="Qt::AlignHCenter|Qt::AlignBottom">
+         <widget class="QLabel" name="title">
+          <property name="font">
+           <font>
+            <family>微软雅黑</family>
+           </font>
+          </property>
+          <property name="text">
+           <string>Databases</string>
+          </property>
+         </widget>
+        </item>
+        <item row="5" column="2">
          <widget class="QPushButton" name="deleteButton">
+          <property name="enabled">
+           <bool>false</bool>
+          </property>
           <property name="minimumSize">
            <size>
             <width>100</width>
@@ -88,7 +126,10 @@
          </widget>
         </item>
         <item row="2" column="2">
-         <widget class="QPushButton" name="selectButton">
+         <widget class="QPushButton" name="connectButton">
+          <property name="enabled">
+           <bool>false</bool>
+          </property>
           <property name="minimumSize">
            <size>
             <width>100</width>
@@ -103,7 +144,7 @@
            </font>
           </property>
           <property name="text">
-           <string>SELECT</string>
+           <string>CONNECT</string>
           </property>
          </widget>
         </item>
@@ -118,12 +159,12 @@
           <property name="sizeHint" stdset="0">
            <size>
             <width>20</width>
-            <height>40</height>
+            <height>30</height>
            </size>
           </property>
          </spacer>
         </item>
-        <item row="6" column="2">
+        <item row="7" column="2">
          <spacer name="verticalSpacer_2">
           <property name="orientation">
            <enum>Qt::Vertical</enum>
@@ -134,28 +175,26 @@
           <property name="sizeHint" stdset="0">
            <size>
             <width>20</width>
-            <height>40</height>
+            <height>30</height>
            </size>
           </property>
          </spacer>
         </item>
-        <item row="5" column="2">
-         <spacer name="verticalSpacer_4">
-          <property name="orientation">
-           <enum>Qt::Vertical</enum>
+        <item row="3" column="2">
+         <widget class="QPushButton" name="addButton">
+          <property name="font">
+           <font>
+            <family>微软雅黑</family>
+            <weight>75</weight>
+            <bold>true</bold>
+           </font>
           </property>
-          <property name="sizeType">
-           <enum>QSizePolicy::Fixed</enum>
+          <property name="text">
+           <string>ADD</string>
           </property>
-          <property name="sizeHint" stdset="0">
-           <size>
-            <width>20</width>
-            <height>40</height>
-           </size>
-          </property>
-         </spacer>
+         </widget>
         </item>
-        <item row="1" column="0" rowspan="5">
+        <item row="1" column="0" rowspan="6">
          <widget class="QListWidget" name="listWidget">
           <property name="sizePolicy">
            <sizepolicy hsizetype="Expanding" vsizetype="MinimumExpanding">
@@ -168,25 +207,6 @@
             <width>0</width>
             <height>0</height>
            </size>
-          </property>
-         </widget>
-        </item>
-        <item row="1" column="1" rowspan="5">
-         <widget class="Line" name="line">
-          <property name="orientation">
-           <enum>Qt::Vertical</enum>
-          </property>
-         </widget>
-        </item>
-        <item row="0" column="0" alignment="Qt::AlignHCenter|Qt::AlignBottom">
-         <widget class="QLabel" name="title">
-          <property name="font">
-           <font>
-            <family>微软雅黑</family>
-           </font>
-          </property>
-          <property name="text">
-           <string>Databases</string>
           </property>
          </widget>
         </item>
@@ -338,10 +358,10 @@
  <resources/>
  <connections>
   <connection>
-   <sender>selectButton</sender>
+   <sender>connectButton</sender>
    <signal>clicked()</signal>
    <receiver>MainWindow</receiver>
-   <slot>selectClicked()</slot>
+   <slot>connectClicked()</slot>
    <hints>
     <hint type="sourcelabel">
      <x>643</x>
@@ -382,22 +402,6 @@
     <hint type="destinationlabel">
      <x>619</x>
      <y>267</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>listWidget</sender>
-   <signal>itemClicked(QListWidgetItem*)</signal>
-   <receiver>MainWindow</receiver>
-   <slot>listClicked()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>322</x>
-     <y>226</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>166</x>
-     <y>94</y>
     </hint>
    </hints>
   </connection>
@@ -465,12 +469,62 @@
     </hint>
    </hints>
   </connection>
+  <connection>
+   <sender>addButton</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>addClicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>604</x>
+     <y>204</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>615</x>
+     <y>82</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>listWidget</sender>
+   <signal>itemClicked(QListWidgetItem*)</signal>
+   <receiver>MainWindow</receiver>
+   <slot>listClicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>322</x>
+     <y>226</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>166</x>
+     <y>94</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>listWidget</sender>
+   <signal>itemDoubleClicked(QListWidgetItem*)</signal>
+   <receiver>MainWindow</receiver>
+   <slot>listDoubleClicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>73</x>
+     <y>158</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>75</x>
+     <y>45</y>
+    </hint>
+   </hints>
+  </connection>
  </connections>
  <slots>
-  <slot>selectClicked()</slot>
+  <slot>connectClicked()</slot>
   <slot>editClicked()</slot>
   <slot>deleteClicked()</slot>
   <slot>listClicked()</slot>
   <slot>saveDatabaseConf()</slot>
+  <slot>addClicked()</slot>
+  <slot>listDoubleClicked()</slot>
  </slots>
 </ui>
