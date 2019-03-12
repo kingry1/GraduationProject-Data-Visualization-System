@@ -31,7 +31,6 @@ class MyMainWindow(QMainWindow, Ui_MainWindow):
         self.userLine.setValidator(userValidator)
 
     def listClicked(self, clicked_item):
-        print("clicked", clicked_item.text())
         self.clickedDatabaseItem = clicked_item
         self.clickedDatabaseName = clicked_item.text()
         self.hostLine.setText(self.dbsDic[self.clickedDatabaseName]['host'])
@@ -58,7 +57,7 @@ class MyMainWindow(QMainWindow, Ui_MainWindow):
         print("传给下一个页面的数据:", self.dbsDic[self.clickedDatabaseName])
 
     def addClicked(self):
-        dbsName, ok = QInputDialog.getText(self, '新建数据库名称', '输入数据库名称                  ')
+        dbsName, ok = QInputDialog.getText(self, '新建数据库', '输入数据库名称                  ')
         if ok:
             self.listWidget.addItem(dbsName)
             global_var.new_dbs(dbsName=dbsName)
@@ -69,10 +68,22 @@ class MyMainWindow(QMainWindow, Ui_MainWindow):
         self.portLine.setEnabled(True)
         self.userLine.setEnabled(True)
         self.passwordLine.setEnabled(True)
-        print(self.dbsDic)
 
     def deleteClicked(self):
-        print(self.dbsDic)
+        self.listWidget.takeItem(self.listWidget.row(self.clickedDatabaseItem))
+        global_var.dbsDic.pop(self.clickedDatabaseName)
+        self.hostLine.setEnabled(False)
+        self.portLine.setEnabled(False)
+        self.userLine.setEnabled(False)
+        self.passwordLine.setEnabled(False)
+        self.hostLine.setText('')
+        self.portLine.setText('')
+        self.userLine.setText('')
+        self.passwordLine.setText('')
+        self.connectButton.setEnabled(False)
+        self.deleteButton.setEnabled(False)
+        self.editButton.setEnabled(False)
+        global_var.save_dbs()
 
     def saveDatabaseConf(self):
         self.hostLine.setEnabled(False)
