@@ -1,11 +1,9 @@
 # -*- coding: utf-8 -*-
 
-import sys
 from PyQt5.QtWidgets import QMainWindow, QListWidgetItem, QInputDialog
 from PyQt5.QtGui import QRegExpValidator, QIntValidator
 from PyQt5.QtCore import QRegExp, pyqtSignal
 from views.UI_MainDbsConfWin import Ui_MainDbsConfWin
-from GUIs.DbsTableSelect import DbsTableSelect
 from libs import global_var
 
 
