@@ -37,6 +37,19 @@ def save_dbs():
         parser.write(fw)
 
 
+def new_dbs(dbsName):
+    parser = ConfigParser()
+    global dbConfPath
+    global dbsDic
+    default_conf = {'host': '127.0.0.1',
+                    'port': '1234',
+                    'user': 'default',
+                    'password': '12345'
+                    }
+    dbsDic[dbsName] = default_conf
+    save_dbs()
+
+
 dirname = os.path.split(os.path.realpath(__file__))[0].replace('\\', '/')
 dbConfFile = '/config/db.conf'
 dbConfPath = dirname + dbConfFile
