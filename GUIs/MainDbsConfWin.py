@@ -3,13 +3,15 @@
 import sys
 from PyQt5.QtWidgets import QMainWindow, QListWidgetItem, QInputDialog
 from PyQt5.QtGui import QRegExpValidator, QIntValidator
-from PyQt5.QtCore import QRegExp
+from PyQt5.QtCore import QRegExp, pyqtSignal
 from views.UI_MainDbsConfWin import Ui_MainDbsConfWin
 from GUIs.DbsTableSelect import DbsTableSelect
 from libs import global_var
 
 
 class MainDbsConfWin(QMainWindow, Ui_MainDbsConfWin):
+    callDbsTableSignal = pyqtSignal()
+
     def __init__(self, parent=None):
         super(MainDbsConfWin, self).__init__(parent)
         self.setupUi(self)
@@ -55,8 +57,7 @@ class MainDbsConfWin(QMainWindow, Ui_MainDbsConfWin):
     def connectClicked(self):
         # 这里将选中的数据库传给下一个页面
         print("传给下一个页面的数据:", self.dbsDic[self.clickedDatabaseName])
-        self.secondUI = DbsTableSelect()
-        self.secondUI.show()
+        self.callDbsTableSignal.emit()
 
     def addClicked(self):
         dbsName, ok = QInputDialog.getText(self, '新建数据库', '输入数据库名称                  ')

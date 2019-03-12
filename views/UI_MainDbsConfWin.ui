@@ -101,7 +101,7 @@
            </font>
           </property>
           <property name="text">
-           <string>Databases</string>
+           <string>数据库</string>
           </property>
          </widget>
         </item>

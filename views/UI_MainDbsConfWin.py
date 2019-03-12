@@ -184,7 +184,7 @@ class Ui_MainDbsConfWin(object):
         _translate = QtCore.QCoreApplication.translate
         MainDbsConfWin.setWindowTitle(_translate("MainDbsConfWin", "数据库配置"))
         self.editButton.setText(_translate("MainDbsConfWin", "EDIT"))
-        self.title.setText(_translate("MainDbsConfWin", "Databases"))
+        self.title.setText(_translate("MainDbsConfWin", "数据库"))
         self.deleteButton.setText(_translate("MainDbsConfWin", "DELETE"))
         self.connectButton.setText(_translate("MainDbsConfWin", "CONNECT"))
         self.addButton.setText(_translate("MainDbsConfWin", "ADD"))
