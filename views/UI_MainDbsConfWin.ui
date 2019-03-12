@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>MainWindow</class>
- <widget class="QMainWindow" name="MainWindow">
+ <class>MainDbsConfWin</class>
+ <widget class="QMainWindow" name="MainDbsConfWin">
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>MainWindow</string>
+   <string>数据库配置</string>
   </property>
   <widget class="QWidget" name="centralwidget">
    <layout class="QVBoxLayout" name="verticalLayout_2">
@@ -363,7 +363,7 @@
   <connection>
    <sender>connectButton</sender>
    <signal>clicked()</signal>
-   <receiver>MainWindow</receiver>
+   <receiver>MainDbsConfWin</receiver>
    <slot>connectClicked()</slot>
    <hints>
     <hint type="sourcelabel">
@@ -379,7 +379,7 @@
   <connection>
    <sender>editButton</sender>
    <signal>clicked()</signal>
-   <receiver>MainWindow</receiver>
+   <receiver>MainDbsConfWin</receiver>
    <slot>editClicked()</slot>
    <hints>
     <hint type="sourcelabel">
@@ -395,7 +395,7 @@
   <connection>
    <sender>deleteButton</sender>
    <signal>clicked()</signal>
-   <receiver>MainWindow</receiver>
+   <receiver>MainDbsConfWin</receiver>
    <slot>deleteClicked()</slot>
    <hints>
     <hint type="sourcelabel">
@@ -411,7 +411,7 @@
   <connection>
    <sender>hostLine</sender>
    <signal>returnPressed()</signal>
-   <receiver>MainWindow</receiver>
+   <receiver>MainDbsConfWin</receiver>
    <slot>saveDatabaseConf()</slot>
    <hints>
     <hint type="sourcelabel">
@@ -427,7 +427,7 @@
   <connection>
    <sender>portLine</sender>
    <signal>returnPressed()</signal>
-   <receiver>MainWindow</receiver>
+   <receiver>MainDbsConfWin</receiver>
    <slot>saveDatabaseConf()</slot>
    <hints>
     <hint type="sourcelabel">
@@ -443,7 +443,7 @@
   <connection>
    <sender>userLine</sender>
    <signal>returnPressed()</signal>
-   <receiver>MainWindow</receiver>
+   <receiver>MainDbsConfWin</receiver>
    <slot>saveDatabaseConf()</slot>
    <hints>
     <hint type="sourcelabel">
@@ -459,7 +459,7 @@
   <connection>
    <sender>passwordLine</sender>
    <signal>returnPressed()</signal>
-   <receiver>MainWindow</receiver>
+   <receiver>MainDbsConfWin</receiver>
    <slot>saveDatabaseConf()</slot>
    <hints>
     <hint type="sourcelabel">
@@ -475,7 +475,7 @@
   <connection>
    <sender>addButton</sender>
    <signal>clicked()</signal>
-   <receiver>MainWindow</receiver>
+   <receiver>MainDbsConfWin</receiver>
    <slot>addClicked()</slot>
    <hints>
     <hint type="sourcelabel">
@@ -491,7 +491,7 @@
   <connection>
    <sender>listWidget</sender>
    <signal>itemClicked(QListWidgetItem*)</signal>
-   <receiver>MainWindow</receiver>
+   <receiver>MainDbsConfWin</receiver>
    <slot>listClicked()</slot>
    <hints>
     <hint type="sourcelabel">
@@ -507,7 +507,7 @@
   <connection>
    <sender>listWidget</sender>
    <signal>itemDoubleClicked(QListWidgetItem*)</signal>
-   <receiver>MainWindow</receiver>
+   <receiver>MainDbsConfWin</receiver>
    <slot>listDoubleClicked()</slot>
    <hints>
     <hint type="sourcelabel">

@@ -25,7 +25,6 @@ def config_dic():
 
 
 def save_dbs():
-    print("Saving database configuration...")
     parser = ConfigParser()
     global dbConfPath
     global dbsDic
@@ -38,7 +37,6 @@ def save_dbs():
 
 
 def new_dbs(dbsName):
-    parser = ConfigParser()
     global dbConfPath
     global dbsDic
     default_conf = {'host': '127.0.0.1',
@@ -51,6 +49,6 @@ def new_dbs(dbsName):
 
 
 dirname = os.path.split(os.path.realpath(__file__))[0].replace('\\', '/')
-dbConfFile = '/config/db.conf'
+dbConfFile = '/../config/db.conf'
 dbConfPath = dirname + dbConfFile
 dbsDic = config_dic()

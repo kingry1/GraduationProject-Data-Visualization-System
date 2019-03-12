@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'MainInit.ui'
+# Form implementation generated from reading ui file 'UI_MainDbsConfWin.ui'
 #
 # Created by: PyQt5 UI code generator 5.11.3
 #
@@ -8,11 +8,11 @@
 
 from PyQt5 import QtCore, QtGui, QtWidgets
 
-class Ui_MainWindow(object):
-    def setupUi(self, MainWindow):
-        MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(664, 570)
-        self.centralwidget = QtWidgets.QWidget(MainWindow)
+class Ui_MainDbsConfWin(object):
+    def setupUi(self, MainDbsConfWin):
+        MainDbsConfWin.setObjectName("MainDbsConfWin")
+        MainDbsConfWin.resize(664, 570)
+        self.centralwidget = QtWidgets.QWidget(MainDbsConfWin)
         self.centralwidget.setObjectName("centralwidget")
         self.verticalLayout_2 = QtWidgets.QVBoxLayout(self.centralwidget)
         self.verticalLayout_2.setObjectName("verticalLayout_2")
@@ -158,38 +158,38 @@ class Ui_MainWindow(object):
         self.verticalLayout.addLayout(self.gridLayout_2)
         self.verticalLayout.setStretch(0, 1)
         self.verticalLayout_2.addLayout(self.verticalLayout)
-        MainWindow.setCentralWidget(self.centralwidget)
-        self.menubar = QtWidgets.QMenuBar(MainWindow)
+        MainDbsConfWin.setCentralWidget(self.centralwidget)
+        self.menubar = QtWidgets.QMenuBar(MainDbsConfWin)
         self.menubar.setGeometry(QtCore.QRect(0, 0, 664, 22))
         self.menubar.setObjectName("menubar")
-        MainWindow.setMenuBar(self.menubar)
-        self.statusbar = QtWidgets.QStatusBar(MainWindow)
+        MainDbsConfWin.setMenuBar(self.menubar)
+        self.statusbar = QtWidgets.QStatusBar(MainDbsConfWin)
         self.statusbar.setObjectName("statusbar")
-        MainWindow.setStatusBar(self.statusbar)
+        MainDbsConfWin.setStatusBar(self.statusbar)
 
-        self.retranslateUi(MainWindow)
-        self.connectButton.clicked.connect(MainWindow.connectClicked)
-        self.editButton.clicked.connect(MainWindow.editClicked)
-        self.deleteButton.clicked.connect(MainWindow.deleteClicked)
-        self.hostLine.returnPressed.connect(MainWindow.saveDatabaseConf)
-        self.portLine.returnPressed.connect(MainWindow.saveDatabaseConf)
-        self.userLine.returnPressed.connect(MainWindow.saveDatabaseConf)
-        self.passwordLine.returnPressed.connect(MainWindow.saveDatabaseConf)
-        self.addButton.clicked.connect(MainWindow.addClicked)
-        self.listWidget.itemClicked['QListWidgetItem*'].connect(MainWindow.listClicked)
-        self.listWidget.itemDoubleClicked['QListWidgetItem*'].connect(MainWindow.listDoubleClicked)
-        QtCore.QMetaObject.connectSlotsByName(MainWindow)
+        self.retranslateUi(MainDbsConfWin)
+        self.connectButton.clicked.connect(MainDbsConfWin.connectClicked)
+        self.editButton.clicked.connect(MainDbsConfWin.editClicked)
+        self.deleteButton.clicked.connect(MainDbsConfWin.deleteClicked)
+        self.hostLine.returnPressed.connect(MainDbsConfWin.saveDatabaseConf)
+        self.portLine.returnPressed.connect(MainDbsConfWin.saveDatabaseConf)
+        self.userLine.returnPressed.connect(MainDbsConfWin.saveDatabaseConf)
+        self.passwordLine.returnPressed.connect(MainDbsConfWin.saveDatabaseConf)
+        self.addButton.clicked.connect(MainDbsConfWin.addClicked)
+        self.listWidget.itemClicked['QListWidgetItem*'].connect(MainDbsConfWin.listClicked)
+        self.listWidget.itemDoubleClicked['QListWidgetItem*'].connect(MainDbsConfWin.listDoubleClicked)
+        QtCore.QMetaObject.connectSlotsByName(MainDbsConfWin)
 
-    def retranslateUi(self, MainWindow):
+    def retranslateUi(self, MainDbsConfWin):
         _translate = QtCore.QCoreApplication.translate
-        MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
-        self.editButton.setText(_translate("MainWindow", "EDIT"))
-        self.title.setText(_translate("MainWindow", "Databases"))
-        self.deleteButton.setText(_translate("MainWindow", "DELETE"))
-        self.connectButton.setText(_translate("MainWindow", "CONNECT"))
-        self.addButton.setText(_translate("MainWindow", "ADD"))
-        self.hostLabel.setText(_translate("MainWindow", "Host"))
-        self.userLabel.setText(_translate("MainWindow", "User"))
-        self.passwordLabel.setText(_translate("MainWindow", "Password"))
-        self.portLabel.setText(_translate("MainWindow", "Port"))
+        MainDbsConfWin.setWindowTitle(_translate("MainDbsConfWin", "数据库配置"))
+        self.editButton.setText(_translate("MainDbsConfWin", "EDIT"))
+        self.title.setText(_translate("MainDbsConfWin", "Databases"))
+        self.deleteButton.setText(_translate("MainDbsConfWin", "DELETE"))
+        self.connectButton.setText(_translate("MainDbsConfWin", "CONNECT"))
+        self.addButton.setText(_translate("MainDbsConfWin", "ADD"))
+        self.hostLabel.setText(_translate("MainDbsConfWin", "Host"))
+        self.userLabel.setText(_translate("MainDbsConfWin", "User"))
+        self.passwordLabel.setText(_translate("MainDbsConfWin", "Password"))
+        self.portLabel.setText(_translate("MainDbsConfWin", "Port"))
 

@@ -1,17 +1,17 @@
 # -*- coding: utf-8 -*-
 
 import sys
-from PyQt5 import QtCore, QtGui, QtWidgets
-from PyQt5.QtWidgets import QApplication, QMainWindow, QListWidgetItem, QInputDialog
+from PyQt5.QtWidgets import QMainWindow, QListWidgetItem, QInputDialog
 from PyQt5.QtGui import QRegExpValidator, QIntValidator
 from PyQt5.QtCore import QRegExp
-from views.MainInit import Ui_MainWindow
-import global_var
+from views.UI_MainDbsConfWin import Ui_MainDbsConfWin
+from GUIs.DbsTableSelect import DbsTableSelect
+from libs import global_var
 
 
-class MyMainWindow(QMainWindow, Ui_MainWindow):
+class MainDbsConfWin(QMainWindow, Ui_MainDbsConfWin):
     def __init__(self, parent=None):
-        super(MyMainWindow, self).__init__(parent)
+        super(MainDbsConfWin, self).__init__(parent)
         self.setupUi(self)
         self.dbsDic = global_var.dbsDic
         self.clickedDatabaseName = ''
@@ -55,6 +55,8 @@ class MyMainWindow(QMainWindow, Ui_MainWindow):
     def connectClicked(self):
         # 这里将选中的数据库传给下一个页面
         print("传给下一个页面的数据:", self.dbsDic[self.clickedDatabaseName])
+        self.secondUI = DbsTableSelect()
+        self.secondUI.show()
 
     def addClicked(self):
         dbsName, ok = QInputDialog.getText(self, '新建数据库', '输入数据库名称                  ')
@@ -99,10 +101,3 @@ class MyMainWindow(QMainWindow, Ui_MainWindow):
         global_var.dbsDic[self.clickedDatabaseName]['user'] = user
         global_var.dbsDic[self.clickedDatabaseName]['password'] = password
         global_var.save_dbs()
-
-
-if __name__ == "__main__":
-    app = QApplication(sys.argv)
-    myWin = MyMainWindow()
-    myWin.show()
-    sys.exit(app.exec_())
