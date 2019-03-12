@@ -14,8 +14,8 @@ class Controller(QObject):
         self.mainDbsConf.callDbsTableSignal.connect(self.show_table_select)
         self.mainDbsConf.show()
 
-    def show_table_select(self):
-        self.tableSelect = DbsTableSelect()
+    def show_table_select(self, dic):
+        self.tableSelect = DbsTableSelect(dic)
         self.tableSelect.backSignal.connect(self.show_main)
         self.mainDbsConf.close()
         self.tableSelect.show()

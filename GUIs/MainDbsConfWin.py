@@ -8,7 +8,7 @@ from libs import global_var
 
 
 class MainDbsConfWin(QMainWindow, Ui_MainDbsConfWin):
-    callDbsTableSignal = pyqtSignal()
+    callDbsTableSignal = pyqtSignal(dict)
 
     def __init__(self, parent=None):
         super(MainDbsConfWin, self).__init__(parent)
@@ -54,8 +54,7 @@ class MainDbsConfWin(QMainWindow, Ui_MainDbsConfWin):
 
     def connectClicked(self):
         # 这里将选中的数据库传给下一个页面
-        print("传给下一个页面的数据:", self.dbsDic[self.clickedDatabaseName])
-        self.callDbsTableSignal.emit()
+        self.callDbsTableSignal.emit(self.dbsDic[self.clickedDatabaseName])
 
     def addClicked(self):
         dbsName, ok = QInputDialog.getText(self, '新建数据库', '输入数据库名称                  ')

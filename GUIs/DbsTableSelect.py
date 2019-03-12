@@ -8,9 +8,11 @@ from PyQt5.QtCore import pyqtSignal
 class DbsTableSelect(QWidget, Ui_DbsTableSelect):
     backSignal = pyqtSignal()
 
-    def __init__(self, parent=None):
+    def __init__(self, conf, parent=None):
         super(DbsTableSelect, self).__init__(parent)
         self.setupUi(self)
+        self.conf = conf
+        print(self.conf)
 
     def backClicked(self):
         self.backSignal.emit()
