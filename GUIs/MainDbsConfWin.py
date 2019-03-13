@@ -4,16 +4,17 @@ from PyQt5.QtWidgets import QMainWindow, QListWidgetItem, QInputDialog
 from PyQt5.QtGui import QRegExpValidator, QIntValidator
 from PyQt5.QtCore import QRegExp, pyqtSignal
 from views.UI_MainDbsConfWin import Ui_MainDbsConfWin
-from libs import global_var
+from libs import GL
 
 
 class MainDbsConfWin(QMainWindow, Ui_MainDbsConfWin):
     callDbsTableSignal = pyqtSignal(dict)
 
     def __init__(self, parent=None):
+        print("new main")
         super(MainDbsConfWin, self).__init__(parent)
         self.setupUi(self)
-        self.dbsDic = global_var.dbsDic
+        self.dbsDic = GL.dbsDic
         self.clickedDatabaseName = ''
         for dbsName in sorted(self.dbsDic.keys()):
             item = QListWidgetItem()
@@ -49,8 +50,8 @@ class MainDbsConfWin(QMainWindow, Ui_MainDbsConfWin):
             self.clickedDatabaseItem = clicked_item
             self.clickedDatabaseName = newName
             clicked_item.setText(newName)
-            global_var.dbsDic[newName] = global_var.dbsDic.pop(oldName)
-            global_var.save_dbs()
+            GL.dbsDic[newName] = GL.dbsDic.pop(oldName)
+            GL.save_dbs()
 
     def connectClicked(self):
         # 这里将选中的数据库传给下一个页面
@@ -60,7 +61,7 @@ class MainDbsConfWin(QMainWindow, Ui_MainDbsConfWin):
         dbsName, ok = QInputDialog.getText(self, '新建数据库', '输入数据库名称                  ')
         if ok:
             self.listWidget.addItem(dbsName)
-            global_var.new_dbs(dbsName=dbsName)
+            GL.new_dbs(dbsName=dbsName)
 
     def editClicked(self):
         # set lineEdit enable
@@ -71,7 +72,7 @@ class MainDbsConfWin(QMainWindow, Ui_MainDbsConfWin):
 
     def deleteClicked(self):
         self.listWidget.takeItem(self.listWidget.row(self.clickedDatabaseItem))
-        global_var.dbsDic.pop(self.clickedDatabaseName)
+        GL.dbsDic.pop(self.clickedDatabaseName)
         self.hostLine.setEnabled(False)
         self.portLine.setEnabled(False)
         self.userLine.setEnabled(False)
@@ -83,7 +84,7 @@ class MainDbsConfWin(QMainWindow, Ui_MainDbsConfWin):
         self.connectButton.setEnabled(False)
         self.deleteButton.setEnabled(False)
         self.editButton.setEnabled(False)
-        global_var.save_dbs()
+        GL.save_dbs()
 
     def saveDatabaseConf(self):
         self.hostLine.setEnabled(False)
@@ -94,8 +95,8 @@ class MainDbsConfWin(QMainWindow, Ui_MainDbsConfWin):
         port = self.portLine.text()
         user = self.userLine.text()
         password = self.passwordLine.text()
-        global_var.dbsDic[self.clickedDatabaseName]['host'] = host
-        global_var.dbsDic[self.clickedDatabaseName]['port'] = port
-        global_var.dbsDic[self.clickedDatabaseName]['user'] = user
-        global_var.dbsDic[self.clickedDatabaseName]['password'] = password
-        global_var.save_dbs()
+        GL.dbsDic[self.clickedDatabaseName]['host'] = host
+        GL.dbsDic[self.clickedDatabaseName]['port'] = port
+        GL.dbsDic[self.clickedDatabaseName]['user'] = user
+        GL.dbsDic[self.clickedDatabaseName]['password'] = password
+        GL.save_dbs()

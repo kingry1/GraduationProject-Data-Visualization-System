@@ -3,6 +3,7 @@
 from PyQt5.QtCore import QObject
 from GUIs.MainDbsConfWin import MainDbsConfWin
 from GUIs.DbsTableSelect import DbsTableSelect
+from libs import GL
 
 
 class Controller(QObject):
@@ -21,6 +22,7 @@ class Controller(QObject):
         self.tableSelect.show()
 
     def show_main(self):
+        GL.refresh_conf()
         self.mainDbsConf = MainDbsConfWin()
         self.mainDbsConf.callDbsTableSignal.connect(self.show_table_select)
         self.tableSelect.close()
