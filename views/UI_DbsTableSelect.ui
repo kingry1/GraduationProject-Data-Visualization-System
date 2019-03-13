@@ -35,7 +35,7 @@
           </widget>
          </item>
          <item>
-          <widget class="QListWidget" name="listWidget"/>
+          <widget class="QListWidget" name="tableNamesWidget"/>
          </item>
          <item>
           <layout class="QHBoxLayout" name="horizontalLayout_2">
@@ -187,7 +187,7 @@
    </hints>
   </connection>
   <connection>
-   <sender>listWidget</sender>
+   <sender>tableNamesWidget</sender>
    <signal>itemClicked(QListWidgetItem*)</signal>
    <receiver>DbsTableSelect</receiver>
    <slot>tableSelected()</slot>

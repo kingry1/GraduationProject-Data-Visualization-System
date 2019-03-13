@@ -28,9 +28,9 @@ class Ui_DbsTableSelect(object):
         self.label.setFont(font)
         self.label.setObjectName("label")
         self.verticalLayout_6.addWidget(self.label, 0, QtCore.Qt.AlignHCenter)
-        self.listWidget = QtWidgets.QListWidget(DbsTableSelect)
-        self.listWidget.setObjectName("listWidget")
-        self.verticalLayout_6.addWidget(self.listWidget)
+        self.tableNamesWidget = QtWidgets.QListWidget(DbsTableSelect)
+        self.tableNamesWidget.setObjectName("tableNamesWidget")
+        self.verticalLayout_6.addWidget(self.tableNamesWidget)
         self.horizontalLayout_2 = QtWidgets.QHBoxLayout()
         self.horizontalLayout_2.setObjectName("horizontalLayout_2")
         spacerItem = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
@@ -87,7 +87,7 @@ class Ui_DbsTableSelect(object):
 
         self.retranslateUi(DbsTableSelect)
         self.pushButton.clicked.connect(DbsTableSelect.backClicked)
-        self.listWidget.itemClicked['QListWidgetItem*'].connect(DbsTableSelect.tableSelected)
+        self.tableNamesWidget.itemClicked['QListWidgetItem*'].connect(DbsTableSelect.tableSelected)
         QtCore.QMetaObject.connectSlotsByName(DbsTableSelect)
 
     def retranslateUi(self, DbsTableSelect):

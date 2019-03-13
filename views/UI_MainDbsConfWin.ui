@@ -239,15 +239,22 @@
         <property name="sizeConstraint">
          <enum>QLayout::SetMinAndMaxSize</enum>
         </property>
-        <item row="0" column="0" alignment="Qt::AlignRight">
-         <widget class="QLabel" name="hostLabel">
+        <item row="4" column="1">
+         <widget class="QLineEdit" name="databaseNameLine">
+          <property name="enabled">
+           <bool>false</bool>
+          </property>
+         </widget>
+        </item>
+        <item row="4" column="0" alignment="Qt::AlignRight">
+         <widget class="QLabel" name="label">
           <property name="font">
            <font>
             <family>微软雅黑</family>
            </font>
           </property>
           <property name="text">
-           <string>Host</string>
+           <string>DatabaseName</string>
           </property>
          </widget>
         </item>
@@ -263,13 +270,15 @@
           </property>
          </widget>
         </item>
-        <item row="2" column="1">
-         <widget class="QLineEdit" name="userLine">
-          <property name="enabled">
-           <bool>false</bool>
+        <item row="0" column="0" alignment="Qt::AlignRight">
+         <widget class="QLabel" name="hostLabel">
+          <property name="font">
+           <font>
+            <family>微软雅黑</family>
+           </font>
           </property>
-          <property name="readOnly">
-           <bool>false</bool>
+          <property name="text">
+           <string>Host</string>
           </property>
          </widget>
         </item>
@@ -282,6 +291,16 @@
           </property>
           <property name="text">
            <string>Password</string>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="1">
+         <widget class="QLineEdit" name="userLine">
+          <property name="enabled">
+           <bool>false</bool>
+          </property>
+          <property name="readOnly">
+           <bool>false</bool>
           </property>
          </widget>
         </item>
@@ -307,16 +326,6 @@
           </property>
          </widget>
         </item>
-        <item row="1" column="1">
-         <widget class="QLineEdit" name="portLine">
-          <property name="enabled">
-           <bool>false</bool>
-          </property>
-          <property name="readOnly">
-           <bool>false</bool>
-          </property>
-         </widget>
-        </item>
         <item row="0" column="1">
          <widget class="QLineEdit" name="hostLine">
           <property name="enabled">
@@ -327,7 +336,36 @@
           </property>
          </widget>
         </item>
-        <item row="0" column="2" rowspan="4">
+        <item row="1" column="1">
+         <widget class="QLineEdit" name="portLine">
+          <property name="enabled">
+           <bool>false</bool>
+          </property>
+          <property name="readOnly">
+           <bool>false</bool>
+          </property>
+         </widget>
+        </item>
+        <item row="5" column="0" alignment="Qt::AlignRight">
+         <widget class="QLabel" name="label_2">
+          <property name="font">
+           <font>
+            <family>微软雅黑</family>
+           </font>
+          </property>
+          <property name="text">
+           <string>DatabaseType</string>
+          </property>
+         </widget>
+        </item>
+        <item row="5" column="1">
+         <widget class="QComboBox" name="typeComboBox">
+          <property name="enabled">
+           <bool>false</bool>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="2" rowspan="6">
          <spacer name="horizontalSpacer">
           <property name="orientation">
            <enum>Qt::Horizontal</enum>
@@ -368,7 +406,7 @@
    <hints>
     <hint type="sourcelabel">
      <x>643</x>
-     <y>169</y>
+     <y>155</y>
     </hint>
     <hint type="destinationlabel">
      <x>560</x>
@@ -384,7 +422,7 @@
    <hints>
     <hint type="sourcelabel">
      <x>643</x>
-     <y>237</y>
+     <y>233</y>
     </hint>
     <hint type="destinationlabel">
      <x>577</x>
@@ -400,7 +438,7 @@
    <hints>
     <hint type="sourcelabel">
      <x>643</x>
-     <y>282</y>
+     <y>272</y>
     </hint>
     <hint type="destinationlabel">
      <x>619</x>
@@ -415,8 +453,8 @@
    <slot>saveDatabaseConf()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>368</x>
-     <y>460</y>
+     <x>505</x>
+     <y>413</y>
     </hint>
     <hint type="destinationlabel">
      <x>294</x>
@@ -431,8 +469,8 @@
    <slot>saveDatabaseConf()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>565</x>
-     <y>478</y>
+     <x>616</x>
+     <y>438</y>
     </hint>
     <hint type="destinationlabel">
      <x>531</x>
@@ -447,8 +485,8 @@
    <slot>saveDatabaseConf()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>608</x>
-     <y>504</y>
+     <x>616</x>
+     <y>463</y>
     </hint>
     <hint type="destinationlabel">
      <x>596</x>
@@ -463,8 +501,8 @@
    <slot>saveDatabaseConf()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>248</x>
-     <y>526</y>
+     <x>385</x>
+     <y>488</y>
     </hint>
     <hint type="destinationlabel">
      <x>60</x>
@@ -479,8 +517,8 @@
    <slot>addClicked()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>604</x>
-     <y>204</y>
+     <x>643</x>
+     <y>194</y>
     </hint>
     <hint type="destinationlabel">
      <x>615</x>
@@ -517,6 +555,38 @@
     <hint type="destinationlabel">
      <x>75</x>
      <y>45</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>databaseNameLine</sender>
+   <signal>returnPressed()</signal>
+   <receiver>MainDbsConfWin</receiver>
+   <slot>saveDatabaseConf()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>188</x>
+     <y>510</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>41</x>
+     <y>458</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>typeComboBox</sender>
+   <signal>activated(int)</signal>
+   <receiver>MainDbsConfWin</receiver>
+   <slot>saveDatabaseConf()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>545</x>
+     <y>526</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>651</x>
+     <y>514</y>
     </hint>
    </hints>
   </connection>

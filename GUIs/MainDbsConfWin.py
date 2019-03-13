@@ -19,6 +19,7 @@ class MainDbsConfWin(QMainWindow, Ui_MainDbsConfWin):
             item = QListWidgetItem()
             item.setText(dbsName)
             self.listWidget.addItem(item)
+        self.typeComboBox.addItem('请选择数据库类型')
 
         # add validator
         hostRegexp = QRegExp("^((25[0-5]|2[0-4]\d|((1\d{2})|([1-9]?\d)))\.){3}(25[0-5]|2[0-4]\d|((1\d{2})|([1-9]?\d)))$")
@@ -37,6 +38,12 @@ class MainDbsConfWin(QMainWindow, Ui_MainDbsConfWin):
         self.portLine.setText(self.dbsDic[self.clickedDatabaseName]['port'])
         self.userLine.setText(self.dbsDic[self.clickedDatabaseName]['user'])
         self.passwordLine.setText(self.dbsDic[self.clickedDatabaseName]['password'])
+        self.databaseNameLine.setText(self.dbsDic[self.clickedDatabaseName]['name'])
+        self.typeComboBox.clear()
+        self.typeComboBox.addItems(GL.dbsTypes)
+        index = self.typeComboBox.findText(self.dbsDic[self.clickedDatabaseName]['type'])
+        self.typeComboBox.setCurrentIndex(index)
+
         self.connectButton.setEnabled(True)
         self.deleteButton.setEnabled(True)
         self.editButton.setEnabled(True)
@@ -64,38 +71,44 @@ class MainDbsConfWin(QMainWindow, Ui_MainDbsConfWin):
 
     def editClicked(self):
         # set lineEdit enable
-        self.hostLine.setEnabled(True)
-        self.portLine.setEnabled(True)
-        self.userLine.setEnabled(True)
-        self.passwordLine.setEnabled(True)
+        self.set_input_status(True)
 
     def deleteClicked(self):
         self.listWidget.takeItem(self.listWidget.row(self.clickedDatabaseItem))
         GL.dbsDic.pop(self.clickedDatabaseName)
-        self.hostLine.setEnabled(False)
-        self.portLine.setEnabled(False)
-        self.userLine.setEnabled(False)
-        self.passwordLine.setEnabled(False)
+        self.set_input_status(False)
         self.hostLine.setText('')
         self.portLine.setText('')
         self.userLine.setText('')
         self.passwordLine.setText('')
+        self.databaseNameLine.setText('')
+        self.typeComboBox.clear()
+        self.typeComboBox.addItem('请选择数据库类型')
         self.connectButton.setEnabled(False)
         self.deleteButton.setEnabled(False)
         self.editButton.setEnabled(False)
         GL.save_dbs()
 
     def saveDatabaseConf(self):
-        self.hostLine.setEnabled(False)
-        self.portLine.setEnabled(False)
-        self.userLine.setEnabled(False)
-        self.passwordLine.setEnabled(False)
+        self.set_input_status(False)
         host = self.hostLine.text()
         port = self.portLine.text()
         user = self.userLine.text()
         password = self.passwordLine.text()
+        name = self.databaseNameLine.text()
+        type = self.typeComboBox.currentText()
         GL.dbsDic[self.clickedDatabaseName]['host'] = host
         GL.dbsDic[self.clickedDatabaseName]['port'] = port
         GL.dbsDic[self.clickedDatabaseName]['user'] = user
         GL.dbsDic[self.clickedDatabaseName]['password'] = password
+        GL.dbsDic[self.clickedDatabaseName]['name'] = name
+        GL.dbsDic[self.clickedDatabaseName]['type'] = type
         GL.save_dbs()
+
+    def set_input_status(self, bool):
+        self.hostLine.setEnabled(bool)
+        self.portLine.setEnabled(bool)
+        self.userLine.setEnabled(bool)
+        self.passwordLine.setEnabled(bool)
+        self.databaseNameLine.setEnabled(bool)
+        self.typeComboBox.setEnabled(bool)
