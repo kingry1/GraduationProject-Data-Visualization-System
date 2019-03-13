@@ -11,7 +11,7 @@ try:
         user='root',
         password='Sjn19970508'
     )
-    sql_cmd = "SELECT * FROM sakila.payment"
+    sql_cmd = "USE sakila; SHOW TABLES"
     df = pd.read_sql(sql=sql_cmd, con=mydb)
 
 except mysql.connector.Error as err:

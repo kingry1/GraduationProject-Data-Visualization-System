@@ -13,14 +13,15 @@ class DbsTableSelect(QWidget, Ui_DbsTableSelect):
         super(DbsTableSelect, self).__init__(parent)
         self.setupUi(self)
         self.conf = conf
-        self.mydb = dbsConnector('mysql', self.conf)
-        self.tables_df = self.getTableNames()
-        self.tables = list(self.tables_df.columns)
-        for table in self.tables:
-            self.tableNamesWidget.addItem(table)
+        self.mydb = dbsConnector(self.conf)
+        self.tables_raw = self.getTableNames()
+
+        for table in self.tables_raw:
+            self.tableNamesWidget.addItem(table[0])
 
     def getTableNames(self):
-        tables_df = self.mydb.read_sql("SHOW TABLES")
+        sql = "SHOW TABLES;".format(self.conf['name'])
+        tables_df = self.mydb.driver_mysql(sql_cmd=sql)
 
         return tables_df
 

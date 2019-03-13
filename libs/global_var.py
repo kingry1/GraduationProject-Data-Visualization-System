@@ -10,7 +10,8 @@ class GlobalVar:
         self.dbConfFile = '/../config/db.conf'
         self.dbConfPath = self.dirname + self.dbConfFile
         self.dbsDic = self.config_dic()
-        self.dbsTypes = ['mysql', 'postgresql']
+        self.dbsTypes = ('mysql', 'postgresql')
+        self.confKeys = ('host', 'port', 'user', 'password', 'name', 'type')
 
     def config_dic(self):
         # create a parser

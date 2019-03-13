@@ -97,6 +97,7 @@ class MainDbsConfWin(QMainWindow, Ui_MainDbsConfWin):
         password = self.passwordLine.text()
         name = self.databaseNameLine.text()
         type = self.typeComboBox.currentText()
+
         GL.dbsDic[self.clickedDatabaseName]['host'] = host
         GL.dbsDic[self.clickedDatabaseName]['port'] = port
         GL.dbsDic[self.clickedDatabaseName]['user'] = user
