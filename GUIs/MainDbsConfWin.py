@@ -11,7 +11,6 @@ class MainDbsConfWin(QMainWindow, Ui_MainDbsConfWin):
     callDbsTableSignal = pyqtSignal(dict)
 
     def __init__(self, parent=None):
-        print("new main")
         super(MainDbsConfWin, self).__init__(parent)
         self.setupUi(self)
         self.dbsDic = GL.dbsDic

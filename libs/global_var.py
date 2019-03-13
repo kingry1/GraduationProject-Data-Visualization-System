@@ -12,7 +12,6 @@ class GlobalVar:
         self.dbsDic = self.config_dic()
 
     def config_dic(self):
-        print("reading config")
         # create a parser
         parser = ConfigParser()
         # read config file

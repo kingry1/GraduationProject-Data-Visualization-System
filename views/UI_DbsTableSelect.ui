@@ -186,8 +186,25 @@
     </hint>
    </hints>
   </connection>
+  <connection>
+   <sender>listWidget</sender>
+   <signal>itemClicked(QListWidgetItem*)</signal>
+   <receiver>DbsTableSelect</receiver>
+   <slot>tableSelected()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>190</x>
+     <y>155</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>209</x>
+     <y>589</y>
+    </hint>
+   </hints>
+  </connection>
  </connections>
  <slots>
   <slot>backClicked()</slot>
+  <slot>tableSelected()</slot>
  </slots>
 </ui>

@@ -87,6 +87,7 @@ class Ui_DbsTableSelect(object):
 
         self.retranslateUi(DbsTableSelect)
         self.pushButton.clicked.connect(DbsTableSelect.backClicked)
+        self.listWidget.itemClicked['QListWidgetItem*'].connect(DbsTableSelect.tableSelected)
         QtCore.QMetaObject.connectSlotsByName(DbsTableSelect)
 
     def retranslateUi(self, DbsTableSelect):
