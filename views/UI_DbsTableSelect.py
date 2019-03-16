@@ -11,7 +11,7 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Ui_DbsTableSelect(object):
     def setupUi(self, DbsTableSelect):
         DbsTableSelect.setObjectName("DbsTableSelect")
-        DbsTableSelect.resize(697, 570)
+        DbsTableSelect.resize(800, 600)
         self.verticalLayout_2 = QtWidgets.QVBoxLayout(DbsTableSelect)
         self.verticalLayout_2.setObjectName("verticalLayout_2")
         self.verticalLayout = QtWidgets.QVBoxLayout()
@@ -44,6 +44,7 @@ class Ui_DbsTableSelect(object):
         self.refreshButton.setObjectName("refreshButton")
         self.horizontalLayout_2.addWidget(self.refreshButton)
         self.chooseButton = QtWidgets.QPushButton(DbsTableSelect)
+        self.chooseButton.setEnabled(False)
         font = QtGui.QFont()
         font.setFamily("微软雅黑")
         font.setBold(True)

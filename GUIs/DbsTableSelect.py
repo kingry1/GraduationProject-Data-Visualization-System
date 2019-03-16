@@ -28,7 +28,6 @@ class DbsTableSelect(QWidget, Ui_DbsTableSelect):
 
     def finish_getTableNames(self):
         self.tables_raw = GL.tables_df
-
         for table in self.tables_raw:
             self.tableNamesWidget.addItem(table[0])
 
@@ -36,10 +35,12 @@ class DbsTableSelect(QWidget, Ui_DbsTableSelect):
         self.backSignal.emit()
 
     def tableSelected(self, clicked_item):
+        self.chooseButton.setEnabled(True)
         # 右侧浏览窗口数据刷新
         print(clicked_item.text())
 
     def refreshClicked(self):
+        self.chooseButton.setEnabled(False)
         self.tableNamesWidget.clear()
         self.tableNamesWidget.setEnabled(False)
         refresh_item = QListWidgetItem()
@@ -51,4 +52,4 @@ class DbsTableSelect(QWidget, Ui_DbsTableSelect):
         self.tableNamesWidget.setEnabled(True)
 
     def chooseClicked(self):
-        print("Choose Clicked!")
+        print(self.tableNamesWidget.currentItem().text())

@@ -68,6 +68,9 @@
            </item>
            <item>
             <widget class="QPushButton" name="chooseButton">
+             <property name="enabled">
+              <bool>false</bool>
+             </property>
              <property name="font">
               <font>
                <family>微软雅黑</family>
@@ -234,8 +237,8 @@
    <slot>backClicked()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>458</x>
-     <y>558</y>
+     <x>460</x>
+     <y>582</y>
     </hint>
     <hint type="destinationlabel">
      <x>696</x>
@@ -267,11 +270,27 @@
    <hints>
     <hint type="sourcelabel">
      <x>82</x>
-     <y>513</y>
+     <y>537</y>
     </hint>
     <hint type="destinationlabel">
      <x>7</x>
      <y>261</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>chooseButton</sender>
+   <signal>clicked()</signal>
+   <receiver>DbsTableSelect</receiver>
+   <slot>chooseClicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>185</x>
+     <y>534</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>7</x>
+     <y>435</y>
     </hint>
    </hints>
   </connection>
@@ -280,5 +299,6 @@
   <slot>backClicked()</slot>
   <slot>tableSelected()</slot>
   <slot>refreshClicked()</slot>
+  <slot>chooseClicked()</slot>
  </slots>
 </ui>
