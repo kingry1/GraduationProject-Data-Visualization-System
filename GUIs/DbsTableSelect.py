@@ -27,7 +27,7 @@ class DbsTableSelect(QWidget, Ui_DbsTableSelect):
         self.getTableThread.start()
 
     def finish_getTableNames(self):
-        self.tables_raw = GL.tables_df
+        self.tables_raw = GL.tables_lists
         for table in self.tables_raw:
             self.tableNamesWidget.addItem(table[0])
 

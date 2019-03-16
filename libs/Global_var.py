@@ -13,6 +13,7 @@ class GlobalVar:
         self.dbsDic = self.config_dic()
         self.dbsTypes = ('mysql', 'postgresql')
         self.confKeys = ('host', 'port', 'user', 'password', 'name', 'type')
+        self.tables_lists = None
         self.tables_df = None
 
     def config_dic(self):

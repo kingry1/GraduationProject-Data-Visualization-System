@@ -14,6 +14,6 @@ class RfTableListsThread(QThread):
     def run(self):
         sql = "SHOW TABLES;".format(self.conf['name'])
         self.mydb = dbsConnector(self.conf)
-        GL.tables_df = self.mydb.driver_mysql(sql_cmd=sql)
+        GL.tables_lists = self.mydb.driver_mysql(sql_cmd=sql)
 
         self.trigger.emit()
