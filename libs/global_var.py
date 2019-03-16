@@ -2,6 +2,7 @@
 
 import os
 from configparser import ConfigParser
+import pandas as pd
 
 
 class GlobalVar:
@@ -12,6 +13,7 @@ class GlobalVar:
         self.dbsDic = self.config_dic()
         self.dbsTypes = ('mysql', 'postgresql')
         self.confKeys = ('host', 'port', 'user', 'password', 'name', 'type')
+        self.tables_df = None
 
     def config_dic(self):
         # create a parser

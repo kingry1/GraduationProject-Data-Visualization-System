@@ -44,9 +44,7 @@ class MainDbsConfWin(QMainWindow, Ui_MainDbsConfWin):
         index = self.typeComboBox.findText(self.dbsDic[self.clickedDatabaseName]['type'])
         self.typeComboBox.setCurrentIndex(index)
 
-        self.connectButton.setEnabled(True)
-        self.deleteButton.setEnabled(True)
-        self.editButton.setEnabled(True)
+        self.set_button_status(True)
 
     def listDoubleClicked(self, clicked_item):
         oldName = clicked_item.text()
@@ -84,9 +82,7 @@ class MainDbsConfWin(QMainWindow, Ui_MainDbsConfWin):
         self.databaseNameLine.setText('')
         self.typeComboBox.clear()
         self.typeComboBox.addItem('请选择数据库类型')
-        self.connectButton.setEnabled(False)
-        self.deleteButton.setEnabled(False)
-        self.editButton.setEnabled(False)
+        self.set_button_status(False)
         GL.save_dbs()
 
     def saveDatabaseConf(self):
@@ -96,14 +92,14 @@ class MainDbsConfWin(QMainWindow, Ui_MainDbsConfWin):
         user = self.userLine.text()
         password = self.passwordLine.text()
         name = self.databaseNameLine.text()
-        type = self.typeComboBox.currentText()
+        _type = self.typeComboBox.currentText()
 
         GL.dbsDic[self.clickedDatabaseName]['host'] = host
         GL.dbsDic[self.clickedDatabaseName]['port'] = port
         GL.dbsDic[self.clickedDatabaseName]['user'] = user
         GL.dbsDic[self.clickedDatabaseName]['password'] = password
         GL.dbsDic[self.clickedDatabaseName]['name'] = name
-        GL.dbsDic[self.clickedDatabaseName]['type'] = type
+        GL.dbsDic[self.clickedDatabaseName]['type'] = _type
         GL.save_dbs()
 
     def set_input_status(self, bool):
@@ -113,3 +109,8 @@ class MainDbsConfWin(QMainWindow, Ui_MainDbsConfWin):
         self.passwordLine.setEnabled(bool)
         self.databaseNameLine.setEnabled(bool)
         self.typeComboBox.setEnabled(bool)
+
+    def set_button_status(self, bool):
+        self.connectButton.setEnabled(bool)
+        self.deleteButton.setEnabled(bool)
+        self.editButton.setEnabled(bool)
