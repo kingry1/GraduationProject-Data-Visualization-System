@@ -18,12 +18,12 @@ class Controller(QObject):
 
     def show_table_select(self, dic):
         self.tableSelect = DbsTableSelect(dic)
-        self.tableSelect.backSignal.connect(self.show_main)
+        self.tableSelect.backSignal.connect(self.back_main)
         self.tableSelect.visualizationSignal.connect(self.show_data_visualization)
         self.mainDbsConf.close()
         self.tableSelect.show()
 
-    def show_main(self):
+    def back_main(self):
         GL.refresh_conf()
         self.mainDbsConf = MainDbsConfWin()
         self.mainDbsConf.callDbsTableSignal.connect(self.show_table_select)
