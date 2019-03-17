@@ -6,6 +6,8 @@ from PyQt5.QtWidgets import QWidget, QListWidgetItem
 from PyQt5.QtCore import pyqtSignal
 from libs import dbsConnector
 from GUIs.Threads.RfTableListsThread import RfTableListsThread
+from GUIs.Threads.ShowTablesThread import ShowTablesThread
+from libs.PandasModel import PandasModel
 from libs import GL
 
 
@@ -37,7 +39,13 @@ class DbsTableSelect(QWidget, Ui_DbsTableSelect):
     def tableSelected(self, clicked_item):
         self.chooseButton.setEnabled(True)
         # 右侧浏览窗口数据刷新
-        print(clicked_item.text())
+        self.showTableThread = ShowTablesThread(self.conf, clicked_item.text())
+        self.showTableThread.trigger.connect(self.showTableContent)
+        self.showTableThread.start()
+
+    def showTableContent(self):
+        self.tableModel = PandasModel(GL.tables_df)
+        self.tableView.setModel(self.tableModel)
 
     def refreshClicked(self):
         self.chooseButton.setEnabled(False)

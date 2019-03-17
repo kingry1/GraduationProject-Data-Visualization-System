@@ -14,7 +14,8 @@ class MainDbsConfWin(QMainWindow, Ui_MainDbsConfWin):
         super(MainDbsConfWin, self).__init__(parent)
         self.setupUi(self)
         self.dbsDic = GL.dbsDic
-        self.clickedDatabaseName = ''
+        self.clickedDatabaseName = None
+        self.clickedDatabaseItem= None
         for dbsName in sorted(self.dbsDic.keys()):
             item = QListWidgetItem()
             item.setText(dbsName)
