@@ -80,6 +80,7 @@ class MatplotlibCanvas(FigureCanvas):
         ax.set_title(u'PyQt5 + Matplotlib')
         self.draw()
 
+
 # 运行程序
 if __name__ == '__main__':
     app = QtWidgets.QApplication(sys.argv)

@@ -8,7 +8,6 @@ import numpy as np
 plt.rcParams['font.sans-serif'] = ['SimHei']
 plt.rcParams['axes.unicode_minus'] = False
 
-
 # 构建数据
 GDP = [12406.8, 13908.57, 9386.87, 9143.64]
 

@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 
 import mysql.connector
+
 # from mysql.connector.errors import DatabaseError
 
 param = {

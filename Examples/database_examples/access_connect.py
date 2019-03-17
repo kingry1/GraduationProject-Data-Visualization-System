@@ -22,5 +22,4 @@ def get_milk_data():
         print(result)
 
 
-
 get_milk_data()

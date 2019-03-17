@@ -15,7 +15,7 @@ class MainDbsConfWin(QMainWindow, Ui_MainDbsConfWin):
         self.setupUi(self)
         self.dbsDic = GL.dbsDic
         self.clickedDatabaseName = None
-        self.clickedDatabaseItem= None
+        self.clickedDatabaseItem = None
         for dbsName in sorted(self.dbsDic.keys()):
             item = QListWidgetItem()
             item.setText(dbsName)
@@ -23,7 +23,8 @@ class MainDbsConfWin(QMainWindow, Ui_MainDbsConfWin):
         self.typeComboBox.addItem('请选择数据库类型')
 
         # add validator
-        hostRegexp = QRegExp("^((25[0-5]|2[0-4]\d|((1\d{2})|([1-9]?\d)))\.){3}(25[0-5]|2[0-4]\d|((1\d{2})|([1-9]?\d)))$")
+        hostRegexp = QRegExp(
+            "^((25[0-5]|2[0-4]\d|((1\d{2})|([1-9]?\d)))\.){3}(25[0-5]|2[0-4]\d|((1\d{2})|([1-9]?\d)))$")
         hostValidator = QRegExpValidator(hostRegexp)
         self.hostLine.setValidator(hostValidator)
         portValidator = QIntValidator(0, 65535)

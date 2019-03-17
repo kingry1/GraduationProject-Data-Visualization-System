@@ -6,7 +6,7 @@ import matplotlib.pyplot as plt
 x = np.linspace(-3, 3, 50)
 y1 = 2 * x + 1
 y2 = x ** 2
-plt.figure(num=1, figsize=(8,8), dpi=300)
+plt.figure(num=1, figsize=(8, 8), dpi=300)
 plt.plot(x, y1)
 plt.plot(x, y2, color='red', linewidth=2, linestyle='--')
 # plt.xlim(-1,2)
@@ -31,4 +31,3 @@ ax.set_ylabel('y data')
 ax.xaxis.set_ticks_position('top')
 ax.yaxis.set_ticks_position('left')
 plt.show()
-

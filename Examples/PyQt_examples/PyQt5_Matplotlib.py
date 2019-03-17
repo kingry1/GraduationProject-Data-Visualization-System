@@ -40,6 +40,7 @@ class MatplotlibCanvas(FigureCanvas):
         ax.plot([1, 2, 3, 4, 5])
         self.draw()
 
+
 # 运行程序
 if __name__ == '__main__':
     app = QApplication(sys.argv)

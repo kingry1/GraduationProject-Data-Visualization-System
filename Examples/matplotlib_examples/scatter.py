@@ -3,7 +3,6 @@
 import matplotlib.pyplot as plt
 import numpy as np
 
-
 plt.figure(1, figsize=(10, 8), dpi=300)
 # generate x values
 x = np.random.randn(1000)

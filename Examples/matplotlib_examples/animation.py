@@ -7,7 +7,6 @@ from matplotlib.animation import FuncAnimation
 # Fixing random state for reproducibility
 np.random.seed(19680801)
 
-
 # Create new Figure and an Axes which fills it.
 fig = plt.figure(figsize=(7, 7))
 ax = fig.add_axes([0, 0, 1, 1], frameon=False)
@@ -17,9 +16,9 @@ ax.set_ylim(0, 1), ax.set_yticks([])
 # Create rain data
 n_drops = 50
 rain_drops = np.zeros(n_drops, dtype=[('position', float, 2),
-                                      ('size',     float, 1),
-                                      ('growth',   float, 1),
-                                      ('color',    float, 4)])
+                                      ('size', float, 1),
+                                      ('growth', float, 1),
+                                      ('color', float, 4)])
 
 # Initialize the raindrops in random positions and with
 # random growth rates.
@@ -38,7 +37,7 @@ def update(frame_number):
     current_index = frame_number % n_drops
 
     # Make all colors more transparent as time progresses.
-    rain_drops['color'][:, 3] -= 1.0/len(rain_drops)
+    rain_drops['color'][:, 3] -= 1.0 / len(rain_drops)
     rain_drops['color'][:, 3] = np.clip(rain_drops['color'][:, 3], 0, 1)
 
     # Make all circles bigger.
