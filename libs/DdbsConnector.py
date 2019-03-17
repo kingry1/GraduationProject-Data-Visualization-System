@@ -48,13 +48,15 @@ class DbsConnector:
     @staticmethod
     def test_connection(conf):
         try:
-            connection = mysql.connector.connect(
-                host=conf['host'],
-                user=conf['user'],
-                password=conf['password'],
-                port=conf['port']
-            )
-            connection.close()
+            if conf['type'] == 'mysql':
+                connection = mysql.connector.connect(
+                    host=conf['host'],
+                    user=conf['user'],
+                    password=conf['password'],
+                    port=conf['port'],
+                    connect_timeout=1000
+                )
+                connection.close()
         except mysql.connector.Error as err:
             raise err
         except Exception as err:

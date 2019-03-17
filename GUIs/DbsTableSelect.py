@@ -13,6 +13,7 @@ from libs import GL
 
 class DbsTableSelect(QWidget, Ui_DbsTableSelect):
     backSignal = pyqtSignal()
+    visualizationSignal = pyqtSignal(dict, str)
 
     def __init__(self, conf, parent=None):
         super(DbsTableSelect, self).__init__(parent)
@@ -46,6 +47,7 @@ class DbsTableSelect(QWidget, Ui_DbsTableSelect):
     def showTableContent(self):
         self.tableModel = PandasModel(GL.tables_df)
         self.tableView.setModel(self.tableModel)
+        self.tableView.scrollToTop()
 
     def refreshClicked(self):
         self.chooseButton.setEnabled(False)
@@ -61,3 +63,4 @@ class DbsTableSelect(QWidget, Ui_DbsTableSelect):
 
     def chooseClicked(self):
         print(self.tableNamesWidget.currentItem().text())
+        self.visualizationSignal.emit(self.conf, self.tableNamesWidget.currentItem().text())
