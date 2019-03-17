@@ -4,6 +4,7 @@ from PyQt5.QtWidgets import QMainWindow, QListWidgetItem, QInputDialog
 from PyQt5.QtGui import QRegExpValidator, QIntValidator
 from PyQt5.QtCore import QRegExp, pyqtSignal
 from views.UI_MainDbsConfWin import Ui_MainDbsConfWin
+from libs.DdbsConnector import DbsConnector
 from libs import GL
 
 
@@ -60,6 +61,13 @@ class MainDbsConfWin(QMainWindow, Ui_MainDbsConfWin):
             GL.save_dbs()
 
     def connectClicked(self):
+        # check connection
+        try:
+            DbsConnector.test_connection(self.dbsDic[self.clickedDatabaseName])
+        except Exception as err:
+            self.statusbar.showMessage(str(err))
+            return
+
         # 这里将选中的数据库传给下一个页面
         self.callDbsTableSignal.emit(self.dbsDic[self.clickedDatabaseName])
 

@@ -8,7 +8,6 @@
 
 from PyQt5 import QtCore, QtGui, QtWidgets
 
-
 class Ui_DbsTableSelect(object):
     def setupUi(self, DbsTableSelect):
         DbsTableSelect.setObjectName("DbsTableSelect")
@@ -125,3 +124,4 @@ class Ui_DbsTableSelect(object):
         self.label_2.setText(_translate("DbsTableSelect", "表数据预览"))
         self.pushButton_2.setText(_translate("DbsTableSelect", "占位"))
         self.pushButton.setText(_translate("DbsTableSelect", "返回"))
+

@@ -8,7 +8,6 @@
 
 from PyQt5 import QtCore, QtGui, QtWidgets
 
-
 class Ui_MainDbsConfWin(object):
     def setupUi(self, MainDbsConfWin):
         MainDbsConfWin.setObjectName("MainDbsConfWin")
@@ -50,7 +49,7 @@ class Ui_MainDbsConfWin(object):
         font.setWeight(75)
         self.title.setFont(font)
         self.title.setObjectName("title")
-        self.gridLayout.addWidget(self.title, 0, 0, 1, 1, QtCore.Qt.AlignHCenter | QtCore.Qt.AlignBottom)
+        self.gridLayout.addWidget(self.title, 0, 0, 1, 1, QtCore.Qt.AlignHCenter|QtCore.Qt.AlignBottom)
         self.deleteButton = QtWidgets.QPushButton(self.centralwidget)
         self.deleteButton.setEnabled(False)
         self.deleteButton.setMinimumSize(QtCore.QSize(100, 0))
@@ -185,6 +184,10 @@ class Ui_MainDbsConfWin(object):
         self.menubar.setObjectName("menubar")
         MainDbsConfWin.setMenuBar(self.menubar)
         self.statusbar = QtWidgets.QStatusBar(MainDbsConfWin)
+        self.statusbar.setStyleSheet("QStatusBar\n"
+"{\n"
+"    color: rgb(255, 0, 0);\n"
+"}")
         self.statusbar.setObjectName("statusbar")
         MainDbsConfWin.setStatusBar(self.statusbar)
 
@@ -217,3 +220,4 @@ class Ui_MainDbsConfWin(object):
         self.passwordLabel.setText(_translate("MainDbsConfWin", "Password"))
         self.portLabel.setText(_translate("MainDbsConfWin", "Port"))
         self.label_2.setText(_translate("MainDbsConfWin", "DatabaseType"))
+

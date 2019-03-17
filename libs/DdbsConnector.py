@@ -39,7 +39,23 @@ class DbsConnector:
             myCursor = self.mydb.cursor()
             myCursor.execute(sql_cmd)
             results = myCursor.fetchall()
+            myCursor.close()
         except mysql.connector.Error as err:
             print(err)
 
         return results
+
+    @staticmethod
+    def test_connection(conf):
+        try:
+            connection = mysql.connector.connect(
+                host=conf['host'],
+                user=conf['user'],
+                password=conf['password'],
+                port=conf['port']
+            )
+            connection.close()
+        except mysql.connector.Error as err:
+            raise err
+        except Exception as err:
+            raise err
