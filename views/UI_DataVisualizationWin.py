@@ -14,9 +14,13 @@ class Ui_DataVisualizationWin(object):
         DataVisualizationWin.resize(800, 600)
         self.centralwidget = QtWidgets.QWidget(DataVisualizationWin)
         self.centralwidget.setObjectName("centralwidget")
-        self.label = QtWidgets.QLabel(self.centralwidget)
-        self.label.setGeometry(QtCore.QRect(350, 220, 71, 51))
-        self.label.setObjectName("label")
+        self.lineEdit = QtWidgets.QLineEdit(self.centralwidget)
+        self.lineEdit.setGeometry(QtCore.QRect(180, 220, 113, 20))
+        self.lineEdit.setDragEnabled(True)
+        self.lineEdit.setObjectName("lineEdit")
+        self.dropableButton = MyButton(self.centralwidget)
+        self.dropableButton.setGeometry(QtCore.QRect(490, 220, 75, 23))
+        self.dropableButton.setObjectName("dropableButton")
         DataVisualizationWin.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(DataVisualizationWin)
         self.menubar.setGeometry(QtCore.QRect(0, 0, 800, 22))
@@ -32,5 +36,6 @@ class Ui_DataVisualizationWin(object):
     def retranslateUi(self, DataVisualizationWin):
         _translate = QtCore.QCoreApplication.translate
         DataVisualizationWin.setWindowTitle(_translate("DataVisualizationWin", "数据可视化"))
-        self.label.setText(_translate("DataVisualizationWin", "数据可视化"))
+        self.dropableButton.setText(_translate("DataVisualizationWin", "PushButton"))
 
+from .mybutton import MyButton
