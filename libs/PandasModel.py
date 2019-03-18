@@ -25,8 +25,9 @@ class PandasModel(QtCore.QAbstractTableModel):
         if not index.isValid():
             return QtCore.QVariant()
         if index.row() == 0:
-            return QtCore.QVariant(self._df.columns.values[index.column()])
-        return QtCore.QVariant(str(self._df.iloc[index.row() - 1, index.column()]))
+            # return QtCore.QVariant(self._df.columns.values[index.column()])
+            pass
+        return QtCore.QVariant(str(self._df.iloc[index.row(), index.column()]))
 
     def setData(self, index, value, role):
         if index.row() == 0:
@@ -51,7 +52,7 @@ class PandasModel(QtCore.QAbstractTableModel):
         return True
 
     def rowCount(self, parent=QtCore.QModelIndex()):
-        return len(self._df.index) + 1
+        return len(self._df.index)
 
     def columnCount(self, parent=QtCore.QModelIndex()):
         return len(self._df.columns)
