@@ -45,6 +45,9 @@ class DbsConnector:
 
         return results
 
+    def close_connection(self):
+        self.mydb.close()
+
     @staticmethod
     def test_connection(conf):
         try:
