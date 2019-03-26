@@ -27,6 +27,7 @@ except mysql.connector.Error as err:
     print(err)
 
 for (emp_no, salary) in myCursor:
-    print(emp_no)
+    print(emp_no, '##', salary)
 
+print(myCursor.description)
 mydb.close()
