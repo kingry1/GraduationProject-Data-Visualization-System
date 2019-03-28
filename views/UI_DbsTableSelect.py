@@ -12,6 +12,9 @@ class Ui_DbsTableSelect(object):
     def setupUi(self, DbsTableSelect):
         DbsTableSelect.setObjectName("DbsTableSelect")
         DbsTableSelect.resize(800, 600)
+        icon = QtGui.QIcon()
+        icon.addPixmap(QtGui.QPixmap("icon/icon.ico"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        DbsTableSelect.setWindowIcon(icon)
         self.verticalLayout_2 = QtWidgets.QVBoxLayout(DbsTableSelect)
         self.verticalLayout_2.setObjectName("verticalLayout_2")
         self.verticalLayout = QtWidgets.QVBoxLayout()

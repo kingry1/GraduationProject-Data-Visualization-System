@@ -12,6 +12,9 @@ class Ui_MainDbsConfWin(object):
     def setupUi(self, MainDbsConfWin):
         MainDbsConfWin.setObjectName("MainDbsConfWin")
         MainDbsConfWin.resize(664, 570)
+        icon = QtGui.QIcon()
+        icon.addPixmap(QtGui.QPixmap("icon/icon.ico"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        MainDbsConfWin.setWindowIcon(icon)
         self.centralwidget = QtWidgets.QWidget(MainDbsConfWin)
         self.centralwidget.setObjectName("centralwidget")
         self.verticalLayout_2 = QtWidgets.QVBoxLayout(self.centralwidget)

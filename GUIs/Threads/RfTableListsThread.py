@@ -1,5 +1,6 @@
+# -*- coding: utf-8 -*-
+
 from PyQt5.QtCore import QThread, pyqtSignal
-import pandas as pd
 from libs import GL, dbsConnector
 
 

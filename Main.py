@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 import sys
-from Controller import Controller
+from GUIs.Controller import Controller
 from PyQt5.QtWidgets import QApplication
 
 if __name__ == "__main__":

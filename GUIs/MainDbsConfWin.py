@@ -6,6 +6,7 @@ from PyQt5.QtCore import QRegExp, pyqtSignal
 from views.UI_MainDbsConfWin import Ui_MainDbsConfWin
 from libs.DdbsConnector import DbsConnector
 from libs import GL
+import os
 
 
 class MainDbsConfWin(QMainWindow, Ui_MainDbsConfWin):
