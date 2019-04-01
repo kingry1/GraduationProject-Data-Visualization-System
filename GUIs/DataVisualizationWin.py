@@ -26,3 +26,13 @@ class DataVisualizationWin(QMainWindow, Ui_DataVisualizationWin):
 
     def backClicked(self):
         self.backSignal.emit(self.conf)
+
+    def horizontalParamRemove(self, clicked_item):
+        # 删除
+        text = clicked_item.text()
+        print(text)
+
+    def verticalParamRemove(self, clicked_item):
+        # 删除
+        text = clicked_item.text()
+        print(text)
