@@ -93,7 +93,7 @@
               </property>
               <property name="maximumSize">
                <size>
-                <width>250</width>
+                <width>225</width>
                 <height>16777215</height>
                </size>
               </property>
@@ -102,6 +102,12 @@
                 <width>0</width>
                 <height>0</height>
                </size>
+              </property>
+              <property name="dragEnabled">
+               <bool>true</bool>
+              </property>
+              <property name="dragDropMode">
+               <enum>QAbstractItemView::DragOnly</enum>
               </property>
              </widget>
             </item>
@@ -140,9 +146,15 @@
               </property>
               <property name="maximumSize">
                <size>
-                <width>250</width>
+                <width>225</width>
                 <height>16777215</height>
                </size>
+              </property>
+              <property name="dragEnabled">
+               <bool>true</bool>
+              </property>
+              <property name="dragDropMode">
+               <enum>QAbstractItemView::DragOnly</enum>
               </property>
              </widget>
             </item>
@@ -151,7 +163,7 @@
          </layout>
         </item>
         <item>
-         <layout class="QVBoxLayout" name="verticalLayout_7">
+         <layout class="QVBoxLayout" name="verticalLayout_7" stretch="1,0,1">
           <item>
            <layout class="QVBoxLayout" name="verticalLayout">
             <item>
@@ -178,8 +190,14 @@
               </property>
               <property name="minimumSize">
                <size>
-                <width>300</width>
+                <width>250</width>
                 <height>0</height>
+               </size>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>16777215</width>
+                <height>250</height>
                </size>
               </property>
               <property name="horizontalScrollBarPolicy">
@@ -193,13 +211,110 @@
                 <rect>
                  <x>0</x>
                  <y>0</y>
-                 <width>298</width>
-                 <height>259</height>
+                 <width>248</width>
+                 <height>374</height>
                 </rect>
                </property>
                <layout class="QVBoxLayout" name="verticalLayout_2">
                 <item>
-                 <layout class="QGridLayout" name="gridLayout_2"/>
+                 <widget class="QWidget" name="widget_2" native="true">
+                  <property name="minimumSize">
+                   <size>
+                    <width>0</width>
+                    <height>350</height>
+                   </size>
+                  </property>
+                  <layout class="QHBoxLayout" name="horizontalLayout_2">
+                   <item>
+                    <layout class="QGridLayout" name="gridLayout">
+                     <item row="3" column="0">
+                      <widget class="QLabel" name="label_8">
+                       <property name="text">
+                        <string>TextLabel</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item row="4" column="0">
+                      <widget class="QLabel" name="label_7">
+                       <property name="text">
+                        <string>TextLabel</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item row="1" column="1">
+                      <widget class="QLabel" name="label_14">
+                       <property name="text">
+                        <string>TextLabel</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item row="0" column="0">
+                      <widget class="QLabel" name="label_11">
+                       <property name="text">
+                        <string>TextLabel</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item row="2" column="0">
+                      <widget class="QLabel" name="label_9">
+                       <property name="text">
+                        <string>TextLabel</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item row="0" column="1">
+                      <widget class="QLabel" name="label_12">
+                       <property name="text">
+                        <string>TextLabel</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item row="1" column="0">
+                      <widget class="QLabel" name="label_10">
+                       <property name="text">
+                        <string>TextLabel</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item row="2" column="1">
+                      <widget class="QLabel" name="label_13">
+                       <property name="text">
+                        <string>TextLabel</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item row="0" column="2">
+                      <widget class="QLabel" name="label_15">
+                       <property name="text">
+                        <string>TextLabel</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item row="1" column="2">
+                      <widget class="QLabel" name="label_16">
+                       <property name="text">
+                        <string>TextLabel</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item row="3" column="2">
+                      <widget class="QLabel" name="label_17">
+                       <property name="text">
+                        <string>TextLabel</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item row="2" column="2">
+                      <widget class="QLabel" name="label_18">
+                       <property name="text">
+                        <string>TextLabel</string>
+                       </property>
+                      </widget>
+                     </item>
+                    </layout>
+                   </item>
+                  </layout>
+                 </widget>
                 </item>
                </layout>
               </widget>
@@ -282,6 +397,12 @@
               <property name="verticalScrollBarPolicy">
                <enum>Qt::ScrollBarAlwaysOff</enum>
               </property>
+              <property name="dragDropOverwriteMode">
+               <bool>false</bool>
+              </property>
+              <property name="dragDropMode">
+               <enum>QAbstractItemView::DropOnly</enum>
+              </property>
               <property name="flow">
                <enum>QListView::LeftToRight</enum>
               </property>
@@ -324,6 +445,9 @@
               </property>
               <property name="verticalScrollBarPolicy">
                <enum>Qt::ScrollBarAlwaysOff</enum>
+              </property>
+              <property name="dragDropMode">
+               <enum>QAbstractItemView::DropOnly</enum>
               </property>
               <property name="flow">
                <enum>QListView::LeftToRight</enum>
@@ -486,8 +610,8 @@
    <slot>plot()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>856</x>
-     <y>623</y>
+     <x>851</x>
+     <y>610</y>
     </hint>
     <hint type="destinationlabel">
      <x>747</x>
@@ -511,8 +635,42 @@
     </hint>
    </hints>
   </connection>
+  <connection>
+   <sender>listWidget_4</sender>
+   <signal>itemDoubleClicked(QListWidgetItem*)</signal>
+   <receiver>DataVisualizationWin</receiver>
+   <slot>horizontalParamRemove()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>580</x>
+     <y>60</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>521</x>
+     <y>34</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>listWidget_3</sender>
+   <signal>itemDoubleClicked(QListWidgetItem*)</signal>
+   <receiver>DataVisualizationWin</receiver>
+   <slot>verticalParamRemove()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>623</x>
+     <y>119</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>519</x>
+     <y>84</y>
+    </hint>
+   </hints>
+  </connection>
  </connections>
  <slots>
   <slot>backClicked()</slot>
+  <slot>horizontalParamRemove()</slot>
+  <slot>verticalParamRemove()</slot>
  </slots>
 </ui>
