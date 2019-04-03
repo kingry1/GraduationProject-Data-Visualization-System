@@ -211,13 +211,13 @@
                 <rect>
                  <x>0</x>
                  <y>0</y>
-                 <width>248</width>
+                 <width>386</width>
                  <height>374</height>
                 </rect>
                </property>
                <layout class="QVBoxLayout" name="verticalLayout_2">
                 <item>
-                 <widget class="QWidget" name="widget_2" native="true">
+                 <widget class="QWidget" name="widget_graph" native="true">
                   <property name="minimumSize">
                    <size>
                     <width>0</width>
@@ -227,87 +227,117 @@
                   <layout class="QHBoxLayout" name="horizontalLayout_2">
                    <item>
                     <layout class="QGridLayout" name="gridLayout">
-                     <item row="3" column="0">
-                      <widget class="QLabel" name="label_8">
+                     <item row="3" column="0" alignment="Qt::AlignHCenter">
+                      <widget class="ClickableLabel" name="label_8">
                        <property name="text">
                         <string>TextLabel</string>
                        </property>
                       </widget>
                      </item>
-                     <item row="4" column="0">
-                      <widget class="QLabel" name="label_7">
+                     <item row="4" column="0" alignment="Qt::AlignHCenter">
+                      <widget class="ClickableLabel" name="label_7">
                        <property name="text">
                         <string>TextLabel</string>
                        </property>
                       </widget>
                      </item>
-                     <item row="1" column="1">
-                      <widget class="QLabel" name="label_14">
+                     <item row="3" column="2" alignment="Qt::AlignHCenter">
+                      <widget class="ClickableLabel" name="label_17">
                        <property name="text">
                         <string>TextLabel</string>
                        </property>
                       </widget>
                      </item>
-                     <item row="0" column="0">
-                      <widget class="QLabel" name="label_11">
+                     <item row="1" column="1" alignment="Qt::AlignHCenter">
+                      <widget class="ClickableLabel" name="label_14">
                        <property name="text">
                         <string>TextLabel</string>
                        </property>
                       </widget>
                      </item>
-                     <item row="2" column="0">
-                      <widget class="QLabel" name="label_9">
+                     <item row="2" column="0" alignment="Qt::AlignHCenter">
+                      <widget class="ClickableLabel" name="label_9">
                        <property name="text">
                         <string>TextLabel</string>
                        </property>
                       </widget>
                      </item>
-                     <item row="0" column="1">
-                      <widget class="QLabel" name="label_12">
+                     <item row="0" column="2" alignment="Qt::AlignHCenter">
+                      <widget class="ClickableLabel" name="label_15">
                        <property name="text">
                         <string>TextLabel</string>
                        </property>
                       </widget>
                      </item>
-                     <item row="1" column="0">
-                      <widget class="QLabel" name="label_10">
+                     <item row="1" column="2" alignment="Qt::AlignHCenter">
+                      <widget class="ClickableLabel" name="label_16">
                        <property name="text">
                         <string>TextLabel</string>
                        </property>
                       </widget>
                      </item>
-                     <item row="2" column="1">
-                      <widget class="QLabel" name="label_13">
+                     <item row="0" column="1" alignment="Qt::AlignHCenter">
+                      <widget class="ClickableLabel" name="label_12">
+                       <property name="sizePolicy">
+                        <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                         <horstretch>0</horstretch>
+                         <verstretch>0</verstretch>
+                        </sizepolicy>
+                       </property>
+                       <property name="maximumSize">
+                        <size>
+                         <width>16777215</width>
+                         <height>16777215</height>
+                        </size>
+                       </property>
+                       <property name="text">
+                        <string>TextLabel</string>
+                       </property>
+                       <property name="scaledContents">
+                        <bool>true</bool>
+                       </property>
+                      </widget>
+                     </item>
+                     <item row="2" column="2" alignment="Qt::AlignHCenter">
+                      <widget class="ClickableLabel" name="label_18">
                        <property name="text">
                         <string>TextLabel</string>
                        </property>
                       </widget>
                      </item>
-                     <item row="0" column="2">
-                      <widget class="QLabel" name="label_15">
+                     <item row="1" column="0" alignment="Qt::AlignHCenter">
+                      <widget class="ClickableLabel" name="label_10">
                        <property name="text">
                         <string>TextLabel</string>
                        </property>
                       </widget>
                      </item>
-                     <item row="1" column="2">
-                      <widget class="QLabel" name="label_16">
+                     <item row="2" column="1" alignment="Qt::AlignHCenter">
+                      <widget class="ClickableLabel" name="label_13">
                        <property name="text">
                         <string>TextLabel</string>
                        </property>
                       </widget>
                      </item>
-                     <item row="3" column="2">
-                      <widget class="QLabel" name="label_17">
+                     <item row="0" column="0" alignment="Qt::AlignHCenter">
+                      <widget class="ClickableLabel" name="label_11">
+                       <property name="sizePolicy">
+                        <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                         <horstretch>0</horstretch>
+                         <verstretch>0</verstretch>
+                        </sizepolicy>
+                       </property>
+                       <property name="maximumSize">
+                        <size>
+                         <width>16777215</width>
+                         <height>16777215</height>
+                        </size>
+                       </property>
                        <property name="text">
                         <string>TextLabel</string>
                        </property>
-                      </widget>
-                     </item>
-                     <item row="2" column="2">
-                      <widget class="QLabel" name="label_18">
-                       <property name="text">
-                        <string>TextLabel</string>
+                       <property name="scaledContents">
+                        <bool>true</bool>
                        </property>
                       </widget>
                      </item>
@@ -467,7 +497,7 @@
            </widget>
           </item>
           <item>
-           <widget class="MplWidget" name="widget" native="true"/>
+           <widget class="MplWidget" name="mplwidget" native="true"/>
           </item>
           <item>
            <layout class="QHBoxLayout" name="horizontalLayout_5">
@@ -488,7 +518,10 @@
              </spacer>
             </item>
             <item>
-             <widget class="QPushButton" name="pushButton">
+             <widget class="QPushButton" name="generateButton">
+              <property name="enabled">
+               <bool>false</bool>
+              </property>
               <property name="font">
                <font>
                 <family>微软雅黑</family>
@@ -600,25 +633,17 @@
     <slot>plot()</slot>
    </slots>
   </customwidget>
+  <customwidget>
+   <class>ClickableLabel</class>
+   <extends>QLabel</extends>
+   <header>.clickablelabel.h</header>
+   <slots>
+    <signal>clicked()</signal>
+   </slots>
+  </customwidget>
  </customwidgets>
  <resources/>
  <connections>
-  <connection>
-   <sender>pushButton</sender>
-   <signal>clicked()</signal>
-   <receiver>widget</receiver>
-   <slot>plot()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>851</x>
-     <y>610</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>747</x>
-     <y>525</y>
-    </hint>
-   </hints>
-  </connection>
   <connection>
    <sender>pushButton_2</sender>
    <signal>clicked()</signal>
@@ -642,8 +667,8 @@
    <slot>horizontalParamRemove()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>580</x>
-     <y>60</y>
+     <x>905</x>
+     <y>77</y>
     </hint>
     <hint type="destinationlabel">
      <x>521</x>
@@ -658,12 +683,220 @@
    <slot>verticalParamRemove()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>623</x>
-     <y>119</y>
+     <x>905</x>
+     <y>129</y>
     </hint>
     <hint type="destinationlabel">
      <x>519</x>
      <y>84</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>label_11</sender>
+   <signal>clicked()</signal>
+   <receiver>DataVisualizationWin</receiver>
+   <slot>graphTypeClicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>362</x>
+     <y>147</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>247</x>
+     <y>45</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>label_12</sender>
+   <signal>clicked()</signal>
+   <receiver>DataVisualizationWin</receiver>
+   <slot>graphTypeClicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>460</x>
+     <y>135</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>341</x>
+     <y>30</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>label_15</sender>
+   <signal>clicked()</signal>
+   <receiver>DataVisualizationWin</receiver>
+   <slot>graphTypeClicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>566</x>
+     <y>120</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>569</x>
+     <y>28</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>label_10</sender>
+   <signal>clicked()</signal>
+   <receiver>DataVisualizationWin</receiver>
+   <slot>graphTypeClicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>329</x>
+     <y>179</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>653</x>
+     <y>133</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>label_14</sender>
+   <signal>clicked()</signal>
+   <receiver>DataVisualizationWin</receiver>
+   <slot>graphTypeClicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>439</x>
+     <y>191</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>651</x>
+     <y>191</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>label_16</sender>
+   <signal>clicked()</signal>
+   <receiver>DataVisualizationWin</receiver>
+   <slot>graphTypeClicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>572</x>
+     <y>184</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>649</x>
+     <y>238</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>label_9</sender>
+   <signal>clicked()</signal>
+   <receiver>DataVisualizationWin</receiver>
+   <slot>graphTypeClicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>340</x>
+     <y>253</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>247</x>
+     <y>291</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>label_13</sender>
+   <signal>clicked()</signal>
+   <receiver>DataVisualizationWin</receiver>
+   <slot>graphTypeClicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>444</x>
+     <y>252</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>250</x>
+     <y>346</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>label_18</sender>
+   <signal>clicked()</signal>
+   <receiver>DataVisualizationWin</receiver>
+   <slot>graphTypeClicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>551</x>
+     <y>258</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>252</x>
+     <y>409</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>label_17</sender>
+   <signal>clicked()</signal>
+   <receiver>DataVisualizationWin</receiver>
+   <slot>graphTypeClicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>581</x>
+     <y>300</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>651</x>
+     <y>306</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>label_8</sender>
+   <signal>clicked()</signal>
+   <receiver>DataVisualizationWin</receiver>
+   <slot>graphTypeClicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>348</x>
+     <y>297</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>252</x>
+     <y>207</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>label_7</sender>
+   <signal>clicked()</signal>
+   <receiver>DataVisualizationWin</receiver>
+   <slot>graphTypeClicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>332</x>
+     <y>384</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>462</x>
+     <y>344</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>generateButton</sender>
+   <signal>clicked()</signal>
+   <receiver>DataVisualizationWin</receiver>
+   <slot>generateGraph()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>753</x>
+     <y>597</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>917</x>
+     <y>599</y>
     </hint>
    </hints>
   </connection>
@@ -672,5 +905,7 @@
   <slot>backClicked()</slot>
   <slot>horizontalParamRemove()</slot>
   <slot>verticalParamRemove()</slot>
+  <slot>graphTypeClicked()</slot>
+  <slot>generateGraph()</slot>
  </slots>
 </ui>
