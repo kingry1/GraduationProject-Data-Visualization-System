@@ -24,7 +24,7 @@
       <item>
        <layout class="QHBoxLayout" name="horizontalLayout_UI" stretch="0,0,1">
         <item>
-         <layout class="QVBoxLayout" name="verticalLayout_3">
+         <layout class="QVBoxLayout" name="verticalLayout_parameter">
           <property name="sizeConstraint">
            <enum>QLayout::SetDefaultConstraint</enum>
           </property>
@@ -107,7 +107,7 @@
                <bool>true</bool>
               </property>
               <property name="dragDropMode">
-               <enum>QAbstractItemView::DragOnly</enum>
+               <enum>QAbstractItemView::InternalMove</enum>
               </property>
              </widget>
             </item>
@@ -483,7 +483,7 @@
                <enum>QListView::LeftToRight</enum>
               </property>
               <property name="spacing">
-               <number>10</number>
+               <number>0</number>
               </property>
              </widget>
             </item>
@@ -900,6 +900,38 @@
     </hint>
    </hints>
   </connection>
+  <connection>
+   <sender>listWidget_horizontal</sender>
+   <signal>itemChanged(QListWidgetItem*)</signal>
+   <receiver>DataVisualizationWin</receiver>
+   <slot>parameterAdded()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>748</x>
+     <y>52</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>736</x>
+     <y>28</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>listWidget_vertical</sender>
+   <signal>itemChanged(QListWidgetItem*)</signal>
+   <receiver>DataVisualizationWin</receiver>
+   <slot>parameterAdded()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>704</x>
+     <y>98</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>650</x>
+     <y>74</y>
+    </hint>
+   </hints>
+  </connection>
  </connections>
  <slots>
   <slot>backClicked()</slot>
@@ -907,5 +939,6 @@
   <slot>verticalParamRemove()</slot>
   <slot>graphTypeClicked()</slot>
   <slot>generateGraph()</slot>
+  <slot>parameterAdded()</slot>
  </slots>
 </ui>
