@@ -31,13 +31,11 @@ class DataVisualizationWin(QMainWindow, Ui_DataVisualizationWin):
 
     def horizontalParamRemove(self, clicked_item):
         # 删除
-        text = clicked_item.text()
-        print(text)
+        self.listWidget_horizontal.takeItem(self.listWidget_horizontal.row(clicked_item))
 
     def verticalParamRemove(self, clicked_item):
         # 删除
-        text = clicked_item.text()
-        print(text)
+        self.listWidget_vertical.takeItem(self.listWidget_vertical.row(clicked_item))
 
     def graphTypeClicked(self, clicked_item_name):
         clicked_item = self.widget_graph.findChild(ClickableLabel, clicked_item_name)
