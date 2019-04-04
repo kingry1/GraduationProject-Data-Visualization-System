@@ -122,7 +122,7 @@ class Ui_DataVisualizationWin(object):
         self.scrollArea.setWidgetResizable(True)
         self.scrollArea.setObjectName("scrollArea")
         self.scrollAreaWidgetContents = QtWidgets.QWidget()
-        self.scrollAreaWidgetContents.setGeometry(QtCore.QRect(0, 0, 386, 374))
+        self.scrollAreaWidgetContents.setGeometry(QtCore.QRect(0, 0, 250, 374))
         self.scrollAreaWidgetContents.setObjectName("scrollAreaWidgetContents")
         self.verticalLayout_2 = QtWidgets.QVBoxLayout(self.scrollAreaWidgetContents)
         self.verticalLayout_2.setObjectName("verticalLayout_2")
@@ -336,8 +336,8 @@ class Ui_DataVisualizationWin(object):
         self.label_8.clicked.connect(DataVisualizationWin.graphTypeClicked)
         self.label_7.clicked.connect(DataVisualizationWin.graphTypeClicked)
         self.generateButton.clicked.connect(DataVisualizationWin.generateGraph)
-        self.listWidget_horizontal.itemChanged['QListWidgetItem*'].connect(DataVisualizationWin.parameterAdded)
-        self.listWidget_vertical.itemChanged['QListWidgetItem*'].connect(DataVisualizationWin.parameterAdded)
+        self.listWidget_horizontal.itemChanged['QListWidgetItem*'].connect(DataVisualizationWin.parameterAddedHorizontal)
+        self.listWidget_vertical.itemChanged['QListWidgetItem*'].connect(DataVisualizationWin.parameterAddedVertical)
         QtCore.QMetaObject.connectSlotsByName(DataVisualizationWin)
 
     def retranslateUi(self, DataVisualizationWin):

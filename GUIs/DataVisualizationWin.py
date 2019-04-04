@@ -25,17 +25,30 @@ class DataVisualizationWin(QMainWindow, Ui_DataVisualizationWin):
             else:
                 self.listWidget_indicator.addItem(index)
         self.clicked_graph_type_label = {}
+        self.horizontal_param = {}
+        self.vertical_param = {}
 
     def backClicked(self):
         self.backSignal.emit(self.conf)
 
     def horizontalParamRemove(self, clicked_item):
-        # 删除
         self.listWidget_horizontal.takeItem(self.listWidget_horizontal.row(clicked_item))
+        text = clicked_item.text()
+        if self.horizontal_param[text] == 'dimension':
+            self.listWidget_dimension.addItem(text)
+        else:
+            self.listWidget_indicator.addItem(text)
+        self.horizontal_param.pop(text)
 
     def verticalParamRemove(self, clicked_item):
         # 删除
         self.listWidget_vertical.takeItem(self.listWidget_vertical.row(clicked_item))
+        text = clicked_item.text()
+        if self.vertical_param[text] == 'dimension':
+            self.listWidget_dimension.addItem(text)
+        else:
+            self.listWidget_indicator.addItem(text)
+        self.vertical_param.pop(text)
 
     def graphTypeClicked(self, clicked_item_name):
         clicked_item = self.widget_graph.findChild(ClickableLabel, clicked_item_name)
@@ -57,12 +70,23 @@ class DataVisualizationWin(QMainWindow, Ui_DataVisualizationWin):
         print(self.get_clicked_graph_name())
         self.mplwidget.plot()
 
-    def parameterAdded(self, widget_item):
+    def parameterAddedHorizontal(self, widget_item):
         list_widget = self.get_parent_widget(widget_item)
         if list_widget == 'dimension':
             self.listWidget_dimension.takeItem(self.listWidget_dimension.row(self.dimension_out[0]))
+            self.horizontal_param[self.dimension_out[0].text()] = 'dimension'
         else:
             self.listWidget_indicator.takeItem(self.listWidget_indicator.row(self.indicator_out[0]))
+            self.horizontal_param[self.indicator_out[0].text()] = 'indicator'
+
+    def parameterAddedVertical(self, widget_item):
+        list_widget = self.get_parent_widget(widget_item)
+        if list_widget == 'dimension':
+            self.listWidget_dimension.takeItem(self.listWidget_dimension.row(self.dimension_out[0]))
+            self.vertical_param[self.dimension_out[0].text()] = 'dimension'
+        else:
+            self.listWidget_indicator.takeItem(self.listWidget_indicator.row(self.indicator_out[0]))
+            self.vertical_param[self.indicator_out[0].text()] = 'indicator'
 
     def get_parent_widget(self, widget_item):
         self.dimension_out = self.listWidget_dimension.findItems(widget_item.text(), Qt.MatchExactly)
