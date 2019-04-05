@@ -68,6 +68,8 @@ class DataVisualizationWin(QMainWindow, Ui_DataVisualizationWin):
 
     def generateGraph(self):
         print(self.get_clicked_graph_name())
+        print("vertical parameter:", list(self.vertical_param.keys()))
+        print("horizontal parameter:", list(self.horizontal_param.keys()))
         self.mplwidget.plot()
 
     def parameterAddedHorizontal(self, widget_item):
