@@ -211,8 +211,8 @@
                 <rect>
                  <x>0</x>
                  <y>0</y>
-                 <width>250</width>
-                 <height>374</height>
+                 <width>231</width>
+                 <height>368</height>
                 </rect>
                </property>
                <layout class="QVBoxLayout" name="verticalLayout_2">
@@ -379,7 +379,7 @@
                </attribute>
                <layout class="QVBoxLayout" name="verticalLayout_5">
                 <item>
-                 <widget class="Ui_propertyForm" name="widget" native="true"/>
+                 <widget class="propertyForm" name="widget" native="true"/>
                 </item>
                </layout>
               </widget>
@@ -662,7 +662,7 @@
    </slots>
   </customwidget>
   <customwidget>
-   <class>Ui_propertyForm</class>
+   <class>propertyForm</class>
    <extends>QWidget</extends>
    <header>.propertyForm.h</header>
    <container>1</container>

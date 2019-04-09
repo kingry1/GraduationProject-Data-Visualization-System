@@ -2,12 +2,11 @@
 
 # Form implementation generated from reading ui file 'UI_DataVisualizationWin.ui'
 #
-# Created by: PyQt5 UI code generator 5.12
+# Created by: PyQt5 UI code generator 5.11.3
 #
 # WARNING! All changes made in this file will be lost!
 
 from PyQt5 import QtCore, QtGui, QtWidgets
-
 
 class Ui_DataVisualizationWin(object):
     def setupUi(self, DataVisualizationWin):
@@ -122,7 +121,7 @@ class Ui_DataVisualizationWin(object):
         self.scrollArea.setWidgetResizable(True)
         self.scrollArea.setObjectName("scrollArea")
         self.scrollAreaWidgetContents = QtWidgets.QWidget()
-        self.scrollAreaWidgetContents.setGeometry(QtCore.QRect(0, 0, 250, 374))
+        self.scrollAreaWidgetContents.setGeometry(QtCore.QRect(0, 0, 231, 368))
         self.scrollAreaWidgetContents.setObjectName("scrollAreaWidgetContents")
         self.verticalLayout_2 = QtWidgets.QVBoxLayout(self.scrollAreaWidgetContents)
         self.verticalLayout_2.setObjectName("verticalLayout_2")
@@ -206,7 +205,7 @@ class Ui_DataVisualizationWin(object):
         self.property_tab.setObjectName("property_tab")
         self.verticalLayout_5 = QtWidgets.QVBoxLayout(self.property_tab)
         self.verticalLayout_5.setObjectName("verticalLayout_5")
-        self.widget = Ui_propertyForm(self.property_tab)
+        self.widget = propertyForm(self.property_tab)
         self.widget.setObjectName("widget")
         self.verticalLayout_5.addWidget(self.widget)
         self.tabWidget.addTab(self.property_tab, "")
@@ -380,7 +379,6 @@ class Ui_DataVisualizationWin(object):
         self.saveButton.setText(_translate("DataVisualizationWin", "保存图片"))
         self.backButton.setText(_translate("DataVisualizationWin", "返回"))
 
-
 from .clickablelabel import ClickableLabel
 from .mplwidget import MplWidget
-from .propertyForm import Ui_propertyForm
+from .propertyForm import propertyForm

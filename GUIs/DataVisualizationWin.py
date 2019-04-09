@@ -97,3 +97,6 @@ class DataVisualizationWin(QMainWindow, Ui_DataVisualizationWin):
             return 'dimension'
         if len(self.indicator_out) > 0:
             return 'indicator'
+
+    def saveGraph(self):
+        self.mplwidget.save('save.png')
