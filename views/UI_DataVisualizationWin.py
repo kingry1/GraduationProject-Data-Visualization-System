@@ -204,6 +204,11 @@ class Ui_DataVisualizationWin(object):
         self.tabWidget.setObjectName("tabWidget")
         self.property_tab = QtWidgets.QWidget()
         self.property_tab.setObjectName("property_tab")
+        self.verticalLayout_5 = QtWidgets.QVBoxLayout(self.property_tab)
+        self.verticalLayout_5.setObjectName("verticalLayout_5")
+        self.widget = Ui_propertyForm(self.property_tab)
+        self.widget.setObjectName("widget")
+        self.verticalLayout_5.addWidget(self.widget)
         self.tabWidget.addTab(self.property_tab, "")
         self.style_tab = QtWidgets.QWidget()
         self.style_tab.setObjectName("style_tab")
@@ -285,6 +290,13 @@ class Ui_DataVisualizationWin(object):
         self.generateButton.setFont(font)
         self.generateButton.setObjectName("generateButton")
         self.horizontalLayout_5.addWidget(self.generateButton)
+        self.saveButton = QtWidgets.QPushButton(self.centralwidget)
+        self.saveButton.setEnabled(False)
+        font = QtGui.QFont()
+        font.setFamily("Microsoft YaHei")
+        self.saveButton.setFont(font)
+        self.saveButton.setObjectName("saveButton")
+        self.horizontalLayout_5.addWidget(self.saveButton)
         spacerItem1 = QtWidgets.QSpacerItem(50, 20, QtWidgets.QSizePolicy.Fixed, QtWidgets.QSizePolicy.Minimum)
         self.horizontalLayout_5.addItem(spacerItem1)
         self.verticalLayout_61.addLayout(self.horizontalLayout_5)
@@ -338,6 +350,7 @@ class Ui_DataVisualizationWin(object):
         self.generateButton.clicked.connect(DataVisualizationWin.generateGraph)
         self.listWidget_horizontal.itemChanged['QListWidgetItem*'].connect(DataVisualizationWin.parameterAddedHorizontal)
         self.listWidget_vertical.itemChanged['QListWidgetItem*'].connect(DataVisualizationWin.parameterAddedVertical)
+        self.saveButton.clicked.connect(DataVisualizationWin.saveGraph)
         QtCore.QMetaObject.connectSlotsByName(DataVisualizationWin)
 
     def retranslateUi(self, DataVisualizationWin):
@@ -364,8 +377,10 @@ class Ui_DataVisualizationWin(object):
         self.horizontal_label.setText(_translate("DataVisualizationWin", "横轴"))
         self.vertical_label.setText(_translate("DataVisualizationWin", "纵轴"))
         self.generateButton.setText(_translate("DataVisualizationWin", "生成图表"))
+        self.saveButton.setText(_translate("DataVisualizationWin", "保存图片"))
         self.backButton.setText(_translate("DataVisualizationWin", "返回"))
 
 
 from .clickablelabel import ClickableLabel
 from .mplwidget import MplWidget
+from .propertyForm import Ui_propertyForm

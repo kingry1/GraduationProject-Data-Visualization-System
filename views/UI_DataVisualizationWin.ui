@@ -377,6 +377,11 @@
                <attribute name="title">
                 <string>图形属性</string>
                </attribute>
+               <layout class="QVBoxLayout" name="verticalLayout_5">
+                <item>
+                 <widget class="Ui_propertyForm" name="widget" native="true"/>
+                </item>
+               </layout>
               </widget>
               <widget class="QWidget" name="style_tab">
                <attribute name="title">
@@ -535,6 +540,21 @@
              </widget>
             </item>
             <item>
+             <widget class="QPushButton" name="saveButton">
+              <property name="enabled">
+               <bool>false</bool>
+              </property>
+              <property name="font">
+               <font>
+                <family>Microsoft YaHei</family>
+               </font>
+              </property>
+              <property name="text">
+               <string>保存图片</string>
+              </property>
+             </widget>
+            </item>
+            <item>
              <spacer name="horizontalSpacer_2">
               <property name="orientation">
                <enum>Qt::Horizontal</enum>
@@ -640,6 +660,12 @@
    <slots>
     <signal>clicked()</signal>
    </slots>
+  </customwidget>
+  <customwidget>
+   <class>Ui_propertyForm</class>
+   <extends>QWidget</extends>
+   <header>.propertyForm.h</header>
+   <container>1</container>
   </customwidget>
  </customwidgets>
  <resources/>
@@ -891,8 +917,8 @@
    <slot>generateGraph()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>753</x>
-     <y>597</y>
+     <x>714</x>
+     <y>610</y>
     </hint>
     <hint type="destinationlabel">
      <x>917</x>
@@ -932,6 +958,22 @@
     </hint>
    </hints>
   </connection>
+  <connection>
+   <sender>saveButton</sender>
+   <signal>clicked()</signal>
+   <receiver>DataVisualizationWin</receiver>
+   <slot>saveGraph()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>757</x>
+     <y>592</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>540</x>
+     <y>591</y>
+    </hint>
+   </hints>
+  </connection>
  </connections>
  <slots>
   <slot>backClicked()</slot>
@@ -941,5 +983,6 @@
   <slot>generateGraph()</slot>
   <slot>parameterAddedHorizontal()</slot>
   <slot>parameterAddedVertical()</slot>
+  <slot>saveGraph()</slot>
  </slots>
 </ui>
