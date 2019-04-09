@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 from views.UI_DataVisualizationWin import Ui_DataVisualizationWin
-from PyQt5.QtWidgets import QMainWindow
+from PyQt5.QtWidgets import QMainWindow, QInputDialog, QMessageBox
 from PyQt5.QtCore import pyqtSignal, Qt
 from libs import GL
 from pandas.api.types import *
@@ -71,6 +71,7 @@ class DataVisualizationWin(QMainWindow, Ui_DataVisualizationWin):
         print("vertical parameter:", list(self.vertical_param.keys()))
         print("horizontal parameter:", list(self.horizontal_param.keys()))
         self.mplwidget.plot()
+        self.saveButton.setEnabled(True)
 
     def parameterAddedHorizontal(self, widget_item):
         list_widget = self.get_parent_widget(widget_item)
@@ -99,4 +100,7 @@ class DataVisualizationWin(QMainWindow, Ui_DataVisualizationWin):
             return 'indicator'
 
     def saveGraph(self):
-        self.mplwidget.save('save.png')
+        image_name, ok = QInputDialog.getText(self, '保存图片', '输入图片名称               ')
+        if ok:
+            self.mplwidget.save(image_name + '.png')
+            QMessageBox.information(self, '', '保存成功！')
