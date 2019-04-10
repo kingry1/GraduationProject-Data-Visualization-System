@@ -61,7 +61,8 @@ class DbsConnector:
             return table_names
         elif self.conf['type'] == 'mysql':
             sql = "SHOW TABLES;"
-            results = self.driver_sql(sql_cmd=sql)
+            results_tuple = self.driver_sql(sql_cmd=sql)
+            results = [result_tuple[0] for result_tuple in results_tuple]
             return results
 
     def get_table_content(self, table_name):

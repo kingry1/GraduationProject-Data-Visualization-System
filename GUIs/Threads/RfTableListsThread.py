@@ -16,6 +16,5 @@ class RfTableListsThread(QThread):
     def run(self):
         self.mydb = dbsConnector(self.conf)
         GL.tables_lists = self.mydb.get_table_names()
-        print(GL.tables_lists)
 
         self.trigger.emit()
