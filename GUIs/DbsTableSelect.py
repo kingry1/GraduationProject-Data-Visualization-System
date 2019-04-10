@@ -4,7 +4,7 @@ from views.UI_DbsTableSelect import Ui_DbsTableSelect
 from PyQt5 import QtCore
 from PyQt5.QtWidgets import QWidget, QListWidgetItem
 from PyQt5.QtCore import pyqtSignal
-from libs import dbsConnector
+from libs.DdbsConnector import DbsConnector as dbsConnector
 from GUIs.Threads.RfTableListsThread import RfTableListsThread
 from GUIs.Threads.ShowTablesThread import ShowTablesThread
 from libs.PandasModel import PandasModel
@@ -32,7 +32,7 @@ class DbsTableSelect(QWidget, Ui_DbsTableSelect):
     def finish_getTableNames(self):
         self.tables_raw = GL.tables_lists
         for table in self.tables_raw:
-            self.tableNamesWidget.addItem(table[0])
+            self.tableNamesWidget.addItem(table)
 
     def backClicked(self):
         self.backSignal.emit()

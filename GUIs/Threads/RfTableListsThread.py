@@ -1,7 +1,8 @@
 # -*- coding: utf-8 -*-
 
 from PyQt5.QtCore import QThread, pyqtSignal
-from libs import GL, dbsConnector
+from libs import GL
+from libs.DdbsConnector import DbsConnector as dbsConnector
 
 
 class RfTableListsThread(QThread):
@@ -13,8 +14,8 @@ class RfTableListsThread(QThread):
         self.mydb = None
 
     def run(self):
-        sql = "SHOW TABLES;".format(self.conf['name'])
         self.mydb = dbsConnector(self.conf)
-        GL.tables_lists = self.mydb.driver_mysql(sql_cmd=sql)
+        GL.tables_lists = self.mydb.get_table_names()
+        print(GL.tables_lists)
 
         self.trigger.emit()

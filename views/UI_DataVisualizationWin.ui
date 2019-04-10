@@ -197,7 +197,7 @@
               <property name="maximumSize">
                <size>
                 <width>16777215</width>
-                <height>250</height>
+                <height>16777215</height>
                </size>
               </property>
               <property name="horizontalScrollBarPolicy">
@@ -210,7 +210,7 @@
                <property name="geometry">
                 <rect>
                  <x>0</x>
-                 <y>-55</y>
+                 <y>0</y>
                  <width>231</width>
                  <height>368</height>
                 </rect>
@@ -371,7 +371,7 @@
                </font>
               </property>
               <property name="currentIndex">
-               <number>0</number>
+               <number>1</number>
               </property>
               <widget class="QWidget" name="property_tab">
                <attribute name="title">
@@ -695,8 +695,8 @@
    <slot>horizontalParamRemove()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>905</x>
-     <y>77</y>
+     <x>908</x>
+     <y>74</y>
     </hint>
     <hint type="destinationlabel">
      <x>521</x>
@@ -711,8 +711,8 @@
    <slot>verticalParamRemove()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>905</x>
-     <y>129</y>
+     <x>908</x>
+     <y>122</y>
     </hint>
     <hint type="destinationlabel">
      <x>519</x>
@@ -727,8 +727,8 @@
    <slot>graphTypeClicked()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>340</x>
-     <y>147</y>
+     <x>324</x>
+     <y>93</y>
     </hint>
     <hint type="destinationlabel">
      <x>247</x>
@@ -743,8 +743,8 @@
    <slot>graphTypeClicked()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>410</x>
-     <y>147</y>
+     <x>390</x>
+     <y>93</y>
     </hint>
     <hint type="destinationlabel">
      <x>341</x>
@@ -759,8 +759,8 @@
    <slot>graphTypeClicked()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>480</x>
-     <y>147</y>
+     <x>457</x>
+     <y>93</y>
     </hint>
     <hint type="destinationlabel">
      <x>569</x>
@@ -775,8 +775,8 @@
    <slot>graphTypeClicked()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>329</x>
-     <y>179</y>
+     <x>324</x>
+     <y>160</y>
     </hint>
     <hint type="destinationlabel">
      <x>653</x>
@@ -791,8 +791,8 @@
    <slot>graphTypeClicked()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>410</x>
-     <y>214</y>
+     <x>390</x>
+     <y>160</y>
     </hint>
     <hint type="destinationlabel">
      <x>651</x>
@@ -807,8 +807,8 @@
    <slot>graphTypeClicked()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>480</x>
-     <y>214</y>
+     <x>457</x>
+     <y>160</y>
     </hint>
     <hint type="destinationlabel">
      <x>649</x>
@@ -823,8 +823,8 @@
    <slot>graphTypeClicked()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>340</x>
-     <y>253</y>
+     <x>324</x>
+     <y>228</y>
     </hint>
     <hint type="destinationlabel">
      <x>247</x>
@@ -839,8 +839,8 @@
    <slot>graphTypeClicked()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>410</x>
-     <y>280</y>
+     <x>390</x>
+     <y>228</y>
     </hint>
     <hint type="destinationlabel">
      <x>250</x>
@@ -855,8 +855,8 @@
    <slot>graphTypeClicked()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>480</x>
-     <y>280</y>
+     <x>457</x>
+     <y>228</y>
     </hint>
     <hint type="destinationlabel">
      <x>252</x>
@@ -871,8 +871,8 @@
    <slot>graphTypeClicked()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>480</x>
-     <y>345</y>
+     <x>457</x>
+     <y>295</y>
     </hint>
     <hint type="destinationlabel">
      <x>651</x>
@@ -887,8 +887,8 @@
    <slot>graphTypeClicked()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>340</x>
-     <y>345</y>
+     <x>324</x>
+     <y>295</y>
     </hint>
     <hint type="destinationlabel">
      <x>252</x>
@@ -903,8 +903,8 @@
    <slot>graphTypeClicked()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>332</x>
-     <y>384</y>
+     <x>324</x>
+     <y>362</y>
     </hint>
     <hint type="destinationlabel">
      <x>462</x>
@@ -919,8 +919,8 @@
    <slot>generateGraph()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>714</x>
-     <y>610</y>
+     <x>707</x>
+     <y>617</y>
     </hint>
     <hint type="destinationlabel">
      <x>917</x>
@@ -967,8 +967,8 @@
    <slot>saveGraph()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>757</x>
-     <y>592</y>
+     <x>856</x>
+     <y>617</y>
     </hint>
     <hint type="destinationlabel">
      <x>540</x>

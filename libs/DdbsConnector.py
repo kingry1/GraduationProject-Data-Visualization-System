@@ -2,41 +2,49 @@
 
 import mysql.connector
 import pandas as pd
+import pyodbc
 
 
 class DbsConnector:
     def __init__(self, conf):
         self.conf = conf
-        self.host = conf['host']
-        self.port = conf['port']
-        self.user = conf['user']
-        self.password = conf['password']
-        self.db = conf['name']
+        self.connection = self.create_connection()
 
+    def create_connection(self):
+        connection = None
         if self.conf['type'] == 'mysql':
             try:
-                self.mydb = mysql.connector.connect(
-                    host=self.host,
-                    user=self.user,
-                    password=self.password,
-                    port=self.port,
-                    db=self.db
+                connection = mysql.connector.connect(
+                    host=self.conf['host'],
+                    user=self.conf['user'],
+                    password=self.conf['password'],
+                    port=self.conf['port'],
+                    db=self.conf['name']
                 )
             except mysql.connector.Error as err:
                 print(err)
+        elif self.conf['type'] == 'Access':
+            try:
+                MDB = self.conf['file_path']
+                DRV = '{Microsoft Access Driver (*.mdb, *.accdb)}'
+                connection = pyodbc.connect('DRIVER={};DBQ={}'.format(DRV, MDB))
+            except Exception as e:
+                print(e)
+
+        return connection
 
     def read_sql(self, sql_cmd):
         df = ''
         try:
-            df = pd.read_sql(sql=sql_cmd, con=self.mydb)
+            df = pd.read_sql(sql=sql_cmd, con=self.connection)
         except Exception as err:
             print(err)
         return df
 
-    def driver_mysql(self, sql_cmd):
+    def driver_sql(self, sql_cmd):
         results = ''
         try:
-            myCursor = self.mydb.cursor()
+            myCursor = self.connection.cursor()
             myCursor.execute(sql_cmd)
             results = myCursor.fetchall()
             myCursor.close()
@@ -45,8 +53,29 @@ class DbsConnector:
 
         return results
 
+    def get_table_names(self):
+        if self.conf['type'] == 'Access':
+            cursor = self.connection.cursor()
+            tables = cursor.tables(tableType='TABLE')
+            table_names = [table.table_name for table in tables]
+            return table_names
+        elif self.conf['type'] == 'mysql':
+            sql = "SHOW TABLES;"
+            results = self.driver_sql(sql_cmd=sql)
+            return results
+
+    def get_table_content(self, table_name):
+        df = None
+        if self.conf['type'] == 'Access':
+            sql = "SELECT TOP 1000 * FROM {};".format(table_name)
+            df = self.read_sql(sql_cmd=sql)
+        elif self.conf['type'] == 'mysql':
+            sql = "SELECT * FROM {0}.{1} LIMIT 1000;".format(self.conf['name'], table_name)
+            df = self.read_sql(sql_cmd=sql)
+        return df
+
     def close_connection(self):
-        self.mydb.close()
+        self.connection.close()
 
     @staticmethod
     def test_connection(conf):
@@ -60,7 +89,14 @@ class DbsConnector:
                     connect_timeout=1000
                 )
                 connection.close()
+            elif conf['type'] == 'Access':
+                MDB = conf['file_path']
+                DRV = '{Microsoft Access Driver (*.mdb, *.accdb)}'
+                connection = pyodbc.connect('DRIVER={};DBQ={}'.format(DRV, MDB))
+                connection.close()
         except mysql.connector.Error as err:
+            raise err
+        except pyodbc.Error as err:
             raise err
         except Exception as err:
             raise err

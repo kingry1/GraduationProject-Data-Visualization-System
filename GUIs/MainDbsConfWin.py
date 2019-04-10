@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-from PyQt5.QtWidgets import QMainWindow, QListWidgetItem, QInputDialog
+from PyQt5.QtWidgets import QMainWindow, QListWidgetItem, QInputDialog, QFileDialog
 from PyQt5.QtGui import QRegExpValidator, QIntValidator
 from PyQt5.QtCore import QRegExp, pyqtSignal
 from views.UI_MainDbsConfWin import Ui_MainDbsConfWin
@@ -126,3 +126,13 @@ class MainDbsConfWin(QMainWindow, Ui_MainDbsConfWin):
         self.connectButton.setEnabled(bool)
         self.deleteButton.setEnabled(bool)
         self.editButton.setEnabled(bool)
+
+    def openAccess(self):
+        file_path, file_type = QFileDialog.getOpenFileName(self,
+                                                                "选取Access文件",
+                                                                "/",  # 起始路径
+                                                                "Access Files (*.mdb *.accdb)")
+        if file_path == "":
+            return
+        conf = {'file_path': file_path, 'type': 'Access'}
+        self.callDbsTableSignal.emit(conf)

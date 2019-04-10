@@ -1,7 +1,8 @@
 # -*- coding: utf-8 -*-
 
 from PyQt5.QtCore import QThread, pyqtSignal
-from libs import GL, dbsConnector
+from libs import GL
+from libs.DdbsConnector import DbsConnector as dbsConnector
 
 
 class ShowTablesThread(QThread):
@@ -14,8 +15,7 @@ class ShowTablesThread(QThread):
         self.mydb = None
 
     def run(self):
-        sql = "SELECT * FROM {0}.{1}".format(self.conf['name'], self.table_name)
         self.mydb = dbsConnector(self.conf)
-        GL.tables_df = self.mydb.read_sql(sql_cmd=sql)
+        GL.tables_df = self.mydb.get_table_content(table_name=self.table_name)
 
         self.trigger.emit()
