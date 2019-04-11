@@ -20,12 +20,14 @@ class MplWidget(QWidget):
 
     def plot(self):
         self.figure.clear()
-        ax = self.figure.add_axes([0.1, 0.1, 0.8, 0.8])
-        s = Series(np.random.randn(10).cumsum(), index=np.arange(0, 100, 10))
+        # ax = self.figure.add_axes([0.1, 0.1, 0.8, 0.8])
+        ax = self.figure.add_subplot(1, 1, 1)
+        s = Series(np.random.randn(10).cumsum(), index=['a', 'b', 'c', 'd','e', 'f','g','h', 'i', 'j'])
+        print(s)
         # s.plot(ax=axes[1])
+        # index是横轴
         s.plot(kind='line', ax=ax)
         ax.set_ylabel('GDP')
-        ax.plot([1, 2, 3, 4, 5])
         self.canvas.draw()
 
     def save(self, filename):
