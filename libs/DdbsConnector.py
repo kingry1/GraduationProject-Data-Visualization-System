@@ -2,7 +2,9 @@
 
 import mysql.connector
 import pandas as pd
-import pyodbc
+import platform
+if platform.system() == "Windows":
+    import pyodbc
 
 
 class DbsConnector:
