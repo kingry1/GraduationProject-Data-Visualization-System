@@ -230,49 +230,49 @@
                      <item row="3" column="0" alignment="Qt::AlignHCenter">
                       <widget class="ClickableLabel" name="label_8">
                        <property name="text">
-                        <string>TextLabel</string>
+                        <string>...</string>
                        </property>
                       </widget>
                      </item>
                      <item row="4" column="0" alignment="Qt::AlignHCenter">
                       <widget class="ClickableLabel" name="label_7">
                        <property name="text">
-                        <string>TextLabel</string>
+                        <string>...</string>
                        </property>
                       </widget>
                      </item>
                      <item row="3" column="2" alignment="Qt::AlignHCenter">
                       <widget class="ClickableLabel" name="label_17">
                        <property name="text">
-                        <string>TextLabel</string>
+                        <string>...</string>
                        </property>
                       </widget>
                      </item>
                      <item row="1" column="1" alignment="Qt::AlignHCenter">
                       <widget class="ClickableLabel" name="label_14">
                        <property name="text">
-                        <string>TextLabel</string>
+                        <string>....</string>
                        </property>
                       </widget>
                      </item>
                      <item row="2" column="0" alignment="Qt::AlignHCenter">
                       <widget class="ClickableLabel" name="label_9">
                        <property name="text">
-                        <string>TextLabel</string>
+                        <string>...</string>
                        </property>
                       </widget>
                      </item>
                      <item row="0" column="2" alignment="Qt::AlignHCenter">
                       <widget class="ClickableLabel" name="label_15">
                        <property name="text">
-                        <string>TextLabel</string>
+                        <string>Histogram</string>
                        </property>
                       </widget>
                      </item>
                      <item row="1" column="2" alignment="Qt::AlignHCenter">
                       <widget class="ClickableLabel" name="label_16">
                        <property name="text">
-                        <string>TextLabel</string>
+                        <string>...</string>
                        </property>
                       </widget>
                      </item>
@@ -291,7 +291,7 @@
                         </size>
                        </property>
                        <property name="text">
-                        <string>TextLabel</string>
+                        <string>Pie chart</string>
                        </property>
                        <property name="scaledContents">
                         <bool>true</bool>
@@ -301,21 +301,21 @@
                      <item row="2" column="2" alignment="Qt::AlignHCenter">
                       <widget class="ClickableLabel" name="label_18">
                        <property name="text">
-                        <string>TextLabel</string>
+                        <string>...</string>
                        </property>
                       </widget>
                      </item>
                      <item row="1" column="0" alignment="Qt::AlignHCenter">
                       <widget class="ClickableLabel" name="label_10">
                        <property name="text">
-                        <string>TextLabel</string>
+                        <string>...</string>
                        </property>
                       </widget>
                      </item>
                      <item row="2" column="1" alignment="Qt::AlignHCenter">
                       <widget class="ClickableLabel" name="label_13">
                        <property name="text">
-                        <string>TextLabel</string>
+                        <string>...</string>
                        </property>
                       </widget>
                      </item>
@@ -334,7 +334,7 @@
                         </size>
                        </property>
                        <property name="text">
-                        <string>TextLabel</string>
+                        <string>Line chart</string>
                        </property>
                        <property name="scaledContents">
                         <bool>true</bool>
