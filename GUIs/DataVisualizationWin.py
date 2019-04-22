@@ -6,6 +6,7 @@ from PyQt5.QtCore import pyqtSignal, Qt
 from libs import GL
 from pandas.api.types import *
 from views.clickablelabel import ClickableLabel
+from GUIs.Threads.VisualizationDataThread import VisualizationDataThread
 
 
 class DataVisualizationWin(QMainWindow, Ui_DataVisualizationWin):
@@ -24,6 +25,7 @@ class DataVisualizationWin(QMainWindow, Ui_DataVisualizationWin):
                 self.listWidget_dimension.addItem(index)
             else:
                 self.listWidget_indicator.addItem(index)
+        self.listWidget_indicator.addItem("count(*)")
         self.clicked_graph_type_label = {}
         self.horizontal_param = {}
         self.vertical_param = {}
@@ -57,6 +59,10 @@ class DataVisualizationWin(QMainWindow, Ui_DataVisualizationWin):
             label.unclick()
         clicked_item.click()
         self.generateButton.setEnabled(True)
+        if clicked_item_name == 'label_histogram':
+            self.listWidget_horizontal.setHidden(False)
+            self.listWidget_vertical.setHidden(True)
+            self.vertical_label.setHidden(True)
 
     def get_clicked_graph_name(self):
         clicked_name = None
@@ -67,10 +73,19 @@ class DataVisualizationWin(QMainWindow, Ui_DataVisualizationWin):
         return clicked_name
 
     def generateGraph(self):
-        print(self.get_clicked_graph_name())
-        print("vertical parameter:", list(self.vertical_param.keys()))
-        print("horizontal parameter:", list(self.horizontal_param.keys()))
-        self.mplwidget.plot()
+        # 新建线程获得数据
+        self.getDataThread = VisualizationDataThread(conf=self.conf, table_name=self.table_name,
+                                                     horizontal_axes=list(
+                                                         self.horizontal_param.keys()),
+                                                     vertical_axes=list(self.vertical_param.keys()),
+                                                     graph_type=self.get_clicked_graph_name())
+        self.getDataThread.trigger.connect(self.generateGraphFinish)
+        self.getDataThread.start()
+
+    def generateGraphFinish(self):
+        self.mplwidget.plot(horizontal_axes=list(self.horizontal_param.keys()),
+                            vertical_axes=list(self.vertical_param.keys()),
+                            graph_type=self.get_clicked_graph_name(), dataframe=GL.visualization_df)
         self.saveButton.setEnabled(True)
 
     def parameterAddedHorizontal(self, widget_item):
@@ -92,8 +107,10 @@ class DataVisualizationWin(QMainWindow, Ui_DataVisualizationWin):
             self.vertical_param[self.indicator_out[0].text()] = 'indicator'
 
     def get_parent_widget(self, widget_item):
-        self.dimension_out = self.listWidget_dimension.findItems(widget_item.text(), Qt.MatchExactly)
-        self.indicator_out = self.listWidget_indicator.findItems(widget_item.text(), Qt.MatchExactly)
+        self.dimension_out = self.listWidget_dimension.findItems(widget_item.text(),
+                                                                 Qt.MatchExactly)
+        self.indicator_out = self.listWidget_indicator.findItems(widget_item.text(),
+                                                                 Qt.MatchExactly)
         if len(self.dimension_out) > 0:
             return 'dimension'
         if len(self.indicator_out) > 0:

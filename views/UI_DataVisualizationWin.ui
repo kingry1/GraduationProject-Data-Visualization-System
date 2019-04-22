@@ -211,8 +211,8 @@
                 <rect>
                  <x>0</x>
                  <y>0</y>
-                 <width>231</width>
-                 <height>368</height>
+                 <width>248</width>
+                 <height>374</height>
                 </rect>
                </property>
                <layout class="QVBoxLayout" name="verticalLayout_2">
@@ -263,7 +263,7 @@
                       </widget>
                      </item>
                      <item row="0" column="2" alignment="Qt::AlignHCenter">
-                      <widget class="ClickableLabel" name="label_15">
+                      <widget class="ClickableLabel" name="label_histogram">
                        <property name="text">
                         <string>Histogram</string>
                        </property>
@@ -277,7 +277,7 @@
                       </widget>
                      </item>
                      <item row="0" column="1" alignment="Qt::AlignHCenter">
-                      <widget class="ClickableLabel" name="label_12">
+                      <widget class="ClickableLabel" name="label_pie_chart">
                        <property name="sizePolicy">
                         <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
                          <horstretch>0</horstretch>
@@ -320,7 +320,7 @@
                       </widget>
                      </item>
                      <item row="0" column="0" alignment="Qt::AlignHCenter">
-                      <widget class="ClickableLabel" name="label_11">
+                      <widget class="ClickableLabel" name="label_line_chart">
                        <property name="sizePolicy">
                         <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
                          <horstretch>0</horstretch>
@@ -721,7 +721,7 @@
    </hints>
   </connection>
   <connection>
-   <sender>label_11</sender>
+   <sender>label_line_chart</sender>
    <signal>clicked()</signal>
    <receiver>DataVisualizationWin</receiver>
    <slot>graphTypeClicked()</slot>
@@ -737,7 +737,7 @@
    </hints>
   </connection>
   <connection>
-   <sender>label_12</sender>
+   <sender>label_pie_chart</sender>
    <signal>clicked()</signal>
    <receiver>DataVisualizationWin</receiver>
    <slot>graphTypeClicked()</slot>
@@ -753,7 +753,7 @@
    </hints>
   </connection>
   <connection>
-   <sender>label_15</sender>
+   <sender>label_histogram</sender>
    <signal>clicked()</signal>
    <receiver>DataVisualizationWin</receiver>
    <slot>graphTypeClicked()</slot>

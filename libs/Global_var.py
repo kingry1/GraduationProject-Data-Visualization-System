@@ -15,6 +15,7 @@ class GlobalVar:
         self.confKeys = ('host', 'port', 'user', 'password', 'name', 'type')
         self.tables_lists = None
         self.tables_df = None
+        self.visualization_df = None
 
     def config_dic(self):
         # create a parser
