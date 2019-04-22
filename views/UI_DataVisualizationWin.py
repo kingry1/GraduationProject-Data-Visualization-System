@@ -2,11 +2,12 @@
 
 # Form implementation generated from reading ui file 'UI_DataVisualizationWin.ui'
 #
-# Created by: PyQt5 UI code generator 5.11.3
+# Created by: PyQt5 UI code generator 5.12
 #
 # WARNING! All changes made in this file will be lost!
 
 from PyQt5 import QtCore, QtGui, QtWidgets
+
 
 class Ui_DataVisualizationWin(object):
     def setupUi(self, DataVisualizationWin):
@@ -361,18 +362,18 @@ class Ui_DataVisualizationWin(object):
         self.label_2.setText(_translate("DataVisualizationWin", "维度"))
         self.label_3.setText(_translate("DataVisualizationWin", "指标"))
         self.graphTypeLabel.setText(_translate("DataVisualizationWin", "图表类型"))
-        self.label_8.setText(_translate("DataVisualizationWin", "TextLabel"))
-        self.label_7.setText(_translate("DataVisualizationWin", "TextLabel"))
-        self.label_17.setText(_translate("DataVisualizationWin", "TextLabel"))
-        self.label_14.setText(_translate("DataVisualizationWin", "TextLabel"))
-        self.label_9.setText(_translate("DataVisualizationWin", "TextLabel"))
-        self.label_15.setText(_translate("DataVisualizationWin", "TextLabel"))
-        self.label_16.setText(_translate("DataVisualizationWin", "TextLabel"))
-        self.label_12.setText(_translate("DataVisualizationWin", "TextLabel"))
-        self.label_18.setText(_translate("DataVisualizationWin", "TextLabel"))
-        self.label_10.setText(_translate("DataVisualizationWin", "TextLabel"))
-        self.label_13.setText(_translate("DataVisualizationWin", "TextLabel"))
-        self.label_11.setText(_translate("DataVisualizationWin", "TextLabel"))
+        self.label_8.setText(_translate("DataVisualizationWin", "..."))
+        self.label_7.setText(_translate("DataVisualizationWin", "..."))
+        self.label_17.setText(_translate("DataVisualizationWin", "..."))
+        self.label_14.setText(_translate("DataVisualizationWin", "...."))
+        self.label_9.setText(_translate("DataVisualizationWin", "..."))
+        self.label_15.setText(_translate("DataVisualizationWin", "Histogram"))
+        self.label_16.setText(_translate("DataVisualizationWin", "..."))
+        self.label_12.setText(_translate("DataVisualizationWin", "Pie chart"))
+        self.label_18.setText(_translate("DataVisualizationWin", "..."))
+        self.label_10.setText(_translate("DataVisualizationWin", "..."))
+        self.label_13.setText(_translate("DataVisualizationWin", "..."))
+        self.label_11.setText(_translate("DataVisualizationWin", "Line chart"))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.property_tab), _translate("DataVisualizationWin", "图形属性"))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.style_tab), _translate("DataVisualizationWin", "组件样式"))
         self.horizontal_label.setText(_translate("DataVisualizationWin", "横轴"))
@@ -380,6 +381,7 @@ class Ui_DataVisualizationWin(object):
         self.generateButton.setText(_translate("DataVisualizationWin", "生成图表"))
         self.saveButton.setText(_translate("DataVisualizationWin", "保存图片"))
         self.backButton.setText(_translate("DataVisualizationWin", "返回"))
+
 
 from .clickablelabel import ClickableLabel
 from .mplwidget import MplWidget

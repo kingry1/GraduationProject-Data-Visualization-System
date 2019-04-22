@@ -2,16 +2,17 @@
 
 # Form implementation generated from reading ui file 'UI_MainDbsConfWin.ui'
 #
-# Created by: PyQt5 UI code generator 5.11.3
+# Created by: PyQt5 UI code generator 5.12
 #
 # WARNING! All changes made in this file will be lost!
 
 from PyQt5 import QtCore, QtGui, QtWidgets
 
+
 class Ui_MainDbsConfWin(object):
     def setupUi(self, MainDbsConfWin):
         MainDbsConfWin.setObjectName("MainDbsConfWin")
-        MainDbsConfWin.resize(664, 570)
+        MainDbsConfWin.resize(664, 600)
         icon = QtGui.QIcon()
         icon.addPixmap(QtGui.QPixmap("icon/icon.ico"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         MainDbsConfWin.setWindowIcon(icon)
@@ -94,14 +95,15 @@ class Ui_MainDbsConfWin(object):
         self.listWidget.setMinimumSize(QtCore.QSize(0, 0))
         self.listWidget.setObjectName("listWidget")
         self.gridLayout.addWidget(self.listWidget, 1, 0, 7, 1)
-        self.pushButton = QtWidgets.QPushButton(self.centralwidget)
+        self.accessButton = QtWidgets.QPushButton(self.centralwidget)
+        self.accessButton.setEnabled(False)
         font = QtGui.QFont()
         font.setFamily("微软雅黑")
         font.setBold(True)
         font.setWeight(75)
-        self.pushButton.setFont(font)
-        self.pushButton.setObjectName("pushButton")
-        self.gridLayout.addWidget(self.pushButton, 2, 2, 1, 1)
+        self.accessButton.setFont(font)
+        self.accessButton.setObjectName("accessButton")
+        self.gridLayout.addWidget(self.accessButton, 2, 2, 1, 1)
         self.verticalLayout.addLayout(self.gridLayout)
         self.line_2 = QtWidgets.QFrame(self.centralwidget)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Fixed)
@@ -215,7 +217,7 @@ class Ui_MainDbsConfWin(object):
         self.listWidget.itemDoubleClicked['QListWidgetItem*'].connect(MainDbsConfWin.listDoubleClicked)
         self.databaseNameLine.returnPressed.connect(MainDbsConfWin.saveDatabaseConf)
         self.typeComboBox.activated['int'].connect(MainDbsConfWin.saveDatabaseConf)
-        self.pushButton.clicked.connect(MainDbsConfWin.openAccess)
+        self.accessButton.clicked.connect(MainDbsConfWin.openAccess)
         QtCore.QMetaObject.connectSlotsByName(MainDbsConfWin)
 
     def retranslateUi(self, MainDbsConfWin):
@@ -226,11 +228,12 @@ class Ui_MainDbsConfWin(object):
         self.deleteButton.setText(_translate("MainDbsConfWin", "删除"))
         self.connectButton.setText(_translate("MainDbsConfWin", "连接"))
         self.addButton.setText(_translate("MainDbsConfWin", "添加"))
-        self.pushButton.setText(_translate("MainDbsConfWin", "打开Access文件"))
+        self.accessButton.setText(_translate("MainDbsConfWin", "打开Access文件"))
         self.label.setText(_translate("MainDbsConfWin", "DatabaseName"))
         self.userLabel.setText(_translate("MainDbsConfWin", "User"))
         self.hostLabel.setText(_translate("MainDbsConfWin", "Host"))
         self.passwordLabel.setText(_translate("MainDbsConfWin", "Password"))
         self.portLabel.setText(_translate("MainDbsConfWin", "Port"))
         self.label_2.setText(_translate("MainDbsConfWin", "DatabaseType"))
+
 

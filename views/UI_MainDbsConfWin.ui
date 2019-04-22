@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>664</width>
-    <height>570</height>
+    <height>600</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -218,7 +218,10 @@
          </widget>
         </item>
         <item row="2" column="2">
-         <widget class="QPushButton" name="pushButton">
+         <widget class="QPushButton" name="accessButton">
+          <property name="enabled">
+           <bool>false</bool>
+          </property>
           <property name="font">
            <font>
             <family>微软雅黑</family>
@@ -616,7 +619,7 @@
    </hints>
   </connection>
   <connection>
-   <sender>pushButton</sender>
+   <sender>accessButton</sender>
    <signal>clicked()</signal>
    <receiver>MainDbsConfWin</receiver>
    <slot>openAccess()</slot>

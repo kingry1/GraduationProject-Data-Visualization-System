@@ -6,7 +6,7 @@ from PyQt5.QtCore import QRegExp, pyqtSignal
 from views.UI_MainDbsConfWin import Ui_MainDbsConfWin
 from libs.DdbsConnector import DbsConnector
 from libs import GL
-import os
+import platform
 
 
 class MainDbsConfWin(QMainWindow, Ui_MainDbsConfWin):
@@ -15,6 +15,9 @@ class MainDbsConfWin(QMainWindow, Ui_MainDbsConfWin):
     def __init__(self, parent=None):
         super(MainDbsConfWin, self).__init__(parent)
         self.setupUi(self)
+        if platform.system() == "Windows":
+            self.accessButton.setEnabled(True)
+
         self.dbsDic = GL.dbsDic
         self.clickedDatabaseName = None
         self.clickedDatabaseItem = None
