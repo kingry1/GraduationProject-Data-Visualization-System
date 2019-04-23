@@ -28,6 +28,9 @@ class MplWidget(QWidget):
             dataframe.plot(kind='line', ax=ax)
         elif graph_type == 'histogram':
             dataframe.plot(kind='hist', ax=ax)
+        elif graph_type == 'pie_chart':
+            dataframe.set_index([vertical for vertical in vertical_axes], inplace=True)
+            dataframe.plot(kind='pie', ax=ax, subplots=True)
         self.canvas.draw()
 
     def save(self, filename):

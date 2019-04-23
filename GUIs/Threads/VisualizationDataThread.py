@@ -52,6 +52,18 @@ class VisualizationDataThread(QThread):
                 sql_front = sql_front[:-2]
                 sql_middle = " FROM {};".format(self.table_name)
                 sql = sql_front + sql_middle
+        elif self.graph_type == "pie_chart":
+            sql_front = "SELECT "
+            for jiaodu in self.horizontal_axes:
+                if jiaodu == 'count(*)':
+                    sql_front = sql_front + jiaodu + ', '
+                else:
+                    sql_front = sql_front + "sum({})".format(jiaodu) + ', '
+            sql_front = sql_front + self.vertical_axes[0] + ', '
+            sql_front = sql_front[:-2]
+            sql_middle = " FROM {}".format(self.table_name)
+            sql_end = " GROUP BY {};".format(self.vertical_axes[0])
+            sql = sql_front + sql_middle + sql_end
         try:
             GL.visualization_df = self.mydb.read_sql(sql_cmd=sql)
         except Exception as e:

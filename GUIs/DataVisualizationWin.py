@@ -7,7 +7,6 @@ from libs import GL
 from pandas.api.types import *
 from views.clickablelabel import ClickableLabel
 from GUIs.Threads.VisualizationDataThread import VisualizationDataThread
-import traceback
 
 
 class DataVisualizationWin(QMainWindow, Ui_DataVisualizationWin):
@@ -66,6 +65,9 @@ class DataVisualizationWin(QMainWindow, Ui_DataVisualizationWin):
         elif clicked_item_name == 'label_line_chart':
             self.horizontal_label.setText('横轴')
             self.vertical_label.setText('纵轴')
+        elif clicked_item_name == 'label_pie_chart':
+            self.horizontal_label.setText('角度')
+            self.vertical_label.setText('颜色')
 
     def get_clicked_graph_name(self):
         clicked_name = None

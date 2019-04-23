@@ -12,7 +12,7 @@ try:
         password='Sjn19970508'
     )
     sql_cmd = "USE sakila; SHOW TABLES"
-    df = pd.read_sql(sql='SELECT sum(staff_id), payment_id FROM payment GROUP BY payment_id;', con=mydb)
+    df = pd.read_sql(sql='SELECT sum(amount), payment_id FROM sakila.payment GROUP BY payment_id;', con=mydb)
 
 except mysql.connector.Error as err:
     print(err)
@@ -21,7 +21,4 @@ except mysql.connector.Error as err:
 #     print(emp_no)
 
 mydb.close()
-columns = list(df.columns)
-print(columns)
-for column in columns:
-    print(df[column])
+print(df)

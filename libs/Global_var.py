@@ -2,7 +2,6 @@
 
 import os
 from configparser import ConfigParser
-import pandas as pd
 
 
 class GlobalVar:
