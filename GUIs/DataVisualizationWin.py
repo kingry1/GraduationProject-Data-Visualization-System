@@ -63,6 +63,9 @@ class DataVisualizationWin(QMainWindow, Ui_DataVisualizationWin):
         if clicked_item_name == 'label_histogram':
             self.horizontal_label.setText('指标')
             self.vertical_label.setText('分组')
+        elif clicked_item_name == 'label_line_chart':
+            self.horizontal_label.setText('横轴')
+            self.vertical_label.setText('纵轴')
 
     def get_clicked_graph_name(self):
         clicked_name = None
