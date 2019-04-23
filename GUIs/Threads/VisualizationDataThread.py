@@ -24,7 +24,24 @@ class VisualizationDataThread(QThread):
         if self.graph_type == "line_chart":
             sql = "SELECT {}, {} FROM {} GROUP BY {}".format(self.vertical_axes[0], self.horizontal_axes[0], self.table_name, self.horizontal_axes[0])
         elif self.graph_type == "histogram":
-            sql = "SELECT count(*) FROM {} GROUP BY {}".format(self.table_name, self.horizontal_axes[0])
+            if len(self.vertical_axes) > 0:
+                sql_front = "SELECT "
+                for zhibiao in self.horizontal_axes:
+                    if zhibiao == 'count(*)':
+                        sql_front = sql_front + zhibiao + ', '
+                    else:
+                        sql_front = sql_front + "sum({})".format(zhibiao) + ', '
+                sql_front = sql_front[:-2]
+                sql_middle = " FROM {}".format(self.table_name)
+                sql_end = " GROUP BY {};".format(self.vertical_axes[0])
+                sql = sql_front + sql_middle + sql_end
+            else:
+                sql_front = "SELECT "
+                for zhibiao in self.horizontal_axes:
+                    sql_front = sql_front + zhibiao + ', '
+                sql_front = sql_front[:-2]
+                sql_middle = " FROM {};".format(self.table_name)
+                sql = sql_front + sql_middle
         GL.visualization_df = self.mydb.read_sql(sql_cmd=sql)
 
         self.trigger.emit()

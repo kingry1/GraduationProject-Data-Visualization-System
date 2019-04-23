@@ -23,10 +23,6 @@ class MplWidget(QWidget):
         graph_type = graph_type[6:]
         # ax = self.figure.add_axes([0.1, 0.1, 0.8, 0.8])
         ax = self.figure.add_subplot(1, 1, 1)
-        print('graph_type is:', graph_type)
-        print('horizontal_axes is:', horizontal_axes)
-        print('vertical_axes is;', vertical_axes)
-        print('dataframe is:', dataframe)
         if graph_type == 'line_chart':
             # dataframe['count(*)'].plot(kind='line', ax=ax)
             dataframe.plot(kind='line', ax=ax)

@@ -60,9 +60,8 @@ class DataVisualizationWin(QMainWindow, Ui_DataVisualizationWin):
         clicked_item.click()
         self.generateButton.setEnabled(True)
         if clicked_item_name == 'label_histogram':
-            self.listWidget_horizontal.setHidden(False)
-            self.listWidget_vertical.setHidden(True)
-            self.vertical_label.setHidden(True)
+            self.horizontal_label.setText('指标')
+            self.vertical_label.setText('分组')
 
     def get_clicked_graph_name(self):
         clicked_name = None
