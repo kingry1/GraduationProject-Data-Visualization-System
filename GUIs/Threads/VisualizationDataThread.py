@@ -7,6 +7,7 @@ from libs.DdbsConnector import DbsConnector as dbsConnector
 
 class VisualizationDataThread(QThread):
     trigger = pyqtSignal()
+    fail = pyqtSignal(str)
 
     def __init__(self, conf, table_name, horizontal_axes, vertical_axes, graph_type):
         super(VisualizationDataThread, self).__init__()
@@ -19,10 +20,19 @@ class VisualizationDataThread(QThread):
 
     def run(self):
         self.mydb = dbsConnector(self.conf)
-        # GL.tables_lists = self.mydb.get_table_names()
         sql = None
         if self.graph_type == "line_chart":
-            sql = "SELECT {}, {} FROM {} GROUP BY {}".format(self.vertical_axes[0], self.horizontal_axes[0], self.table_name, self.horizontal_axes[0])
+            sql_front = "SELECT "
+            for zongzhou in self.vertical_axes:
+                if zongzhou == 'count(*)':
+                    sql_front = sql_front + ', '
+                else:
+                    sql_front = sql_front + "sum({})".format(zongzhou) + ', '
+            sql_front = sql_front + self.horizontal_axes[0] + ', '
+            sql_front = sql_front[:-2]
+            sql_middle = " FROM {}".format(self.table_name)
+            sql_end = " GROUP BY {};".format(self.horizontal_axes[0])
+            sql = sql_front + sql_middle + sql_end
         elif self.graph_type == "histogram":
             if len(self.vertical_axes) > 0:
                 sql_front = "SELECT "
@@ -42,6 +52,12 @@ class VisualizationDataThread(QThread):
                 sql_front = sql_front[:-2]
                 sql_middle = " FROM {};".format(self.table_name)
                 sql = sql_front + sql_middle
-        GL.visualization_df = self.mydb.read_sql(sql_cmd=sql)
+        try:
+            GL.visualization_df = self.mydb.read_sql(sql_cmd=sql)
+        except Exception as e:
+            self.fail.emit(str(e))
+            return
+        finally:
+            self.mydb.close_connection()
 
         self.trigger.emit()

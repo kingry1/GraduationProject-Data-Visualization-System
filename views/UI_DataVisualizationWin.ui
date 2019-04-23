@@ -643,7 +643,14 @@
     </rect>
    </property>
   </widget>
-  <widget class="QStatusBar" name="statusbar"/>
+  <widget class="QStatusBar" name="statusbar">
+   <property name="styleSheet">
+    <string notr="true">QStatusBar
+{
+	color: rgb(255, 0, 0);
+}</string>
+   </property>
+  </widget>
  </widget>
  <customwidgets>
   <customwidget>
@@ -695,8 +702,8 @@
    <slot>horizontalParamRemove()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>908</x>
-     <y>74</y>
+     <x>905</x>
+     <y>77</y>
     </hint>
     <hint type="destinationlabel">
      <x>521</x>
@@ -711,8 +718,8 @@
    <slot>verticalParamRemove()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>908</x>
-     <y>122</y>
+     <x>905</x>
+     <y>129</y>
     </hint>
     <hint type="destinationlabel">
      <x>519</x>
@@ -775,8 +782,8 @@
    <slot>graphTypeClicked()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>324</x>
-     <y>160</y>
+     <x>316</x>
+     <y>214</y>
     </hint>
     <hint type="destinationlabel">
      <x>653</x>
@@ -791,8 +798,8 @@
    <slot>graphTypeClicked()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>390</x>
-     <y>160</y>
+     <x>386</x>
+     <y>214</y>
     </hint>
     <hint type="destinationlabel">
      <x>651</x>
@@ -807,8 +814,8 @@
    <slot>graphTypeClicked()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>457</x>
-     <y>160</y>
+     <x>452</x>
+     <y>214</y>
     </hint>
     <hint type="destinationlabel">
      <x>649</x>
@@ -823,8 +830,8 @@
    <slot>graphTypeClicked()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>324</x>
-     <y>228</y>
+     <x>316</x>
+     <y>280</y>
     </hint>
     <hint type="destinationlabel">
      <x>247</x>
@@ -839,8 +846,8 @@
    <slot>graphTypeClicked()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>390</x>
-     <y>228</y>
+     <x>384</x>
+     <y>280</y>
     </hint>
     <hint type="destinationlabel">
      <x>250</x>
@@ -855,8 +862,8 @@
    <slot>graphTypeClicked()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>457</x>
-     <y>228</y>
+     <x>452</x>
+     <y>280</y>
     </hint>
     <hint type="destinationlabel">
      <x>252</x>
@@ -871,8 +878,8 @@
    <slot>graphTypeClicked()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>457</x>
-     <y>295</y>
+     <x>452</x>
+     <y>345</y>
     </hint>
     <hint type="destinationlabel">
      <x>651</x>
@@ -887,8 +894,8 @@
    <slot>graphTypeClicked()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>324</x>
-     <y>295</y>
+     <x>316</x>
+     <y>345</y>
     </hint>
     <hint type="destinationlabel">
      <x>252</x>
@@ -903,8 +910,8 @@
    <slot>graphTypeClicked()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>324</x>
-     <y>362</y>
+     <x>316</x>
+     <y>413</y>
     </hint>
     <hint type="destinationlabel">
      <x>462</x>
@@ -919,8 +926,8 @@
    <slot>generateGraph()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>707</x>
-     <y>617</y>
+     <x>713</x>
+     <y>610</y>
     </hint>
     <hint type="destinationlabel">
      <x>917</x>
@@ -967,8 +974,8 @@
    <slot>saveGraph()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>856</x>
-     <y>617</y>
+     <x>851</x>
+     <y>610</y>
     </hint>
     <hint type="destinationlabel">
      <x>540</x>

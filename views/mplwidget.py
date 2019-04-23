@@ -5,7 +5,6 @@ from matplotlib.backends.backend_qt5agg import FigureCanvasQTAgg as FigureCanvas
 import matplotlib.pyplot as plt
 import pandas as pd
 import numpy as np
-from pandas import Series, DataFrame
 
 
 class MplWidget(QWidget):
@@ -25,10 +24,10 @@ class MplWidget(QWidget):
         ax = self.figure.add_subplot(1, 1, 1)
         if graph_type == 'line_chart':
             # dataframe['count(*)'].plot(kind='line', ax=ax)
+            dataframe.set_index([horizontal for horizontal in horizontal_axes], inplace=True)
             dataframe.plot(kind='line', ax=ax)
         elif graph_type == 'histogram':
             dataframe.plot(kind='hist', ax=ax)
-        # ax.set_ylabel('GDP')
         self.canvas.draw()
 
     def save(self, filename):

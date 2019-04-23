@@ -12,7 +12,7 @@ try:
         password='Sjn19970508'
     )
     sql_cmd = "USE sakila; SHOW TABLES"
-    df = pd.read_sql(sql=sql_cmd, con=mydb)
+    df = pd.read_sql(sql='SELECT sum(staff_id), payment_id FROM payment GROUP BY payment_id;', con=mydb)
 
 except mysql.connector.Error as err:
     print(err)

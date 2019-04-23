@@ -40,7 +40,7 @@ class DbsConnector:
         try:
             df = pd.read_sql(sql=sql_cmd, con=self.connection)
         except Exception as err:
-            print(err)
+            raise err
         return df
 
     def driver_sql(self, sql_cmd):

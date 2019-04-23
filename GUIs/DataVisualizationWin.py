@@ -7,6 +7,7 @@ from libs import GL
 from pandas.api.types import *
 from views.clickablelabel import ClickableLabel
 from GUIs.Threads.VisualizationDataThread import VisualizationDataThread
+import traceback
 
 
 class DataVisualizationWin(QMainWindow, Ui_DataVisualizationWin):
@@ -79,6 +80,7 @@ class DataVisualizationWin(QMainWindow, Ui_DataVisualizationWin):
                                                      vertical_axes=list(self.vertical_param.keys()),
                                                      graph_type=self.get_clicked_graph_name())
         self.getDataThread.trigger.connect(self.generateGraphFinish)
+        self.getDataThread.fail.connect(self.generateGraphFailed)
         self.getDataThread.start()
 
     def generateGraphFinish(self):
@@ -86,6 +88,9 @@ class DataVisualizationWin(QMainWindow, Ui_DataVisualizationWin):
                             vertical_axes=list(self.vertical_param.keys()),
                             graph_type=self.get_clicked_graph_name(), dataframe=GL.visualization_df)
         self.saveButton.setEnabled(True)
+
+    def generateGraphFailed(self, exception_message):
+        self.statusbar.showMessage(exception_message)
 
     def parameterAddedHorizontal(self, widget_item):
         list_widget = self.get_parent_widget(widget_item)

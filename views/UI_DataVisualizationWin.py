@@ -329,6 +329,10 @@ class Ui_DataVisualizationWin(object):
         self.menubar.setObjectName("menubar")
         DataVisualizationWin.setMenuBar(self.menubar)
         self.statusbar = QtWidgets.QStatusBar(DataVisualizationWin)
+        self.statusbar.setStyleSheet("QStatusBar\n"
+"{\n"
+"    color: rgb(255, 0, 0);\n"
+"}")
         self.statusbar.setObjectName("statusbar")
         DataVisualizationWin.setStatusBar(self.statusbar)
 
