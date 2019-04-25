@@ -211,7 +211,7 @@
                 <rect>
                  <x>0</x>
                  <y>0</y>
-                 <width>248</width>
+                 <width>250</width>
                  <height>374</height>
                 </rect>
                </property>
@@ -264,8 +264,23 @@
                      </item>
                      <item row="0" column="2" alignment="Qt::AlignHCenter">
                       <widget class="ClickableLabel" name="label_histogram">
+                       <property name="maximumSize">
+                        <size>
+                         <width>60</width>
+                         <height>60</height>
+                        </size>
+                       </property>
+                       <property name="toolTip">
+                        <string>histogram</string>
+                       </property>
                        <property name="text">
-                        <string>Histogram</string>
+                        <string/>
+                       </property>
+                       <property name="pixmap">
+                        <pixmap>icon/histogram.png</pixmap>
+                       </property>
+                       <property name="scaledContents">
+                        <bool>true</bool>
                        </property>
                       </widget>
                      </item>
@@ -286,12 +301,18 @@
                        </property>
                        <property name="maximumSize">
                         <size>
-                         <width>16777215</width>
-                         <height>16777215</height>
+                         <width>60</width>
+                         <height>60</height>
                         </size>
                        </property>
+                       <property name="toolTip">
+                        <string>pie chart</string>
+                       </property>
                        <property name="text">
-                        <string>Pie chart</string>
+                        <string/>
+                       </property>
+                       <property name="pixmap">
+                        <pixmap>icon/pie_chart.png</pixmap>
                        </property>
                        <property name="scaledContents">
                         <bool>true</bool>
@@ -329,12 +350,18 @@
                        </property>
                        <property name="maximumSize">
                         <size>
-                         <width>16777215</width>
-                         <height>16777215</height>
+                         <width>60</width>
+                         <height>60</height>
                         </size>
                        </property>
+                       <property name="toolTip">
+                        <string>line chart</string>
+                       </property>
                        <property name="text">
-                        <string>Line chart</string>
+                        <string/>
+                       </property>
+                       <property name="pixmap">
+                        <pixmap>icon/line_chart.png</pixmap>
                        </property>
                        <property name="scaledContents">
                         <bool>true</bool>

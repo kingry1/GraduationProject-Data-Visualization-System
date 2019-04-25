@@ -106,4 +106,4 @@ venv.bak/
 # pycharm
 .idea/
 
-*.png
+./*.png
