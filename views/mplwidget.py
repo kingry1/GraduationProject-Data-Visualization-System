@@ -25,12 +25,12 @@ class MplWidget(QWidget):
         if graph_type == 'line_chart':
             # dataframe['count(*)'].plot(kind='line', ax=ax)
             dataframe.set_index([horizontal for horizontal in horizontal_axes], inplace=True)
-            dataframe.plot(kind='line', ax=ax)
+            dataframe.plot.line(ax=ax)
         elif graph_type == 'histogram':
-            dataframe.plot(kind='hist', ax=ax)
+            dataframe.plot.hist(ax=ax)
         elif graph_type == 'pie_chart':
             dataframe.set_index([vertical for vertical in vertical_axes], inplace=True)
-            dataframe.plot(kind='pie', ax=ax, subplots=True)
+            dataframe.plot.pie(ax=ax, subplots=True)
         self.canvas.draw()
 
     def save(self, filename):
