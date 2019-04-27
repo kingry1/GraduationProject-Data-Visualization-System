@@ -235,13 +235,26 @@ class Ui_DataVisualizationWin(object):
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(self.widget_property.sizePolicy().hasHeightForWidth())
         self.widget_property.setSizePolicy(sizePolicy)
-        self.widget_property.setMinimumSize(QtCore.QSize(245, 0))
-        self.widget_property.setMaximumSize(QtCore.QSize(245, 16777215))
+        self.widget_property.setMinimumSize(QtCore.QSize(250, 0))
+        self.widget_property.setMaximumSize(QtCore.QSize(250, 16777215))
         self.widget_property.setObjectName("widget_property")
         self.verticalLayout_5.addWidget(self.widget_property, 0, QtCore.Qt.AlignHCenter)
         self.tabWidget.addTab(self.property_tab, "")
         self.style_tab = QtWidgets.QWidget()
         self.style_tab.setObjectName("style_tab")
+        self.horizontalLayout_6 = QtWidgets.QHBoxLayout(self.style_tab)
+        self.horizontalLayout_6.setContentsMargins(0, 0, 0, 0)
+        self.horizontalLayout_6.setObjectName("horizontalLayout_6")
+        self.widget_style = styleForm(self.style_tab)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Fixed, QtWidgets.QSizePolicy.Preferred)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.widget_style.sizePolicy().hasHeightForWidth())
+        self.widget_style.setSizePolicy(sizePolicy)
+        self.widget_style.setMinimumSize(QtCore.QSize(250, 0))
+        self.widget_style.setMaximumSize(QtCore.QSize(250, 16777215))
+        self.widget_style.setObjectName("widget_style")
+        self.horizontalLayout_6.addWidget(self.widget_style)
         self.tabWidget.addTab(self.style_tab, "")
         self.verticalLayout_4.addWidget(self.tabWidget)
         self.verticalLayout_7.addLayout(self.verticalLayout_4)
@@ -367,7 +380,7 @@ class Ui_DataVisualizationWin(object):
         DataVisualizationWin.setStatusBar(self.statusbar)
 
         self.retranslateUi(DataVisualizationWin)
-        self.tabWidget.setCurrentIndex(0)
+        self.tabWidget.setCurrentIndex(1)
         self.backButton.clicked.connect(DataVisualizationWin.backClicked)
         self.listWidget_horizontal.itemDoubleClicked['QListWidgetItem*'].connect(DataVisualizationWin.horizontalParamRemove)
         self.listWidget_vertical.itemDoubleClicked['QListWidgetItem*'].connect(DataVisualizationWin.verticalParamRemove)
@@ -420,3 +433,4 @@ class Ui_DataVisualizationWin(object):
 from .clickablelabel import ClickableLabel
 from .mplwidget import MplWidget
 from .propertyForm import propertyForm
+from .styleForm import styleForm

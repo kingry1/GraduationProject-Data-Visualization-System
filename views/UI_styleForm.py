@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'UI_propertyForm.ui'
+# Form implementation generated from reading ui file 'UI_styleForm.ui'
 #
 # Created by: PyQt5 UI code generator 5.12
 #
@@ -9,16 +9,16 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
 
 
-class Ui_propertyForm(object):
-    def setupUi(self, propertyForm):
-        propertyForm.setObjectName("propertyForm")
-        propertyForm.resize(256, 300)
-        self.verticalLayout_2 = QtWidgets.QVBoxLayout(propertyForm)
+class Ui_styleForm(object):
+    def setupUi(self, styleForm):
+        styleForm.setObjectName("styleForm")
+        styleForm.resize(256, 300)
+        self.verticalLayout_2 = QtWidgets.QVBoxLayout(styleForm)
         self.verticalLayout_2.setContentsMargins(0, -1, 0, 0)
         self.verticalLayout_2.setObjectName("verticalLayout_2")
         self.verticalLayout = QtWidgets.QVBoxLayout()
         self.verticalLayout.setObjectName("verticalLayout")
-        self.toolBox = QtWidgets.QToolBox(propertyForm)
+        self.toolBox = QtWidgets.QToolBox(styleForm)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Fixed, QtWidgets.QSizePolicy.Preferred)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
@@ -85,6 +85,13 @@ class Ui_propertyForm(object):
         self.horizontalLayout_3.setObjectName("horizontalLayout_3")
         self.gridLayout_3 = QtWidgets.QGridLayout()
         self.gridLayout_3.setObjectName("gridLayout_3")
+        self.label_3 = QtWidgets.QLabel(self.page_label)
+        self.label_3.setObjectName("label_3")
+        self.gridLayout_3.addWidget(self.label_3, 0, 0, 1, 1)
+        self.pushButton_content = QtWidgets.QPushButton(self.page_label)
+        self.pushButton_content.setMinimumSize(QtCore.QSize(0, 0))
+        self.pushButton_content.setObjectName("pushButton_content")
+        self.gridLayout_3.addWidget(self.pushButton_content, 0, 2, 1, 1)
         self.lineEdit_label_content = QtWidgets.QLineEdit(self.page_label)
         self.lineEdit_label_content.setEnabled(False)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Fixed)
@@ -94,38 +101,26 @@ class Ui_propertyForm(object):
         self.lineEdit_label_content.setSizePolicy(sizePolicy)
         self.lineEdit_label_content.setObjectName("lineEdit_label_content")
         self.gridLayout_3.addWidget(self.lineEdit_label_content, 0, 1, 1, 1)
-        self.label_3 = QtWidgets.QLabel(self.page_label)
-        self.label_3.setObjectName("label_3")
-        self.gridLayout_3.addWidget(self.label_3, 0, 0, 1, 1)
-        self.pushButton_content = QtWidgets.QPushButton(self.page_label)
-        self.pushButton_content.setMinimumSize(QtCore.QSize(0, 0))
-        self.pushButton_content.setObjectName("pushButton_content")
-        self.gridLayout_3.addWidget(self.pushButton_content, 0, 2, 1, 1)
-        self.gridLayout_3.setColumnStretch(1, 1)
         self.horizontalLayout_3.addLayout(self.gridLayout_3)
         self.toolBox.addItem(self.page_label, "")
         self.verticalLayout.addWidget(self.toolBox)
         self.verticalLayout_2.addLayout(self.verticalLayout)
 
-        self.retranslateUi(propertyForm)
-        self.toolBox.setCurrentIndex(0)
-        self.pushButton.clicked.connect(propertyForm.color_pallet)
-        self.pushButton_content.clicked.connect(propertyForm.set_content_enable)
-        self.horizontalSlider_thickness.sliderMoved['int'].connect(self.label_4.setNum)
-        self.lineEdit_label_content.returnPressed.connect(propertyForm.content_clicked)
-        QtCore.QMetaObject.connectSlotsByName(propertyForm)
+        self.retranslateUi(styleForm)
+        self.toolBox.setCurrentIndex(1)
+        QtCore.QMetaObject.connectSlotsByName(styleForm)
 
-    def retranslateUi(self, propertyForm):
+    def retranslateUi(self, styleForm):
         _translate = QtCore.QCoreApplication.translate
-        propertyForm.setWindowTitle(_translate("propertyForm", "Form"))
-        self.label.setText(_translate("propertyForm", "R,G,B"))
-        self.pushButton.setText(_translate("propertyForm", "调色板"))
-        self.toolBox.setItemText(self.toolBox.indexOf(self.page_color), _translate("propertyForm", "颜色"))
-        self.label_2.setText(_translate("propertyForm", "线条粗细"))
-        self.label_4.setText(_translate("propertyForm", "1"))
-        self.toolBox.setItemText(self.toolBox.indexOf(self.page_width), _translate("propertyForm", "大小"))
-        self.label_3.setText(_translate("propertyForm", "内容"))
-        self.pushButton_content.setText(_translate("propertyForm", "修改"))
-        self.toolBox.setItemText(self.toolBox.indexOf(self.page_label), _translate("propertyForm", "标签"))
+        styleForm.setWindowTitle(_translate("styleForm", "Form"))
+        self.label.setText(_translate("styleForm", "R,G,B"))
+        self.pushButton.setText(_translate("styleForm", "调色板"))
+        self.toolBox.setItemText(self.toolBox.indexOf(self.page_color), _translate("styleForm", "颜色"))
+        self.label_2.setText(_translate("styleForm", "线条粗细"))
+        self.label_4.setText(_translate("styleForm", "1"))
+        self.toolBox.setItemText(self.toolBox.indexOf(self.page_width), _translate("styleForm", "大小"))
+        self.label_3.setText(_translate("styleForm", "内容"))
+        self.pushButton_content.setText(_translate("styleForm", "修改"))
+        self.toolBox.setItemText(self.toolBox.indexOf(self.page_label), _translate("styleForm", "标签"))
 
 

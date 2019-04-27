@@ -1,12 +1,12 @@
 # -*- coding: utf-8 -*-
 
-from .UI_propertyForm import Ui_propertyForm
+from .UI_styleForm import Ui_styleForm
 from PyQt5.QtWidgets import QWidget, QColorDialog
 
 
-class propertyForm(QWidget, Ui_propertyForm):
+class styleForm(QWidget, Ui_styleForm):
     def __init__(self, parent=None):
-        super(propertyForm, self).__init__(parent)
+        super(styleForm, self).__init__(parent)
         self.setupUi(self)
 
     def color_pallet(self):
