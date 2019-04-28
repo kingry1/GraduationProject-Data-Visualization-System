@@ -8,6 +8,7 @@ class propertyForm(QWidget, Ui_propertyForm):
     def __init__(self, parent=None):
         super(propertyForm, self).__init__(parent)
         self.setupUi(self)
+        self.rgb = None
 
     def color_pallet(self):
         self.rgb = QColorDialog.getColor()

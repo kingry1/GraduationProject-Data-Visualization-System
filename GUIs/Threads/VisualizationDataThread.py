@@ -25,7 +25,7 @@ class VisualizationDataThread(QThread):
             sql_front = "SELECT "
             for zongzhou in self.vertical_axes:
                 if zongzhou == 'count(*)':
-                    sql_front = sql_front + ', '
+                    sql_front = sql_front + zongzhou + ', '
                 else:
                     sql_front = sql_front + "sum({})".format(zongzhou) + ', '
             sql_front = sql_front + self.horizontal_axes[0] + ', '

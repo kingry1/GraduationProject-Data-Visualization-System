@@ -78,6 +78,7 @@ class DataVisualizationWin(QMainWindow, Ui_DataVisualizationWin):
         return clicked_name
 
     def generateGraph(self):
+        self.get_custom_dic()
         # 新建线程获得数据
         self.getDataThread = VisualizationDataThread(conf=self.conf, table_name=self.table_name,
                                                      horizontal_axes=list(
@@ -130,3 +131,20 @@ class DataVisualizationWin(QMainWindow, Ui_DataVisualizationWin):
         if ok:
             self.mplwidget.save(image_name + '.png')
             QMessageBox.information(self, '', '保存成功！')
+
+    def get_custom_dic(self):
+        dic = {}
+        dic_property = {}
+        dic_style = {}
+        dic_property['line_color'] = self.widget_property.rgb
+        dic_property['line_width'] = self.widget_property.horizontalSlider_thickness.value()
+        dic_property['label_content'] = self.widget_property.lineEdit_label_content.text()
+        dic_style['title_color'] = self.widget_style.title_color
+        dic_style['title_content'] = self.widget_style.lineEdit_title_content.text()
+        dic_style['title_enabled'] = self.widget_style.comboBox_title_enable.currentText()
+        dic_style['legend_position'] = self.widget_style.comboBox_legend_position.currentText()
+        dic_style['legend_enabled'] = self.widget_style.comboBox_legend_enable.currentText()
+        dic_style['background_color'] = self.widget_style.background_color
+        dic['property'] = dic_property
+        dic['style'] = dic_style
+        print(dic)
