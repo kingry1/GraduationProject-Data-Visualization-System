@@ -8,15 +8,23 @@ class styleForm(QWidget, Ui_styleForm):
     def __init__(self, parent=None):
         super(styleForm, self).__init__(parent)
         self.setupUi(self)
+        self.title_color = None
+        self.background_color = None
 
-    def color_pallet(self):
-        self.rgb = QColorDialog.getColor()
-        r, g, b, a = self.rgb.getRgb()
+    def title_color_pallet(self):
+        self.title_color = QColorDialog.getColor()
+        r, g, b, a = self.title_color.getRgb()
         rgb_string = "{}, {}, {}, {}".format(r, g, b, a)
-        self.lineEdit_color.setText(rgb_string)
+        self.lineEdit_title_color.setText(rgb_string)
 
-    def set_content_enable(self):
-        self.lineEdit_label_content.setEnabled(True)
+    def background_color_pallet(self):
+        self.background_color = QColorDialog.getColor()
+        r, g, b, a = self.background_color.getRgb()
+        rgb_string = "{}, {}, {}, {}".format(r, g, b, a)
+        self.lineEdit_background_color.setText(rgb_string)
 
-    def content_clicked(self):
-        self.lineEdit_label_content.setEnabled(False)
+    def set_title_content_enable(self):
+        self.lineEdit_title_content.setEnabled(True)
+
+    def title_content_clicked(self):
+        self.lineEdit_title_content.setEnabled(False)
