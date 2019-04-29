@@ -62,5 +62,4 @@ class DbsTableSelect(QWidget, Ui_DbsTableSelect):
         self.tableNamesWidget.setEnabled(True)
 
     def chooseClicked(self):
-        print(self.tableNamesWidget.currentItem().text())
         self.visualizationSignal.emit(self.conf, self.tableNamesWidget.currentItem().text())

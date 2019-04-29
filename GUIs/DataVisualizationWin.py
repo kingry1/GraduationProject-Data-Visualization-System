@@ -29,6 +29,7 @@ class DataVisualizationWin(QMainWindow, Ui_DataVisualizationWin):
         self.clicked_graph_type_label = {}
         self.horizontal_param = {}
         self.vertical_param = {}
+        self.graph_conf = None
 
     def backClicked(self):
         self.backSignal.emit(self.conf)
@@ -78,7 +79,6 @@ class DataVisualizationWin(QMainWindow, Ui_DataVisualizationWin):
         return clicked_name
 
     def generateGraph(self):
-        self.get_custom_dic()
         # 新建线程获得数据
         self.getDataThread = VisualizationDataThread(conf=self.conf, table_name=self.table_name,
                                                      horizontal_axes=list(
@@ -90,9 +90,11 @@ class DataVisualizationWin(QMainWindow, Ui_DataVisualizationWin):
         self.getDataThread.start()
 
     def generateGraphFinish(self):
+        self.graph_conf = self.get_custom_dic()
         self.mplwidget.plot(horizontal_axes=list(self.horizontal_param.keys()),
                             vertical_axes=list(self.vertical_param.keys()),
-                            graph_type=self.get_clicked_graph_name(), dataframe=GL.visualization_df)
+                            graph_type=self.get_clicked_graph_name(), dataframe=GL.visualization_df,
+                            graph_conf=self.graph_conf)
         self.saveButton.setEnabled(True)
 
     def generateGraphFailed(self, exception_message):
@@ -147,4 +149,5 @@ class DataVisualizationWin(QMainWindow, Ui_DataVisualizationWin):
         dic_style['background_color'] = self.widget_style.background_color
         dic['property'] = dic_property
         dic['style'] = dic_style
-        print(dic)
+        # {'property': {'line_color': <PyQt5.QtGui.QColor object at 0x157d12828>, 'line_width': 1, 'label_content': ''}, 'style': {'title_color': None, 'title_content': '', 'title_enabled': '是', 'legend_position': '右', 'legend_enabled': '是', 'background_color': None}}
+        return dic

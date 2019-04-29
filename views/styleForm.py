@@ -15,13 +15,13 @@ class styleForm(QWidget, Ui_styleForm):
         self.title_color = QColorDialog.getColor()
         r, g, b, a = self.title_color.getRgb()
         rgb_string = "{}, {}, {}, {}".format(r, g, b, a)
-        self.lineEdit_title_color.setText(rgb_string)
+        self.lineEdit_title_color.setStyleSheet('background-color: rgba({})'.format(rgb_string))
 
     def background_color_pallet(self):
         self.background_color = QColorDialog.getColor()
         r, g, b, a = self.background_color.getRgb()
         rgb_string = "{}, {}, {}, {}".format(r, g, b, a)
-        self.lineEdit_background_color.setText(rgb_string)
+        self.lineEdit_background_color.setStyleSheet('background-color: rgba({})'.format(rgb_string))
 
     def set_title_content_enable(self):
         self.lineEdit_title_content.setEnabled(True)

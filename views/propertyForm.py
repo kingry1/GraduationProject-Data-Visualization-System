@@ -14,7 +14,7 @@ class propertyForm(QWidget, Ui_propertyForm):
         self.rgb = QColorDialog.getColor()
         r, g, b, a = self.rgb.getRgb()
         rgb_string = "{}, {}, {}, {}".format(r, g, b, a)
-        self.lineEdit_color.setText(rgb_string)
+        self.lineEdit_color.setStyleSheet('background-color: rgba({})'.format(rgb_string))
 
     def set_content_enable(self):
         self.lineEdit_label_content.setEnabled(True)

@@ -120,6 +120,9 @@
                <pointsize>9</pointsize>
               </font>
              </property>
+             <property name="styleSheet">
+              <string notr="true">background-color: rgba(255, 255, 255, 255)</string>
+             </property>
             </widget>
            </item>
            <item row="0" column="0">
@@ -133,12 +136,12 @@
             <widget class="QComboBox" name="comboBox_title_enable">
              <item>
               <property name="text">
-               <string>是</string>
+               <string>yes</string>
               </property>
              </item>
              <item>
               <property name="text">
-               <string>否</string>
+               <string>no</string>
               </property>
              </item>
             </widget>
@@ -180,12 +183,12 @@
             <widget class="QComboBox" name="comboBox_legend_enable">
              <item>
               <property name="text">
-               <string>是</string>
+               <string>yes</string>
               </property>
              </item>
              <item>
               <property name="text">
-               <string>否</string>
+               <string>no</string>
               </property>
              </item>
             </widget>
@@ -194,12 +197,12 @@
             <widget class="QComboBox" name="comboBox_legend_position">
              <item>
               <property name="text">
-               <string>右</string>
+               <string>upper right</string>
               </property>
              </item>
              <item>
               <property name="text">
-               <string>左</string>
+               <string>upper left</string>
               </property>
              </item>
             </widget>
@@ -258,6 +261,9 @@
               <font>
                <pointsize>9</pointsize>
               </font>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">background-color: rgba(255, 255, 255, 255)</string>
              </property>
             </widget>
            </item>
