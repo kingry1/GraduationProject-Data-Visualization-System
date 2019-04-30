@@ -25,13 +25,22 @@ class MplWidget(QWidget):
         if graph_type == 'line_chart':
             # dataframe['count(*)'].plot(kind='line', ax=ax)
             dataframe.set_index([horizontal for horizontal in horizontal_axes], inplace=True)
-            dataframe.plot.line(ax=ax, title=None if graph_conf['style']['title_enabled'] == 'no' else graph_conf['style']['title_content'], legend=False if graph_conf['style']['legend_enabled'] == 'no' else True)
+            dataframe.plot.line(ax=ax, linewidth=5, color=graph_conf['property']['line_color'].name())
+            ax.set_title(label='' if graph_conf['style']['title_enabled'] == 'no' else graph_conf['style']['title_content'], color=graph_conf['style']['title_color'].name())
+            ax.patch.set_facecolor(graph_conf['style']['background_color'].name())
         elif graph_type == 'histogram':
-            dataframe.plot.hist(ax=ax, title=None if graph_conf['style']['title_enabled'] == 'no' else graph_conf['style']['title_content'], legend=False if graph_conf['style']['legend_enabled'] == 'no' else True)
+            dataframe.plot.hist(ax=ax, color=graph_conf['property']['line_color'].name())
+            ax.set_title(label='' if graph_conf['style']['title_enabled'] == 'no' else graph_conf['style']['title_content'], color=graph_conf['style']['title_color'].name())
+            ax.patch.set_facecolor(graph_conf['style']['background_color'].name())
         elif graph_type == 'pie_chart':
             dataframe.set_index([vertical for vertical in vertical_axes], inplace=True)
-            dataframe.plot.pie(ax=ax, subplots=True, title=None if graph_conf['style']['title_enabled'] == 'no' else graph_conf['style']['title_content'], legend=False if graph_conf['style']['legend_enabled'] == 'no' else True)
+            dataframe.plot.pie(ax=ax, subplots=True, color=graph_conf['property']['line_color'].name())
+            ax.set_title(label='' if graph_conf['style']['title_enabled'] == 'no' else graph_conf['style']['title_content'], color=graph_conf['style']['title_color'].name())
+            ax.patch.set_facecolor(graph_conf['style']['background_color'].name())
         ax.legend(loc=graph_conf['style']['legend_position'])
+        # legend
+        if graph_conf['style']['legend_enabled'] == 'no':
+            ax.legend_.remove()
         self.canvas.draw()
 
     def save(self, filename):

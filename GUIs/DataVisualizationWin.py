@@ -96,6 +96,7 @@ class DataVisualizationWin(QMainWindow, Ui_DataVisualizationWin):
                             graph_type=self.get_clicked_graph_name(), dataframe=GL.visualization_df,
                             graph_conf=self.graph_conf)
         self.saveButton.setEnabled(True)
+        self.statusbar.showMessage('')
 
     def generateGraphFailed(self, exception_message):
         self.statusbar.showMessage(exception_message)
