@@ -23,13 +23,12 @@ class MplWidget(QWidget):
         # ax = self.figure.add_axes([0.1, 0.1, 0.8, 0.8])
         ax = self.figure.add_subplot(1, 1, 1)
         if graph_type == 'line_chart':
-            # dataframe['count(*)'].plot(kind='line', ax=ax)
             dataframe.set_index([horizontal for horizontal in horizontal_axes], inplace=True)
-            dataframe.plot.line(ax=ax, linewidth=5, color=graph_conf['property']['line_color'].name())
+            dataframe.plot.line(ax=ax, linewidth=graph_conf['property']['line_width'], color=graph_conf['property']['line_color'].name())
             ax.set_title(label='' if graph_conf['style']['title_enabled'] == 'no' else graph_conf['style']['title_content'], color=graph_conf['style']['title_color'].name())
             ax.patch.set_facecolor(graph_conf['style']['background_color'].name())
         elif graph_type == 'histogram':
-            dataframe.plot.hist(ax=ax, color=graph_conf['property']['line_color'].name())
+            dataframe.plot.hist(ax=ax, color=graph_conf['property']['line_color'].name(), width=graph_conf['property']['line_width'])
             ax.set_title(label='' if graph_conf['style']['title_enabled'] == 'no' else graph_conf['style']['title_content'], color=graph_conf['style']['title_color'].name())
             ax.patch.set_facecolor(graph_conf['style']['background_color'].name())
         elif graph_type == 'pie_chart':

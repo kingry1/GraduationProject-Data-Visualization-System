@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 from views.UI_DataVisualizationWin import Ui_DataVisualizationWin
-from PyQt5.QtWidgets import QMainWindow, QInputDialog, QMessageBox
+from PyQt5.QtWidgets import QMainWindow, QInputDialog, QMessageBox, QDesktopWidget
 from PyQt5.QtCore import pyqtSignal, Qt
 from libs import GL
 from pandas.api.types import *
@@ -15,10 +15,9 @@ class DataVisualizationWin(QMainWindow, Ui_DataVisualizationWin):
     def __init__(self, conf, table_name, parent=None):
         super(DataVisualizationWin, self).__init__(parent)
         self.setupUi(self)
+        self.center()
         self.conf = conf
         self.table_name = table_name
-        print('conf:', self.conf)
-        print('table_name:', self.table_name)
         for index in list(GL.tables_df.dtypes.index):
             data_type = GL.tables_df.dtypes[index]
             if is_object_dtype(data_type) or is_datetime64_any_dtype(data_type):
@@ -30,6 +29,11 @@ class DataVisualizationWin(QMainWindow, Ui_DataVisualizationWin):
         self.horizontal_param = {}
         self.vertical_param = {}
         self.graph_conf = None
+
+    def center(self):  # 主窗口居中显示函数
+        screen = QDesktopWidget().screenGeometry()
+        size = self.geometry()
+        self.move((screen.width() - size.width()) / 2, (screen.height() - size.height()) / 2)
 
     def backClicked(self):
         self.backSignal.emit(self.conf)

@@ -2,7 +2,7 @@
 
 from views.UI_DbsTableSelect import Ui_DbsTableSelect
 from PyQt5 import QtCore
-from PyQt5.QtWidgets import QWidget, QListWidgetItem
+from PyQt5.QtWidgets import QWidget, QListWidgetItem, QDesktopWidget
 from PyQt5.QtCore import pyqtSignal
 from libs.DdbsConnector import DbsConnector as dbsConnector
 from GUIs.Threads.RfTableListsThread import RfTableListsThread
@@ -18,10 +18,16 @@ class DbsTableSelect(QWidget, Ui_DbsTableSelect):
     def __init__(self, conf, parent=None):
         super(DbsTableSelect, self).__init__(parent)
         self.setupUi(self)
+        self.center()
         self.conf = conf
         self.mydb = dbsConnector(self.conf)
         self.tables_raw = None
         self.getTableNames()
+
+    def center(self):  # 主窗口居中显示函数
+        screen = QDesktopWidget().screenGeometry()
+        size = self.geometry()
+        self.move((screen.width() - size.width()) / 2, (screen.height() - size.height()) / 2)
 
     def getTableNames(self):
         self.tableNamesWidget.clear()

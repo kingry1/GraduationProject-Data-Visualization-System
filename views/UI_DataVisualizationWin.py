@@ -12,7 +12,7 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Ui_DataVisualizationWin(object):
     def setupUi(self, DataVisualizationWin):
         DataVisualizationWin.setObjectName("DataVisualizationWin")
-        DataVisualizationWin.resize(926, 689)
+        DataVisualizationWin.resize(1024, 768)
         icon = QtGui.QIcon()
         icon.addPixmap(QtGui.QPixmap("icon/icon.ico"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         DataVisualizationWin.setWindowIcon(icon)
@@ -368,7 +368,7 @@ class Ui_DataVisualizationWin(object):
         self.horizontalLayout_win.addLayout(self.horizontalLayout_main)
         DataVisualizationWin.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(DataVisualizationWin)
-        self.menubar.setGeometry(QtCore.QRect(0, 0, 926, 22))
+        self.menubar.setGeometry(QtCore.QRect(0, 0, 1024, 22))
         self.menubar.setObjectName("menubar")
         DataVisualizationWin.setMenuBar(self.menubar)
         self.statusbar = QtWidgets.QStatusBar(DataVisualizationWin)

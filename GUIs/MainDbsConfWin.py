@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-from PyQt5.QtWidgets import QMainWindow, QListWidgetItem, QInputDialog, QFileDialog
+from PyQt5.QtWidgets import QMainWindow, QListWidgetItem, QInputDialog, QFileDialog, QDesktopWidget
 from PyQt5.QtGui import QRegExpValidator, QIntValidator
 from PyQt5.QtCore import QRegExp, pyqtSignal
 from views.UI_MainDbsConfWin import Ui_MainDbsConfWin
@@ -15,6 +15,7 @@ class MainDbsConfWin(QMainWindow, Ui_MainDbsConfWin):
     def __init__(self, parent=None):
         super(MainDbsConfWin, self).__init__(parent)
         self.setupUi(self)
+        self.center()
         if platform.system() == "Windows":
             self.accessButton.setEnabled(True)
 
@@ -37,6 +38,11 @@ class MainDbsConfWin(QMainWindow, Ui_MainDbsConfWin):
         userRegexp = QRegExp("^[a-zA-Z0-9_-]{1,}$")
         userValidator = QRegExpValidator(userRegexp)
         self.userLine.setValidator(userValidator)
+
+    def center(self):  # 主窗口居中显示函数
+        screen = QDesktopWidget().screenGeometry()
+        size = self.geometry()
+        self.move((screen.width() - size.width()) / 2, (screen.height() - size.height()) / 2)
 
     def listClicked(self, clicked_item):
         self.clickedDatabaseItem = clicked_item
