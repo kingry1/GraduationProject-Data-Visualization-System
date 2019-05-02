@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 
 import mysql.connector
+import psycopg2
 import pandas as pd
 import platform
 if platform.system() == "Windows":
@@ -32,7 +33,17 @@ class DbsConnector:
                 connection = pyodbc.connect('DRIVER={};DBQ={}'.format(DRV, MDB))
             except Exception as e:
                 print(e)
-
+        elif self.conf['type'] == 'postgresql':
+            try:
+                connection = psycopg2.connect(
+                    host=self.conf['host'],
+                    user=self.conf['user'],
+                    password=self.conf['password'],
+                    port=self.conf['port'],
+                    dbname=self.conf['name']
+                )
+            except psycopg2.DatabaseError as err:
+                print(err)
         return connection
 
     def read_sql(self, sql_cmd):
@@ -52,6 +63,8 @@ class DbsConnector:
             myCursor.close()
         except mysql.connector.Error as err:
             print(err)
+        except psycopg2.DatabaseError as err:
+            print(err)
 
         return results
 
@@ -66,6 +79,11 @@ class DbsConnector:
             results_tuple = self.driver_sql(sql_cmd=sql)
             results = [result_tuple[0] for result_tuple in results_tuple]
             return results
+        elif self.conf['type'] == 'postgresql':
+            sql = "SELECT tablename FROM pg_tables WHERE schemaname = 'public';"
+            results_tuple = self.driver_sql(sql_cmd=sql)
+            results = [result_tuple[0] for result_tuple in results_tuple]
+            return results
 
     def get_table_content(self, table_name):
         df = None
@@ -74,6 +92,9 @@ class DbsConnector:
             df = self.read_sql(sql_cmd=sql)
         elif self.conf['type'] == 'mysql':
             sql = "SELECT * FROM {0}.{1} LIMIT 1000;".format(self.conf['name'], table_name)
+            df = self.read_sql(sql_cmd=sql)
+        elif self.conf['type'] == 'postgresql':
+            sql = "SELECT * FROM {0} LIMIT 1000;".format(table_name)
             df = self.read_sql(sql_cmd=sql)
         return df
 
@@ -97,9 +118,20 @@ class DbsConnector:
                 DRV = '{Microsoft Access Driver (*.mdb, *.accdb)}'
                 connection = pyodbc.connect('DRIVER={};DBQ={}'.format(DRV, MDB))
                 connection.close()
+            elif conf['type'] == 'postgresql':
+                connection = psycopg2.connect(
+                    host=conf['host'],
+                    user=conf['user'],
+                    password=conf['password'],
+                    port=conf['port'],
+                    connect_timeout=1000
+                )
+                connection.close()
         except mysql.connector.Error as err:
             raise err
         except pyodbc.Error as err:
+            raise err
+        except psycopg2.DatabaseError as err:
             raise err
         except Exception as err:
             raise err

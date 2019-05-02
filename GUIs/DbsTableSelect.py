@@ -20,7 +20,6 @@ class DbsTableSelect(QWidget, Ui_DbsTableSelect):
         self.setupUi(self)
         self.center()
         self.conf = conf
-        self.mydb = dbsConnector(self.conf)
         self.tables_raw = None
         self.getTableNames()
 
