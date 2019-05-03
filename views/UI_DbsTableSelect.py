@@ -115,11 +115,11 @@ class Ui_DbsTableSelect(object):
 
     def retranslateUi(self, DbsTableSelect):
         _translate = QtCore.QCoreApplication.translate
-        DbsTableSelect.setWindowTitle(_translate("DbsTableSelect", "数据表选择"))
-        self.label.setText(_translate("DbsTableSelect", "选择数据表"))
-        self.refreshButton.setText(_translate("DbsTableSelect", "刷新"))
-        self.chooseButton.setText(_translate("DbsTableSelect", "选择"))
-        self.label_2.setText(_translate("DbsTableSelect", "表数据预览"))
-        self.pushButton.setText(_translate("DbsTableSelect", "返回"))
+        DbsTableSelect.setWindowTitle(_translate("DbsTableSelect", "Choose Tables"))
+        self.label.setText(_translate("DbsTableSelect", "Select Tables"))
+        self.refreshButton.setText(_translate("DbsTableSelect", "Refresh"))
+        self.chooseButton.setText(_translate("DbsTableSelect", "Choose"))
+        self.label_2.setText(_translate("DbsTableSelect", "Table Content Preview"))
+        self.pushButton.setText(_translate("DbsTableSelect", "Back"))
 
 

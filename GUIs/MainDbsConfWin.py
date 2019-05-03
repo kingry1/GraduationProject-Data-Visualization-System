@@ -26,7 +26,7 @@ class MainDbsConfWin(QMainWindow, Ui_MainDbsConfWin):
             item = QListWidgetItem()
             item.setText(dbsName)
             self.listWidget.addItem(item)
-        self.typeComboBox.addItem('请选择数据库类型')
+        self.typeComboBox.addItem('Choose Database Type')
 
         # add validator
         hostRegexp = QRegExp(
@@ -62,7 +62,7 @@ class MainDbsConfWin(QMainWindow, Ui_MainDbsConfWin):
 
     def listDoubleClicked(self, clicked_item):
         oldName = clicked_item.text()
-        newName, ok = QInputDialog.getText(self, '修改数据库名称', '输入数据库名称                  ', text=clicked_item.text())
+        newName, ok = QInputDialog.getText(self, 'Modify Database Name', 'Input Database Name                  ', text=clicked_item.text())
         if ok:
             # check first
             self.clickedDatabaseItem = clicked_item
@@ -83,7 +83,7 @@ class MainDbsConfWin(QMainWindow, Ui_MainDbsConfWin):
         self.callDbsTableSignal.emit(self.dbsDic[self.clickedDatabaseName])
 
     def addClicked(self):
-        dbsName, ok = QInputDialog.getText(self, '新建数据库', '输入数据库名称                  ')
+        dbsName, ok = QInputDialog.getText(self, 'New Database', 'Input Database Name                  ')
         if ok:
             self.listWidget.addItem(dbsName)
             GL.new_dbs(dbsName=dbsName)
@@ -102,7 +102,7 @@ class MainDbsConfWin(QMainWindow, Ui_MainDbsConfWin):
         self.passwordLine.setText('')
         self.databaseNameLine.setText('')
         self.typeComboBox.clear()
-        self.typeComboBox.addItem('请选择数据库类型')
+        self.typeComboBox.addItem('Choose Database Type')
         self.set_button_status(False)
         GL.save_dbs()
 
@@ -138,7 +138,7 @@ class MainDbsConfWin(QMainWindow, Ui_MainDbsConfWin):
 
     def openAccess(self):
         file_path, file_type = QFileDialog.getOpenFileName(self,
-                                                                "选取Access文件",
+                                                                "Choose Access File",
                                                                 "/",  # 起始路径
                                                                 "Access Files (*.mdb *.accdb)")
         if file_path == "":

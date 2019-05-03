@@ -3,8 +3,6 @@
 from PyQt5.QtWidgets import *
 from matplotlib.backends.backend_qt5agg import FigureCanvasQTAgg as FigureCanvas
 import matplotlib.pyplot as plt
-import pandas as pd
-import numpy as np
 
 
 class MplWidget(QWidget):

@@ -65,14 +65,14 @@ class DataVisualizationWin(QMainWindow, Ui_DataVisualizationWin):
         clicked_item.click()
         self.generateButton.setEnabled(True)
         if clicked_item_name == 'label_histogram':
-            self.horizontal_label.setText('指标')
-            self.vertical_label.setText('分组')
+            self.horizontal_label.setText('Index')
+            self.vertical_label.setText('Group')
         elif clicked_item_name == 'label_line_chart':
-            self.horizontal_label.setText('横轴')
-            self.vertical_label.setText('纵轴')
+            self.horizontal_label.setText('Horizontal Axes')
+            self.vertical_label.setText('Vertical Axes')
         elif clicked_item_name == 'label_pie_chart':
-            self.horizontal_label.setText('角度')
-            self.vertical_label.setText('颜色')
+            self.horizontal_label.setText('Angle')
+            self.vertical_label.setText('Color')
 
     def get_clicked_graph_name(self):
         clicked_name = None
@@ -134,10 +134,10 @@ class DataVisualizationWin(QMainWindow, Ui_DataVisualizationWin):
             return 'indicator'
 
     def saveGraph(self):
-        image_name, ok = QInputDialog.getText(self, '保存图片', '输入图片名称               ')
+        image_name, ok = QInputDialog.getText(self, 'Save', 'Input Image Name               ')
         if ok:
             self.mplwidget.save(image_name + '.png')
-            QMessageBox.information(self, '', '保存成功！')
+            QMessageBox.information(self, '', 'Save Successfully！')
 
     def get_custom_dic(self):
         dic = {}

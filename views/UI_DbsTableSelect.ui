@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>数据表选择</string>
+   <string>Choose Tables</string>
   </property>
   <property name="windowIcon">
    <iconset>
@@ -34,7 +34,7 @@
             </font>
            </property>
            <property name="text">
-            <string>选择数据表</string>
+            <string>Select Tables</string>
            </property>
           </widget>
          </item>
@@ -73,7 +73,7 @@
               </font>
              </property>
              <property name="text">
-              <string>刷新</string>
+              <string>Refresh</string>
              </property>
             </widget>
            </item>
@@ -90,7 +90,7 @@
               </font>
              </property>
              <property name="text">
-              <string>选择</string>
+              <string>Choose</string>
              </property>
             </widget>
            </item>
@@ -130,7 +130,7 @@
             </font>
            </property>
            <property name="text">
-            <string>表数据预览</string>
+            <string>Table Content Preview</string>
            </property>
           </widget>
          </item>
@@ -180,7 +180,7 @@
           </font>
          </property>
          <property name="text">
-          <string>返回</string>
+          <string>Back</string>
          </property>
         </widget>
        </item>

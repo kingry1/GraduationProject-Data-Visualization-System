@@ -54,11 +54,11 @@
           <x>0</x>
           <y>0</y>
           <width>250</width>
-          <height>175</height>
+          <height>184</height>
          </rect>
         </property>
         <attribute name="label">
-         <string>颜色</string>
+         <string>Color</string>
         </attribute>
         <layout class="QHBoxLayout" name="horizontalLayout">
          <item>
@@ -100,7 +100,7 @@
               </size>
              </property>
              <property name="text">
-              <string>调色板</string>
+              <string>Pallet</string>
              </property>
             </widget>
            </item>
@@ -114,11 +114,11 @@
           <x>0</x>
           <y>0</y>
           <width>250</width>
-          <height>175</height>
+          <height>184</height>
          </rect>
         </property>
         <attribute name="label">
-         <string>大小</string>
+         <string>Width</string>
         </attribute>
         <layout class="QHBoxLayout" name="horizontalLayout_2">
          <item>
@@ -139,7 +139,7 @@
            <item row="0" column="0">
             <widget class="QLabel" name="label_2">
              <property name="text">
-              <string>线条粗细</string>
+              <string>Line Width</string>
              </property>
             </widget>
            </item>
@@ -166,11 +166,11 @@
           <x>0</x>
           <y>0</y>
           <width>250</width>
-          <height>175</height>
+          <height>184</height>
          </rect>
         </property>
         <attribute name="label">
-         <string>标签</string>
+         <string>Label</string>
         </attribute>
         <layout class="QHBoxLayout" name="horizontalLayout_3">
          <item>
@@ -191,7 +191,7 @@
            <item row="0" column="0">
             <widget class="QLabel" name="label_3">
              <property name="text">
-              <string>内容</string>
+              <string>Content</string>
              </property>
             </widget>
            </item>
@@ -204,7 +204,7 @@
               </size>
              </property>
              <property name="text">
-              <string>修改</string>
+              <string>Modify</string>
              </property>
             </widget>
            </item>

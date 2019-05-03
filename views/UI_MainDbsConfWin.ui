@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>数据库配置</string>
+   <string>Database Configuration</string>
   </property>
   <property name="windowIcon">
    <iconset>
@@ -82,7 +82,7 @@
            </font>
           </property>
           <property name="text">
-           <string>数据库</string>
+           <string>Database</string>
           </property>
          </widget>
         </item>
@@ -105,7 +105,7 @@
            </font>
           </property>
           <property name="text">
-           <string>编辑</string>
+           <string>Edit</string>
           </property>
          </widget>
         </item>
@@ -128,7 +128,7 @@
            </font>
           </property>
           <property name="text">
-           <string>删除</string>
+           <string>Delete</string>
           </property>
          </widget>
         </item>
@@ -183,7 +183,7 @@
            </font>
           </property>
           <property name="text">
-           <string>连接</string>
+           <string>Connect</string>
           </property>
          </widget>
         </item>
@@ -197,7 +197,7 @@
            </font>
           </property>
           <property name="text">
-           <string>添加</string>
+           <string>Add</string>
           </property>
          </widget>
         </item>
@@ -230,7 +230,7 @@
            </font>
           </property>
           <property name="text">
-           <string>打开Access文件</string>
+           <string>Open Access File</string>
           </property>
          </widget>
         </item>

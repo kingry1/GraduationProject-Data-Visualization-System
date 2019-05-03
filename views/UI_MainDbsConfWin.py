@@ -222,13 +222,13 @@ class Ui_MainDbsConfWin(object):
 
     def retranslateUi(self, MainDbsConfWin):
         _translate = QtCore.QCoreApplication.translate
-        MainDbsConfWin.setWindowTitle(_translate("MainDbsConfWin", "数据库配置"))
-        self.title.setText(_translate("MainDbsConfWin", "数据库"))
-        self.editButton.setText(_translate("MainDbsConfWin", "编辑"))
-        self.deleteButton.setText(_translate("MainDbsConfWin", "删除"))
-        self.connectButton.setText(_translate("MainDbsConfWin", "连接"))
-        self.addButton.setText(_translate("MainDbsConfWin", "添加"))
-        self.accessButton.setText(_translate("MainDbsConfWin", "打开Access文件"))
+        MainDbsConfWin.setWindowTitle(_translate("MainDbsConfWin", "Database Configuration"))
+        self.title.setText(_translate("MainDbsConfWin", "Database"))
+        self.editButton.setText(_translate("MainDbsConfWin", "Edit"))
+        self.deleteButton.setText(_translate("MainDbsConfWin", "Delete"))
+        self.connectButton.setText(_translate("MainDbsConfWin", "Connect"))
+        self.addButton.setText(_translate("MainDbsConfWin", "Add"))
+        self.accessButton.setText(_translate("MainDbsConfWin", "Open Access File"))
         self.label.setText(_translate("MainDbsConfWin", "DatabaseName"))
         self.userLabel.setText(_translate("MainDbsConfWin", "User"))
         self.hostLabel.setText(_translate("MainDbsConfWin", "Host"))

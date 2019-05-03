@@ -4,7 +4,6 @@ from views.UI_DbsTableSelect import Ui_DbsTableSelect
 from PyQt5 import QtCore
 from PyQt5.QtWidgets import QWidget, QListWidgetItem, QDesktopWidget
 from PyQt5.QtCore import pyqtSignal
-from libs.DdbsConnector import DbsConnector as dbsConnector
 from GUIs.Threads.RfTableListsThread import RfTableListsThread
 from GUIs.Threads.ShowTablesThread import ShowTablesThread
 from libs.PandasModel import PandasModel
@@ -60,7 +59,7 @@ class DbsTableSelect(QWidget, Ui_DbsTableSelect):
         self.tableNamesWidget.setEnabled(False)
         refresh_item = QListWidgetItem()
         refresh_item.setFlags(QtCore.Qt.NoItemFlags)
-        refresh_item.setText("正在刷新...")
+        refresh_item.setText("Refreshing...")
         self.tableNamesWidget.addItem(refresh_item)
         # 多线程，获取table names
         self.getTableNames()

@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>数据可视化</string>
+   <string>Data Visualisation</string>
   </property>
   <property name="windowIcon">
    <iconset>
@@ -38,7 +38,7 @@
              </font>
             </property>
             <property name="text">
-             <string>表名称</string>
+             <string>Fields</string>
             </property>
            </widget>
           </item>
@@ -73,7 +73,7 @@
                </font>
               </property>
               <property name="text">
-               <string>维度</string>
+               <string>Dimension</string>
               </property>
              </widget>
             </item>
@@ -132,7 +132,7 @@
                </font>
               </property>
               <property name="text">
-               <string>指标</string>
+               <string>Indicator</string>
               </property>
              </widget>
             </item>
@@ -176,7 +176,7 @@
                </font>
               </property>
               <property name="text">
-               <string>图表类型</string>
+               <string>Chart Type</string>
               </property>
              </widget>
             </item>
@@ -440,7 +440,7 @@
                </font>
               </property>
               <property name="currentIndex">
-               <number>0</number>
+               <number>1</number>
               </property>
               <widget class="QWidget" name="property_tab">
                <property name="sizePolicy">
@@ -450,7 +450,7 @@
                 </sizepolicy>
                </property>
                <attribute name="title">
-                <string>图形属性</string>
+                <string>Property</string>
                </attribute>
                <layout class="QVBoxLayout" name="verticalLayout_5">
                 <property name="leftMargin">
@@ -491,7 +491,7 @@
               </widget>
               <widget class="QWidget" name="style_tab">
                <attribute name="title">
-                <string>组件样式</string>
+                <string>Style</string>
                </attribute>
                <layout class="QHBoxLayout" name="horizontalLayout_6">
                 <property name="leftMargin">
@@ -543,8 +543,26 @@
             <property name="rightMargin">
              <number>5</number>
             </property>
-            <item>
+            <item alignment="Qt::AlignHCenter">
              <widget class="QLabel" name="horizontal_label">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="minimumSize">
+               <size>
+                <width>105</width>
+                <height>0</height>
+               </size>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>105</width>
+                <height>16777215</height>
+               </size>
+              </property>
               <property name="font">
                <font>
                 <family>微软雅黑</family>
@@ -553,7 +571,10 @@
                </font>
               </property>
               <property name="text">
-               <string>横轴</string>
+               <string>Horizontal Axes</string>
+              </property>
+              <property name="alignment">
+               <set>Qt::AlignCenter</set>
               </property>
              </widget>
             </item>
@@ -592,8 +613,26 @@
             <property name="rightMargin">
              <number>5</number>
             </property>
-            <item>
+            <item alignment="Qt::AlignHCenter">
              <widget class="QLabel" name="vertical_label">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="minimumSize">
+               <size>
+                <width>105</width>
+                <height>0</height>
+               </size>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>105</width>
+                <height>16777215</height>
+               </size>
+              </property>
               <property name="font">
                <font>
                 <family>微软雅黑</family>
@@ -602,7 +641,10 @@
                </font>
               </property>
               <property name="text">
-               <string>纵轴</string>
+               <string>Vertical Axes</string>
+              </property>
+              <property name="alignment">
+               <set>Qt::AlignCenter</set>
               </property>
              </widget>
             </item>
@@ -677,7 +719,7 @@
                </font>
               </property>
               <property name="text">
-               <string>生成图表</string>
+               <string>Generate Chart</string>
               </property>
              </widget>
             </item>
@@ -694,7 +736,7 @@
                </font>
               </property>
               <property name="text">
-               <string>保存图片</string>
+               <string>Save Picture</string>
               </property>
              </widget>
             </item>
@@ -749,7 +791,7 @@
            </font>
           </property>
           <property name="text">
-           <string>返回</string>
+           <string>Back</string>
           </property>
          </widget>
         </item>
