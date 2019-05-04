@@ -54,7 +54,6 @@ class MainDbsConfWin(QMainWindow, Ui_MainDbsConfWin):
         self.databaseNameLine.setText(self.dbsDic[self.clickedDatabaseName]['name'])
         self.typeComboBox.clear()
         self.typeComboBox.addItems(GL.dbsTypes)
-        self.typeComboBox.addItems(GL.dbsTypes)
         index = self.typeComboBox.findText(self.dbsDic[self.clickedDatabaseName]['type'])
         self.typeComboBox.setCurrentIndex(index)
 
