@@ -120,9 +120,6 @@
                <pointsize>9</pointsize>
               </font>
              </property>
-             <property name="styleSheet">
-              <string notr="true">background-color: rgba(255, 255, 255, 255)</string>
-             </property>
             </widget>
            </item>
            <item row="0" column="0">
@@ -155,8 +152,8 @@
          <rect>
           <x>0</x>
           <y>0</y>
-          <width>201</width>
-          <height>80</height>
+          <width>250</width>
+          <height>184</height>
          </rect>
         </property>
         <attribute name="label">
@@ -261,9 +258,6 @@
               <font>
                <pointsize>9</pointsize>
               </font>
-             </property>
-             <property name="styleSheet">
-              <string notr="true">background-color: rgba(255, 255, 255, 255)</string>
              </property>
             </widget>
            </item>

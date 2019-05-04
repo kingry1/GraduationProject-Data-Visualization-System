@@ -9,8 +9,12 @@ class styleForm(QWidget, Ui_styleForm):
     def __init__(self, parent=None):
         super(styleForm, self).__init__(parent)
         self.setupUi(self)
-        self.title_color = QColor(0, 255, 255)
+        self.title_color = QColor(100, 100, 255)
         self.background_color = QColor(255, 255, 255)
+        self.lineEdit_title_color.setStyleSheet(
+            'background-color: rgba({})'.format(self.get_rgb_string(self.title_color)))
+        self.lineEdit_background_color.setStyleSheet(
+            'background-color: rgba({})'.format(self.get_rgb_string(self.background_color)))
 
     def title_color_pallet(self):
         self.title_color = QColorDialog.getColor()
@@ -20,7 +24,8 @@ class styleForm(QWidget, Ui_styleForm):
     def background_color_pallet(self):
         self.background_color = QColorDialog.getColor()
         rgb_string = self.get_rgb_string(self.background_color)
-        self.lineEdit_background_color.setStyleSheet('background-color: rgba({})'.format(rgb_string))
+        self.lineEdit_background_color.setStyleSheet(
+            'background-color: rgba({})'.format(rgb_string))
 
     def set_title_content_enable(self):
         self.lineEdit_title_content.setEnabled(True)

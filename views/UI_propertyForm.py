@@ -44,7 +44,6 @@ class Ui_propertyForm(object):
         font = QtGui.QFont()
         font.setPointSize(9)
         self.lineEdit_color.setFont(font)
-        self.lineEdit_color.setStyleSheet("background-color: rgba(255, 255, 255, 255)")
         self.lineEdit_color.setObjectName("lineEdit_color")
         self.gridLayout.addWidget(self.lineEdit_color, 0, 1, 1, 1)
         self.label = QtWidgets.QLabel(self.page_color)
