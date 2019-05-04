@@ -46,6 +46,7 @@ class DataVisualizationWin(QMainWindow, Ui_DataVisualizationWin):
         else:
             self.listWidget_indicator.addItem(text)
         self.horizontal_param.pop(text)
+        self.check_generate_button()
 
     def verticalParamRemove(self, clicked_item):
         # 删除
@@ -56,6 +57,7 @@ class DataVisualizationWin(QMainWindow, Ui_DataVisualizationWin):
         else:
             self.listWidget_indicator.addItem(text)
         self.vertical_param.pop(text)
+        self.check_generate_button()
 
     def graphTypeClicked(self, clicked_item_name):
         clicked_item = self.widget_graph.findChild(ClickableLabel, clicked_item_name)
@@ -63,7 +65,8 @@ class DataVisualizationWin(QMainWindow, Ui_DataVisualizationWin):
         for label in self.clicked_graph_type_label.values():
             label.unclick()
         clicked_item.click()
-        self.generateButton.setEnabled(True)
+        # check states and enable
+        self.check_generate_button()
         if clicked_item_name == 'label_histogram':
             self.horizontal_label.setText('Index')
             self.vertical_label.setText('Group')
@@ -113,6 +116,7 @@ class DataVisualizationWin(QMainWindow, Ui_DataVisualizationWin):
         else:
             self.listWidget_indicator.takeItem(self.listWidget_indicator.row(self.indicator_out[0]))
             self.horizontal_param[self.indicator_out[0].text()] = 'indicator'
+        self.check_generate_button()
 
     def parameterAddedVertical(self, widget_item):
         list_widget = self.get_parent_widget(widget_item)
@@ -122,6 +126,7 @@ class DataVisualizationWin(QMainWindow, Ui_DataVisualizationWin):
         else:
             self.listWidget_indicator.takeItem(self.listWidget_indicator.row(self.indicator_out[0]))
             self.vertical_param[self.indicator_out[0].text()] = 'indicator'
+        self.check_generate_button()
 
     def get_parent_widget(self, widget_item):
         self.dimension_out = self.listWidget_dimension.findItems(widget_item.text(),
@@ -156,3 +161,16 @@ class DataVisualizationWin(QMainWindow, Ui_DataVisualizationWin):
         dic['style'] = dic_style
         # {'property': {'line_color': <PyQt5.QtGui.QColor object at 0x157d12828>, 'line_width': 1, 'label_content': ''}, 'style': {'title_color': None, 'title_content': '', 'title_enabled': '是', 'legend_position': '右', 'legend_enabled': '是', 'background_color': None}}
         return dic
+
+    def check_generate_button(self):
+        enabled = True
+        if self.listWidget_horizontal.count() == 0:
+            enabled = False
+        if self.listWidget_vertical.count() == 0:
+            enabled = False
+        if self.get_clicked_graph_name() is None:
+            enabled = False
+        if enabled:
+            self.generateButton.setEnabled(True)
+        else:
+            self.generateButton.setEnabled(False)

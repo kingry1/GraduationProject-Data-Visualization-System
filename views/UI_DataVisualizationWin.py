@@ -396,7 +396,7 @@ class Ui_DataVisualizationWin(object):
         DataVisualizationWin.setStatusBar(self.statusbar)
 
         self.retranslateUi(DataVisualizationWin)
-        self.tabWidget.setCurrentIndex(1)
+        self.tabWidget.setCurrentIndex(0)
         self.backButton.clicked.connect(DataVisualizationWin.backClicked)
         self.listWidget_horizontal.itemDoubleClicked['QListWidgetItem*'].connect(DataVisualizationWin.horizontalParamRemove)
         self.listWidget_vertical.itemDoubleClicked['QListWidgetItem*'].connect(DataVisualizationWin.verticalParamRemove)
