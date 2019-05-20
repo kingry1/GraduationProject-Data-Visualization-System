@@ -425,6 +425,7 @@ class Ui_DataVisualizationWin(object):
         self.label_3.setText(_translate("DataVisualizationWin", "Indicator"))
         self.graphTypeLabel.setText(_translate("DataVisualizationWin", "Chart Type"))
         self.label_line_chart.setToolTip(_translate("DataVisualizationWin", "line chart"))
+        self.label_bar_chart.setToolTip(_translate("DataVisualizationWin", "bar chart"))
         self.label_18.setText(_translate("DataVisualizationWin", "..."))
         self.label_13.setText(_translate("DataVisualizationWin", "..."))
         self.label_16.setText(_translate("DataVisualizationWin", "..."))
