@@ -61,7 +61,9 @@ class MainDbsConfWin(QMainWindow, Ui_MainDbsConfWin):
 
     def listDoubleClicked(self, clicked_item):
         oldName = clicked_item.text()
-        newName, ok = QInputDialog.getText(self, 'Modify Database Name', 'Input Database Name                  ', text=clicked_item.text())
+        newName, ok = QInputDialog.getText(self, 'Modify Database Name',
+                                           'Input Database Name                  ',
+                                           text=clicked_item.text())
         if ok:
             # check first
             self.clickedDatabaseItem = clicked_item
@@ -82,7 +84,8 @@ class MainDbsConfWin(QMainWindow, Ui_MainDbsConfWin):
         self.callDbsTableSignal.emit(self.dbsDic[self.clickedDatabaseName])
 
     def addClicked(self):
-        dbsName, ok = QInputDialog.getText(self, 'New Database', 'Input Database Name                  ')
+        dbsName, ok = QInputDialog.getText(self, 'New Database',
+                                           'Input Database Name                  ')
         if ok:
             self.listWidget.addItem(dbsName)
             GL.new_dbs(dbsName=dbsName)
@@ -137,9 +140,9 @@ class MainDbsConfWin(QMainWindow, Ui_MainDbsConfWin):
 
     def openAccess(self):
         file_path, file_type = QFileDialog.getOpenFileName(self,
-                                                                "Choose Access File",
-                                                                "/",  # 起始路径
-                                                                "Access Files (*.mdb *.accdb)")
+                                                           "Choose Access File",
+                                                           "/",  # 起始路径
+                                                           "Access Files (*.mdb *.accdb)")
         if file_path == "":
             return
         conf = {'file_path': file_path, 'type': 'Access'}

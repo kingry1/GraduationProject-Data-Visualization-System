@@ -10,7 +10,8 @@ class propertyForm(QWidget, Ui_propertyForm):
         super(propertyForm, self).__init__(parent)
         self.setupUi(self)
         self.rgb = QColor(100, 100, 255)
-        self.lineEdit_color.setStyleSheet('background-color: rgba({})'.format(self.get_rgb_string(self.rgb)))
+        self.lineEdit_color.setStyleSheet(
+            'background-color: rgba({})'.format(self.get_rgb_string(self.rgb)))
 
     def color_pallet(self):
         self.rgb = QColorDialog.getColor()

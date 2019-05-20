@@ -4,6 +4,7 @@ import mysql.connector
 import psycopg2
 import pandas as pd
 import platform
+
 if platform.system() == "Windows":
     import pyodbc
 

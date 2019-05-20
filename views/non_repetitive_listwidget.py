@@ -17,4 +17,4 @@ class Non_repetitive_ListWidget(QListWidget):
 
 
 def dropEvent(self, e):
-        self.addItem(e.mimeData().text())
+    self.addItem(e.mimeData().text())
