@@ -37,8 +37,7 @@ class MplWidget(QWidget):
             ax.patch.set_facecolor(graph_conf['style']['background_color'].name())
         elif graph_type == 'pie_chart':
             dataframe.set_index([vertical for vertical in vertical_axes], inplace=True)
-            dataframe.plot.pie(ax=ax, subplots=True,
-                               color=graph_conf['property']['line_color'].name())
+            dataframe.plot.pie(ax=ax, subplots=True)
             ax.set_title(
                 label='' if graph_conf['style']['title_enabled'] == 'no' else graph_conf['style'][
                     'title_content'], color=graph_conf['style']['title_color'].name())
