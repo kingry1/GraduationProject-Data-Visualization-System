@@ -76,6 +76,9 @@ class DataVisualizationWin(QMainWindow, Ui_DataVisualizationWin):
         elif clicked_item_name == 'label_pie_chart':
             self.horizontal_label.setText('Angle')
             self.vertical_label.setText('Color')
+        elif clicked_item_name == 'label_bar_chart':
+            self.horizontal_label.setText('Horizontal Axes')
+            self.vertical_label.setText('Vertical Axes')
 
     def get_clicked_graph_name(self):
         clicked_name = None
@@ -164,12 +167,12 @@ class DataVisualizationWin(QMainWindow, Ui_DataVisualizationWin):
 
     def check_generate_button(self):
         enabled = True
-        if self.listWidget_horizontal.count() == 0:
+        clicked_graph_name = self.get_clicked_graph_name()
+        if self.listWidget_horizontal.count() == 0 or clicked_graph_name is None:
             enabled = False
-        if self.listWidget_vertical.count() == 0:
-            enabled = False
-        if self.get_clicked_graph_name() is None:
-            enabled = False
+        elif clicked_graph_name != 'label_histogram':
+            if self.listWidget_vertical.count() == 0:
+                enabled = False
         if enabled:
             self.generateButton.setEnabled(True)
         else:

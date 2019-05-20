@@ -21,7 +21,7 @@ class VisualizationDataThread(QThread):
     def run(self):
         self.mydb = dbsConnector(self.conf)
         sql = None
-        if self.graph_type == "line_chart":
+        if self.graph_type == "line_chart" or self.graph_type == 'bar_chart':
             sql_front = "SELECT "
             for zongzhou in self.vertical_axes:
                 if zongzhou == 'count(*)':
