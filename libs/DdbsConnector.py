@@ -4,6 +4,7 @@ import mysql.connector
 import psycopg2
 import pandas as pd
 import platform
+from sqlalchemy import create_engine
 
 if platform.system() == "Windows":
     import pyodbc
@@ -136,3 +137,36 @@ class DbsConnector:
             raise err
         except Exception as err:
             raise err
+
+    @staticmethod
+    def add_excel(file_path, conf):
+        file_without = '.'.join(file_path.split('/')[-1].split('.')[:-1])
+        df = pd.read_excel(file_path)
+        engine = create_engine(
+            'mysql+mysqlconnector://{}:{}@{}:{}/{}'.format(conf['user'], conf['password'],
+                                                           conf['host'], conf['port'],
+                                                           conf['name']))
+        df.to_sql(name=file_without, con=engine, if_exists='append')
+        engine.dispose()
+
+    @staticmethod
+    def add_csv(file_path, conf):
+        file_without = '.'.join(file_path.split('/')[-1].split('.')[:-1])
+        df = pd.read_csv(file_path)
+        engine = create_engine(
+            'mysql+mysqlconnector://{}:{}@{}:{}/{}'.format(conf['user'], conf['password'],
+                                                           conf['host'], conf['port'],
+                                                           conf['name']))
+        df.to_sql(name=file_without, con=engine, if_exists='append')
+        engine.dispose()
+
+    @staticmethod
+    def add_json(file_path, conf):
+        file_without = '.'.join(file_path.split('/')[-1].split('.')[:-1])
+        df = pd.read_json(file_path)
+        engine = create_engine(
+            'mysql+mysqlconnector://{}:{}@{}:{}/{}'.format(conf['user'], conf['password'],
+                                                           conf['host'], conf['port'],
+                                                           conf['name']))
+        df.to_sql(name=file_without, con=engine, if_exists='append', index=False)
+        engine.dispose()

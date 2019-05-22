@@ -23,7 +23,7 @@
      <item>
       <layout class="QHBoxLayout" name="horizontalLayout_3" stretch="0,1">
        <item>
-        <layout class="QVBoxLayout" name="verticalLayout_6" stretch="0,1,0,0">
+        <layout class="QVBoxLayout" name="verticalLayout_6" stretch="0,1,0,0,0">
          <item alignment="Qt::AlignHCenter">
           <widget class="QLabel" name="label">
            <property name="font">
@@ -96,6 +96,72 @@
            </item>
            <item>
             <spacer name="horizontalSpacer_4">
+             <property name="orientation">
+              <enum>Qt::Horizontal</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>40</width>
+               <height>20</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <layout class="QHBoxLayout" name="horizontalLayout_5">
+           <item>
+            <spacer name="horizontalSpacer_5">
+             <property name="orientation">
+              <enum>Qt::Horizontal</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>40</width>
+               <height>20</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+           <item>
+            <widget class="QPushButton" name="Add_Excel_Button">
+             <property name="font">
+              <font>
+               <family>Microsoft YaHei</family>
+              </font>
+             </property>
+             <property name="text">
+              <string>Add Excel</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="Add_JSON_Button">
+             <property name="font">
+              <font>
+               <family>Microsoft YaHei</family>
+              </font>
+             </property>
+             <property name="text">
+              <string>Add JSON</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="Add_CSV_Button">
+             <property name="font">
+              <font>
+               <family>Microsoft YaHei</family>
+              </font>
+             </property>
+             <property name="text">
+              <string>Add CSV</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <spacer name="horizontalSpacer_6">
              <property name="orientation">
               <enum>Qt::Horizontal</enum>
              </property>
@@ -247,8 +313,8 @@
    <slot>refreshClicked()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>82</x>
-     <y>537</y>
+     <x>211</x>
+     <y>487</y>
     </hint>
     <hint type="destinationlabel">
      <x>7</x>
@@ -263,12 +329,60 @@
    <slot>chooseClicked()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>185</x>
-     <y>534</y>
+     <x>308</x>
+     <y>487</y>
     </hint>
     <hint type="destinationlabel">
      <x>7</x>
      <y>435</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>Add_Excel_Button</sender>
+   <signal>clicked()</signal>
+   <receiver>DbsTableSelect</receiver>
+   <slot>addExcel()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>114</x>
+     <y>509</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>6</x>
+     <y>491</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>Add_JSON_Button</sender>
+   <signal>clicked()</signal>
+   <receiver>DbsTableSelect</receiver>
+   <slot>addJSON()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>200</x>
+     <y>521</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>4</x>
+     <y>523</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>Add_CSV_Button</sender>
+   <signal>clicked()</signal>
+   <receiver>DbsTableSelect</receiver>
+   <slot>addCSV()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>310</x>
+     <y>515</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>8</x>
+     <y>471</y>
     </hint>
    </hints>
   </connection>
@@ -278,5 +392,8 @@
   <slot>tableSelected()</slot>
   <slot>refreshClicked()</slot>
   <slot>chooseClicked()</slot>
+  <slot>addExcel()</slot>
+  <slot>addJSON()</slot>
+  <slot>addCSV()</slot>
  </slots>
 </ui>

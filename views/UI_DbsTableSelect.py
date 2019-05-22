@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file 'UI_DbsTableSelect.ui'
 #
-# Created by: PyQt5 UI code generator 5.12
+# Created by: PyQt5 UI code generator 5.12.1
 #
 # WARNING! All changes made in this file will be lost!
 
@@ -61,6 +61,31 @@ class Ui_DbsTableSelect(object):
         spacerItem1 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
         self.horizontalLayout_2.addItem(spacerItem1)
         self.verticalLayout_6.addLayout(self.horizontalLayout_2)
+        self.horizontalLayout_5 = QtWidgets.QHBoxLayout()
+        self.horizontalLayout_5.setObjectName("horizontalLayout_5")
+        spacerItem2 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
+        self.horizontalLayout_5.addItem(spacerItem2)
+        self.Add_Excel_Button = QtWidgets.QPushButton(DbsTableSelect)
+        font = QtGui.QFont()
+        font.setFamily("Microsoft YaHei")
+        self.Add_Excel_Button.setFont(font)
+        self.Add_Excel_Button.setObjectName("Add_Excel_Button")
+        self.horizontalLayout_5.addWidget(self.Add_Excel_Button)
+        self.Add_JSON_Button = QtWidgets.QPushButton(DbsTableSelect)
+        font = QtGui.QFont()
+        font.setFamily("Microsoft YaHei")
+        self.Add_JSON_Button.setFont(font)
+        self.Add_JSON_Button.setObjectName("Add_JSON_Button")
+        self.horizontalLayout_5.addWidget(self.Add_JSON_Button)
+        self.Add_CSV_Button = QtWidgets.QPushButton(DbsTableSelect)
+        font = QtGui.QFont()
+        font.setFamily("Microsoft YaHei")
+        self.Add_CSV_Button.setFont(font)
+        self.Add_CSV_Button.setObjectName("Add_CSV_Button")
+        self.horizontalLayout_5.addWidget(self.Add_CSV_Button)
+        spacerItem3 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
+        self.horizontalLayout_5.addItem(spacerItem3)
+        self.verticalLayout_6.addLayout(self.horizontalLayout_5)
         self.line = QtWidgets.QFrame(DbsTableSelect)
         self.line.setFrameShape(QtWidgets.QFrame.HLine)
         self.line.setFrameShadow(QtWidgets.QFrame.Sunken)
@@ -89,8 +114,8 @@ class Ui_DbsTableSelect(object):
         self.verticalLayout.addLayout(self.horizontalLayout_3)
         self.horizontalLayout = QtWidgets.QHBoxLayout()
         self.horizontalLayout.setObjectName("horizontalLayout")
-        spacerItem2 = QtWidgets.QSpacerItem(40, 10, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Minimum)
-        self.horizontalLayout.addItem(spacerItem2)
+        spacerItem4 = QtWidgets.QSpacerItem(40, 10, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Minimum)
+        self.horizontalLayout.addItem(spacerItem4)
         self.pushButton = QtWidgets.QPushButton(DbsTableSelect)
         font = QtGui.QFont()
         font.setFamily("微软雅黑")
@@ -100,8 +125,8 @@ class Ui_DbsTableSelect(object):
         self.pushButton.setFont(font)
         self.pushButton.setObjectName("pushButton")
         self.horizontalLayout.addWidget(self.pushButton, 0, QtCore.Qt.AlignBottom)
-        spacerItem3 = QtWidgets.QSpacerItem(40, 10, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Minimum)
-        self.horizontalLayout.addItem(spacerItem3)
+        spacerItem5 = QtWidgets.QSpacerItem(40, 10, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Minimum)
+        self.horizontalLayout.addItem(spacerItem5)
         self.verticalLayout.addLayout(self.horizontalLayout)
         self.verticalLayout.setStretch(0, 1)
         self.verticalLayout_2.addLayout(self.verticalLayout)
@@ -111,6 +136,9 @@ class Ui_DbsTableSelect(object):
         self.tableNamesWidget.itemClicked['QListWidgetItem*'].connect(DbsTableSelect.tableSelected)
         self.refreshButton.clicked.connect(DbsTableSelect.refreshClicked)
         self.chooseButton.clicked.connect(DbsTableSelect.chooseClicked)
+        self.Add_Excel_Button.clicked.connect(DbsTableSelect.addExcel)
+        self.Add_JSON_Button.clicked.connect(DbsTableSelect.addJSON)
+        self.Add_CSV_Button.clicked.connect(DbsTableSelect.addCSV)
         QtCore.QMetaObject.connectSlotsByName(DbsTableSelect)
 
     def retranslateUi(self, DbsTableSelect):
@@ -119,6 +147,9 @@ class Ui_DbsTableSelect(object):
         self.label.setText(_translate("DbsTableSelect", "Select Tables"))
         self.refreshButton.setText(_translate("DbsTableSelect", "Refresh"))
         self.chooseButton.setText(_translate("DbsTableSelect", "Choose"))
+        self.Add_Excel_Button.setText(_translate("DbsTableSelect", "Add Excel"))
+        self.Add_JSON_Button.setText(_translate("DbsTableSelect", "Add JSON"))
+        self.Add_CSV_Button.setText(_translate("DbsTableSelect", "Add CSV"))
         self.label_2.setText(_translate("DbsTableSelect", "Table Content Preview"))
         self.pushButton.setText(_translate("DbsTableSelect", "Back"))
 

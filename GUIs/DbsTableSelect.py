@@ -2,12 +2,13 @@
 
 from views.UI_DbsTableSelect import Ui_DbsTableSelect
 from PyQt5 import QtCore
-from PyQt5.QtWidgets import QWidget, QListWidgetItem, QDesktopWidget
+from PyQt5.QtWidgets import QWidget, QListWidgetItem, QDesktopWidget, QFileDialog
 from PyQt5.QtCore import pyqtSignal
 from GUIs.Threads.RfTableListsThread import RfTableListsThread
 from GUIs.Threads.ShowTablesThread import ShowTablesThread
 from libs.PandasModel import PandasModel
 from libs import GL
+from libs.DdbsConnector import DbsConnector
 
 
 class DbsTableSelect(QWidget, Ui_DbsTableSelect):
@@ -67,3 +68,33 @@ class DbsTableSelect(QWidget, Ui_DbsTableSelect):
 
     def chooseClicked(self):
         self.visualizationSignal.emit(self.conf, self.tableNamesWidget.currentItem().text())
+
+    def addExcel(self):
+        file_path, file_type = QFileDialog.getOpenFileName(self,
+                                                           "Choose Excel File",
+                                                           "/",  # 起始路径
+                                                           "Excel Files (*.xls *.xlsx)")
+        if file_path == "":
+            return
+
+        DbsConnector.add_excel(file_path=file_path, conf=self.conf)
+
+    def addJSON(self):
+        file_path, file_type = QFileDialog.getOpenFileName(self,
+                                                           "Choose JSON File",
+                                                           "/",  # 起始路径
+                                                           "JSON Files (*.json)")
+        if file_path == "":
+            return
+
+        DbsConnector.add_json(file_path=file_path, conf=self.conf)
+
+    def addCSV(self):
+        file_path, file_type = QFileDialog.getOpenFileName(self,
+                                                           "Choose CSV File",
+                                                           "/",  # 起始路径
+                                                           "CSV Files (*.csv)")
+        if file_path == "":
+            return
+
+        DbsConnector.add_json(file_path=file_path, conf=self.conf)

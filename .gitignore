@@ -107,3 +107,9 @@ venv.bak/
 .idea/
 
 ./*.png
+
+./*.json
+
+./*.xls
+
+./*.xlsx
