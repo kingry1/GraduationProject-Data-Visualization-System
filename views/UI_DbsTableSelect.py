@@ -12,7 +12,7 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Ui_DbsTableSelect(object):
     def setupUi(self, DbsTableSelect):
         DbsTableSelect.setObjectName("DbsTableSelect")
-        DbsTableSelect.resize(800, 600)
+        DbsTableSelect.resize(885, 600)
         icon = QtGui.QIcon()
         icon.addPixmap(QtGui.QPixmap("icon/icon.ico"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         DbsTableSelect.setWindowIcon(icon)
@@ -33,6 +33,12 @@ class Ui_DbsTableSelect(object):
         self.label.setObjectName("label")
         self.verticalLayout_6.addWidget(self.label, 0, QtCore.Qt.AlignHCenter)
         self.tableNamesWidget = QtWidgets.QListWidget(DbsTableSelect)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Fixed, QtWidgets.QSizePolicy.Expanding)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.tableNamesWidget.sizePolicy().hasHeightForWidth())
+        self.tableNamesWidget.setSizePolicy(sizePolicy)
+        self.tableNamesWidget.setMinimumSize(QtCore.QSize(407, 0))
         self.tableNamesWidget.setDragEnabled(True)
         self.tableNamesWidget.setDragDropMode(QtWidgets.QAbstractItemView.DragOnly)
         self.tableNamesWidget.setObjectName("tableNamesWidget")

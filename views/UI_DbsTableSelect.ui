@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>800</width>
+    <width>885</width>
     <height>600</height>
    </rect>
   </property>
@@ -40,6 +40,18 @@
          </item>
          <item>
           <widget class="QListWidget" name="tableNamesWidget">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Fixed" vsizetype="Expanding">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="minimumSize">
+            <size>
+             <width>407</width>
+             <height>0</height>
+            </size>
+           </property>
            <property name="dragEnabled">
             <bool>true</bool>
            </property>
